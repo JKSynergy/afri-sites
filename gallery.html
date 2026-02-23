@@ -6,77 +6,161 @@
     <title>Gallery - Afrisites Tours & Travel | Uganda Safari Photos</title>
     <meta name="description" content="Explore our stunning gallery of Uganda and East Africa safari photos. See gorillas, wildlife, waterfalls, and breathtaking landscapes from our tours.">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Josefin+Sans:wght@400;500;600;700&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Josefin+Sans:wght@400;500;600;700&family=Crimson+Text:wght@400;600;700&family=Raleway:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Gallery-specific styles */
+        /* ── Gallery Hero ─────────────────────────────────── */
         .gallery-hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                        url('https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
+            position: relative;
+            height: 62vh;
+            min-height: 460px;
+            background: url('https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
+            overflow: hidden;
         }
 
+        .gallery-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(0,0,0,0.7) 0%, rgba(39,174,96,0.22) 100%);
+            pointer-events: none;
+        }
+
+        .gallery-hero .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .gallery-breadcrumb {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: rgba(255,255,255,0.9);
+            padding: 0.4rem 1.1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 1.25rem;
+            letter-spacing: 0.03em;
+        }
+
+        .gallery-breadcrumb a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .gallery-breadcrumb a:hover { color: #f9c500; }
+        .gallery-breadcrumb i { font-size: 0.65rem; opacity: 0.7; }
+
+        .gallery-hero .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            line-height: 1.1;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+            margin-bottom: 1rem;
+            color: white;
+            text-transform: none;
+        }
+
+        .gallery-hero .hero-content p {
+            font-size: 1.15rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.9);
+            max-width: 580px;
+            margin: 0 auto;
+            line-height: 1.7;
+            letter-spacing: 0.01em;
+        }
+
+        /* Hero stats strip */
+        .gallery-hero-stats {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.45);
+            backdrop-filter: blur(12px);
+            padding: 0.85rem 2rem;
+            gap: 0;
+        }
+
+        .ghs-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 2.5rem;
+        }
+
+        .ghs-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #f9c500;
+            line-height: 1;
+        }
+
+        .ghs-label {
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.8);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 0.2rem;
+            font-weight: 500;
+        }
+
+        .ghs-divider {
+            width: 1px;
+            height: 36px;
+            background: rgba(255,255,255,0.25);
+            flex-shrink: 0;
+        }
+
+        /* ── Gallery Section ──────────────────────────────── */
         .gallery-section {
-            padding: 4rem 0;
-        }
-        
-        /* Alternative masonry layout */
-        .gallery-grid.masonry {
-            columns: 3;
-            column-gap: 2rem;
-        }
-        
-        .gallery-grid.masonry .gallery-item {
-            break-inside: avoid;
-            margin-bottom: 2rem;
-        }
-        
-        .gallery-grid.masonry .gallery-item img {
-            height: auto;
-            min-height: 200px;
-            max-height: 500px;
-        }
-        
-        @media (max-width: 768px) {
-            .gallery-grid.masonry {
-                columns: 1;
-            }
-        }
-        
-        @media (max-width: 1200px) and (min-width: 769px) {
-            .gallery-grid.masonry {
-                columns: 2;
-            }
+            padding: 4.5rem 0;
         }
 
+        /* ── Gallery Controls ─────────────────────────────── */
         .gallery-controls {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 2rem;
+            gap: 1.5rem;
             margin-bottom: 3rem;
         }
-        
+
         .gallery-filters {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 0.75rem;
         }
-        
+
         .layout-toggle {
             display: flex;
             gap: 0.5rem;
         }
-        
+
         .layout-btn {
-            background: transparent;
+            background: white;
             border: 2px solid #27ae60;
             color: #27ae60;
             padding: 0.5rem;
@@ -88,35 +172,35 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 2px 8px rgba(39,174,96,0.15);
         }
-        
+
         .layout-btn.active,
         .layout-btn:hover {
             background: #27ae60;
             color: white;
-        }
-        
-        @media (max-width: 768px) {
-            .gallery-controls {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 1rem;
-            }
-            
-            .layout-toggle {
-                justify-content: center;
-            }
+            box-shadow: 0 4px 12px rgba(39,174,96,0.35);
         }
 
         .filter-btn {
-            background: transparent;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: white;
             border: 2px solid #27ae60;
             color: #27ae60;
-            padding: 0.75rem 1.5rem;
+            padding: 0.65rem 1.4rem;
             border-radius: 25px;
             cursor: pointer;
             font-weight: 600;
+            font-size: 0.875rem;
             transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(39,174,96,0.1);
+            letter-spacing: 0.02em;
+        }
+
+        .filter-btn i {
+            font-size: 0.8rem;
         }
 
         .filter-btn.active,
@@ -124,36 +208,38 @@
             background: #27ae60;
             color: white;
             transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(39,174,96,0.35);
         }
 
+        /* ── Gallery Grid ─────────────────────────────────── */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 1.75rem;
             margin-bottom: 3rem;
         }
 
         .gallery-item {
             position: relative;
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
             cursor: pointer;
-            background: #f0f0f0;
-            min-height: 350px;
+            background: #e8e8e8;
+            min-height: 320px;
         }
 
         .gallery-item:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+            transform: translateY(-8px);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.2);
         }
 
         .gallery-item img {
             width: 100%;
-            height: 350px;
+            height: 320px;
             object-fit: cover;
-            transition: transform 0.3s ease;
+            transition: transform 0.4s ease;
             display: block;
             position: relative;
             z-index: 1;
@@ -162,7 +248,7 @@
         }
 
         .gallery-item:hover img {
-            transform: scale(1.1);
+            transform: scale(1.08);
         }
 
         /* Featured large image styles */
@@ -171,7 +257,7 @@
         }
 
         .gallery-item.large img {
-            height: 450px;
+            height: 420px;
         }
 
         .gallery-item.tall {
@@ -179,35 +265,32 @@
         }
 
         .gallery-item.tall img {
-            height: 500px;
+            height: 480px;
         }
 
-        /* Landscape orientation for landscape photos */
         .gallery-item[data-category="landscapes"] {
             grid-column: span 2;
         }
 
         .gallery-item[data-category="landscapes"] img {
-            height: 300px;
+            height: 290px;
             object-fit: cover;
         }
 
         .gallery-item[data-category="landscapes"].large img {
-            height: 400px;
+            height: 380px;
         }
 
+        /* Overlay */
         .gallery-overlay {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.82) 100%);
             display: flex;
             align-items: flex-end;
             padding: 1.5rem;
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.35s ease;
         }
 
         .gallery-item:hover .gallery-overlay {
@@ -215,37 +298,63 @@
         }
 
         .gallery-info h3 {
+            font-family: 'Playfair Display', serif;
             color: white;
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+            line-height: 1.3;
         }
 
         .gallery-info p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.88);
+            font-size: 0.85rem;
+            line-height: 1.5;
         }
 
+        /* Category badge */
         .gallery-category {
             position: absolute;
             top: 1rem;
             left: 1rem;
-            background: rgba(39, 174, 96, 0.9);
+            background: rgba(39, 174, 96, 0.88);
+            backdrop-filter: blur(6px);
             color: white;
-            padding: 0.5rem 1rem;
+            padding: 0.35rem 0.9rem;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
             z-index: 2;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
 
-        /* Lightbox Modal */
+        /* ── Masonry layout ───────────────────────────────── */
+        .gallery-grid.masonry {
+            columns: 3;
+            column-gap: 1.75rem;
+            display: block;
+        }
+
+        .gallery-grid.masonry .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 1.75rem;
+            display: block;
+        }
+
+        .gallery-grid.masonry .gallery-item img {
+            height: auto;
+            min-height: 200px;
+            max-height: 500px;
+        }
+
+        /* ── Lightbox ─────────────────────────────────────── */
         .lightbox {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
             display: none;
             justify-content: center;
             align-items: center;
@@ -258,65 +367,76 @@
 
         .lightbox-content {
             position: relative;
-            max-width: 95%;
-            max-height: 95%;
+            max-width: 92vw;
+            max-height: 90vh;
             min-width: 300px;
         }
 
         .lightbox img {
-            width: 100%;
-            height: 100%;
+            max-width: 100%;
+            max-height: 78vh;
             object-fit: contain;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+            display: block;
+            margin: 0 auto;
         }
 
         .lightbox-close {
             position: absolute;
-            top: -40px;
+            top: -44px;
             right: 0;
-            background: none;
-            border: none;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+            backdrop-filter: blur(6px);
             color: white;
-            font-size: 2rem;
+            font-size: 1.6rem;
             cursor: pointer;
-            transition: opacity 0.3s ease;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            line-height: 1;
         }
 
         .lightbox-close:hover {
-            opacity: 0.7;
+            background: rgba(255,255,255,0.25);
+            transform: scale(1.1);
         }
 
         .lightbox-nav {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,0.25);
             color: white;
-            border: none;
-            width: 50px;
-            height: 50px;
+            width: 52px;
+            height: 52px;
             border-radius: 50%;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .lightbox-nav:hover {
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-50%) scale(1.08);
         }
 
-        .lightbox-prev {
-            left: -60px;
-        }
-
-        .lightbox-next {
-            right: -60px;
-        }
+        .lightbox-prev { left: -70px; }
+        .lightbox-next { right: -70px; }
 
         .lightbox-info {
             position: absolute;
-            bottom: -60px;
+            bottom: -64px;
             left: 0;
             right: 0;
             color: white;
@@ -324,115 +444,55 @@
         }
 
         .lightbox-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
         }
 
         .lightbox-info p {
-            opacity: 0.9;
+            opacity: 0.8;
+            font-size: 0.9rem;
         }
-        
+
         .zoom-controls {
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: -44px;
+            left: 0;
             display: flex;
-            gap: 0.5rem;
+            gap: 0.4rem;
         }
-        
+
         .zoom-btn {
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,0.25);
             color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             cursor: pointer;
-            font-size: 1.2rem;
-            transition: background 0.3s ease;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        
+
         .zoom-btn:hover {
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(255,255,255,0.25);
         }
-        
+
         .lightbox img.zoomed {
             cursor: grab;
             transform-origin: center;
         }
-        
+
         .lightbox img.zoomed:active {
             cursor: grabbing;
         }
 
-        /* Video Gallery */
-        .video-gallery {
-            background: #f8f9fa;
-            padding: 4rem 0;
-        }
-
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .video-item {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .video-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .video-thumbnail {
-            position: relative;
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-
-        .play-button {
-            background: rgba(39, 174, 96, 0.9);
-            color: white;
-            border: none;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .play-button:hover {
-            background: #27ae60;
-            transform: scale(1.1);
-        }
-
-        .video-content {
-            padding: 1.5rem;
-        }
-
-        .video-content h3 {
-            color: #333;
-            margin-bottom: 0.5rem;
-        }
-
-        .video-content p {
-            color: #666;
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        /* Load More Button */
+        /* ── Load More ────────────────────────────────────── */
         .load-more {
             text-align: center;
             margin-top: 3rem;
@@ -442,86 +502,156 @@
             background: transparent;
             border: 2px solid #27ae60;
             color: #27ae60;
-            padding: 1rem 2rem;
-            border-radius: 25px;
+            padding: 0.9rem 2.5rem;
+            border-radius: 50px;
             font-weight: 600;
+            font-size: 0.95rem;
             cursor: pointer;
             transition: all 0.3s ease;
+            letter-spacing: 0.03em;
+            box-shadow: 0 2px 12px rgba(39,174,96,0.15);
         }
 
         .load-more-btn:hover {
             background: #27ae60;
             color: white;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(39,174,96,0.35);
         }
 
-        /* Responsive Design */
+        /* ── Video Gallery ────────────────────────────────── */
+        .video-gallery {
+            background: #f4f6f4;
+            padding: 4.5rem 0;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .video-item {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .video-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            height: 210px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .video-thumbnail::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.6) 100%);
+        }
+
+        .play-button {
+            position: relative;
+            z-index: 2;
+            background: rgba(39, 174, 96, 0.92);
+            color: white;
+            border: none;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            font-size: 1.4rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .play-button:hover {
+            background: #27ae60;
+            transform: scale(1.12);
+            box-shadow: 0 6px 25px rgba(39,174,96,0.5);
+        }
+
+        .video-content {
+            padding: 1.5rem;
+        }
+
+        .video-content h3 {
+            font-family: 'Playfair Display', serif;
+            color: #222;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .video-content p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.65;
+        }
+
+        /* ── Responsive ───────────────────────────────────── */
         @media (max-width: 1200px) {
             .gallery-grid {
-                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             }
-            
-            .gallery-item.large {
-                grid-column: span 1;
-            }
-            
-            .gallery-item.tall {
-                grid-row: span 1;
-            }
-            
-            .gallery-item.tall img {
-                height: 350px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .gallery-hero {
-                height: 50vh;
-            }
-
-            .gallery-filters {
-                justify-content: center;
-                gap: 0.5rem;
-            }
-
-            .filter-btn {
-                padding: 0.5rem 1rem;
-                font-size: 0.9rem;
-            }
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .gallery-item img {
-                height: 300px;
-            }
-            
             .gallery-item.large,
+            .gallery-item[data-category="landscapes"] {
+                grid-column: span 1;
+            }
             .gallery-item.tall {
+                grid-row: span 1;
+            }
+            .gallery-item.tall img,
+            .gallery-item.large img {
+                height: 320px;
+            }
+            .gallery-grid.masonry {
+                columns: 2;
+            }
+            .lightbox-prev { left: -58px; }
+            .lightbox-next { right: -58px; }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-hero { height: 52vh; min-height: 380px; }
+            .gallery-hero .hero-content h1 { font-size: 2.8rem; }
+            .gallery-hero-stats { flex-wrap: wrap; gap: 0.5rem; }
+            .ghs-item { padding: 0.4rem 1rem; }
+            .ghs-divider { display: none; }
+            .gallery-filters { justify-content: center; gap: 0.4rem; }
+            .filter-btn { padding: 0.5rem 0.9rem; font-size: 0.8rem; }
+            .gallery-controls { flex-direction: column; align-items: stretch; gap: 1rem; }
+            .layout-toggle { justify-content: center; }
+            .gallery-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+            .gallery-item img,
+            .gallery-item.large img,
+            .gallery-item.tall img { height: 280px; }
+            .gallery-item.large,
+            .gallery-item.tall,
+            .gallery-item[data-category="landscapes"] {
                 grid-column: span 1;
                 grid-row: span 1;
             }
-            
-            .gallery-item.large img,
-            .gallery-item.tall img {
-                height: 300px;
-            }
-
-            .video-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .lightbox-nav {
-                display: none;
-            }
-
-            .lightbox-info {
-                position: relative;
-                bottom: 0;
-                margin-top: 1rem;
-            }
+            .video-grid { grid-template-columns: 1fr; }
+            .lightbox-nav { display: none; }
+            .lightbox-info { position: relative; bottom: 0; margin-top: 1rem; }
+            .gallery-grid.masonry { columns: 1; }
         }
     </style>
 </head>
@@ -551,9 +681,22 @@
 
     <!-- Gallery Hero Section -->
     <section class="gallery-hero">
+        <div class="gallery-hero-overlay"></div>
         <div class="hero-content">
-            <h1>Gallery</h1>
+            <div class="gallery-breadcrumb"><a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> Gallery</div>
+            <h1>Our Gallery</h1>
             <p>Discover the beauty of Uganda and East Africa through our lens</p>
+        </div>
+        <div class="gallery-hero-stats">
+            <div class="ghs-item"><span class="ghs-num">30+</span><span class="ghs-label">Wildlife</span></div>
+            <div class="ghs-divider"></div>
+            <div class="ghs-item"><span class="ghs-num">25+</span><span class="ghs-label">Gorillas</span></div>
+            <div class="ghs-divider"></div>
+            <div class="ghs-item"><span class="ghs-num">20+</span><span class="ghs-label">Landscapes</span></div>
+            <div class="ghs-divider"></div>
+            <div class="ghs-item"><span class="ghs-num">10+</span><span class="ghs-label">Waterfalls</span></div>
+            <div class="ghs-divider"></div>
+            <div class="ghs-item"><span class="ghs-num">15+</span><span class="ghs-label">Culture</span></div>
         </div>
     </section>
 
@@ -568,12 +711,12 @@
             <!-- Gallery Controls -->
             <div class="gallery-controls">
                 <div class="gallery-filters">
-                    <button class="filter-btn active" data-filter="all">All Photos</button>
-                    <button class="filter-btn" data-filter="wildlife">Wildlife</button>
-                    <button class="filter-btn" data-filter="gorillas">Gorillas</button>
-                    <button class="filter-btn" data-filter="landscapes">Landscapes</button>
-                    <button class="filter-btn" data-filter="waterfalls">Waterfalls</button>
-                    <button class="filter-btn" data-filter="culture">Culture</button>
+                    <button class="filter-btn active" data-filter="all"><i class="fas fa-border-all"></i> All Photos</button>
+                    <button class="filter-btn" data-filter="wildlife"><i class="fas fa-paw"></i> Wildlife</button>
+                    <button class="filter-btn" data-filter="gorillas"><i class="fas fa-mountain"></i> Gorillas</button>
+                    <button class="filter-btn" data-filter="landscapes"><i class="fas fa-image"></i> Landscapes</button>
+                    <button class="filter-btn" data-filter="waterfalls"><i class="fas fa-water"></i> Waterfalls</button>
+                    <button class="filter-btn" data-filter="culture"><i class="fas fa-drum"></i> Culture</button>
                 </div>
                 <div class="layout-toggle">
                     <button class="layout-btn active" data-layout="grid" title="Grid Layout">
@@ -1026,17 +1169,17 @@
 
             <div class="footer-bottom">
                 <p>&copy; 2025 Afrisites Tours & Travel. All rights reserved.</p>
-                <p>Powered by <a href="#" style="color: #27ae60; text-decoration: none; font-weight: 600;">Synergy Concepts Hub</a></p>
+                <p>Powered by <a href="https://www.synergyconceptshub.com/" target="_blank" rel="noopener noreferrer" style="color: #27ae60; text-decoration: none; font-weight: 600; pointer-events: auto; cursor: pointer;">Synergy Concepts Hub</a></p>
             </div>
         </div>
     </footer>
 
     <!-- Chat Widget -->
     <div class="chat-widget">
-        <div class="chat-button" id="chatButton">
-            <i class="fas fa-comments"></i>
+        <a href="https://wa.me/256393101000?text=Hi%2C%20I%27m%20interested%20in%20booking%20a%20tour" target="_blank" class="chat-button" id="chatButton">
+            <i class="fab fa-whatsapp"></i>
             <span>Need Help?</span>
-        </div>
+        </a>
     </div>
 
     <script src="gallery.js"></script>
