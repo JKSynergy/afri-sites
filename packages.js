@@ -20,14 +20,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 const cardCategories = card.getAttribute('data-category').split(' ');
                 
                 if (category === 'all' || cardCategories.includes(category)) {
-                    card.style.display = 'block';
+                    card.style.display = 'grid';
                     card.style.animation = 'fadeIn 0.5s ease';
                 } else {
                     card.style.display = 'none';
                 }
             });
+
+            // Update visible count
+            updateVisibleCount();
         });
     });
+
+    function updateVisibleCount() {
+        const visible = [...packageCards].filter(c => c.style.display !== 'none').length;
+        const counter = document.getElementById('visibleCount');
+        if (counter) counter.textContent = visible;
+    }
 
     // Package details data
     const packageDetails = {
@@ -1308,11 +1317,16 @@ function applyURLFilters() {
             card.style.display = 'none';
         }
     });
-    
+
+    // Update counter
+    const counter = document.getElementById('visibleCount');
+    if (counter) counter.textContent = visibleCount;
+
     // Show message if no packages match
     if (visibleCount === 0) {
         showFilterNotification('No packages match your search criteria. Showing all packages.', 'warning');
         packageCards.forEach(card => card.style.display = 'grid');
+        if (counter) counter.textContent = packageCards.length;
     }
 }
 

@@ -6,285 +6,494 @@
     <title>Tour Packages - Afrisites Tours & Travel | Uganda Safari Packages</title>
     <meta name="description" content="Discover our comprehensive tour packages including gorilla trekking, Big Five safaris, and cultural experiences across Uganda and Rwanda. Book your dream African adventure today.">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Josefin+Sans:wght@400;500;600;700&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Josefin+Sans:wght@400;500;600;700&family=Crimson+Text:wght@400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Packages Page Specific Styles */
+        /* ============================================================
+           PACKAGES PAGE – POLISHED UI
+        ============================================================ */
+
+        /* ---- Hero ---- */
         .packages-hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                        url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
+            height: 65vh;
+            min-height: 400px;
+            background: linear-gradient(160deg, rgba(0,0,0,0.55) 0%, rgba(39,174,96,0.35) 100%),
+                        url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover fixed;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
+            position: relative;
         }
 
+        .packages-hero .hero-content {
+            padding: 0 1.5rem;
+            animation: heroFadeUp 0.9s ease both;
+        }
+
+        @keyframes heroFadeUp {
+            from { opacity: 0; transform: translateY(28px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .packages-hero .hero-breadcrumb {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 30px;
+            padding: 0.35rem 1rem;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 1.1rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .packages-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 5vw, 3.6rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 0.8rem;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+        }
+
+        .packages-hero p {
+            font-size: clamp(0.95rem, 2vw, 1.15rem);
+            color: rgba(255,255,255,0.88);
+            max-width: 560px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Stats strip */
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            flex-wrap: wrap;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .hero-stat {
+            flex: 1;
+            min-width: 130px;
+            max-width: 200px;
+            padding: 0.9rem 1rem;
+            text-align: center;
+            border-right: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .hero-stat:last-child { border-right: none; }
+
+        .hero-stat-num {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #4cd97b;
+            line-height: 1;
+            margin-bottom: 0.2rem;
+        }
+
+        .hero-stat-label {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: rgba(255,255,255,0.65);
+            font-weight: 500;
+        }
+
+        /* ---- Section header ---- */
         .packages-section {
-            padding: 5rem 0;
+            padding: 5rem 0 4rem;
+            background: #f7f9f8;
         }
 
+        .packages-section .section-header {
+            margin-bottom: 1rem;
+        }
+
+        .packages-section .section-header h2 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .results-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .results-count {
+            font-size: 0.9rem;
+            color: #777;
+            font-weight: 500;
+        }
+
+        .results-count span {
+            color: #27ae60;
+            font-weight: 700;
+        }
+
+        /* ---- Filter pills ---- */
         .package-categories {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 3rem;
+            gap: 0.65rem;
+            margin-bottom: 1.5rem;
         }
 
         .category-btn {
-            background: transparent;
-            border: 2px solid #27ae60;
-            color: #27ae60;
-            padding: 0.75rem 1.5rem;
-            border-radius: 25px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            background: white;
+            border: 1.5px solid #d4edda;
+            color: #2e7d52;
+            padding: 0.6rem 1.35rem;
+            border-radius: 30px;
             cursor: pointer;
             font-weight: 600;
-            transition: all 0.3s ease;
+            font-size: 0.88rem;
+            transition: all 0.25s ease;
             font-family: 'Inter', sans-serif;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        }
+
+        .category-btn i {
+            font-size: 0.8rem;
+            opacity: 0.85;
         }
 
         .category-btn.active,
         .category-btn:hover {
             background: #27ae60;
+            border-color: #27ae60;
             color: white;
             transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(39,174,96,0.3);
         }
 
+        /* ---- Card grid ---- */
         .packages-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 2rem;
-            margin-bottom: 3rem;
+            gap: 1.75rem;
+            margin-bottom: 3.5rem;
         }
 
         .package-card {
             background: white;
-            border-radius: 20px;
+            border-radius: 18px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+            border: 1px solid rgba(0,0,0,0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             display: grid;
-            grid-template-columns: 350px 1fr;
-            min-height: 300px;
+            grid-template-columns: 340px 1fr;
+            min-height: 290px;
         }
 
         .package-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.13);
         }
 
+        /* ---- Card image panel ---- */
         .package-header {
             position: relative;
             height: 100%;
             background-size: cover;
             background-position: center;
             display: flex;
-            align-items: flex-end;
-            padding: 1.5rem;
+            flex-direction: column;
+            justify-content: flex-end;
+            overflow: hidden;
         }
 
-        .package-badge {
+        .package-header::before {
+            content: '';
             position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: #27ae60;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .package-badge.premium {
-            background: #f39c12;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.75) 100%);
+            z-index: 1;
         }
 
         .package-header-content {
-            background: rgba(0, 0, 0, 0.8);
-            border-radius: 12px;
-            padding: 1.2rem;
-            width: 100%;
+            position: relative;
+            z-index: 2;
+            padding: 1.4rem 1.4rem 1.5rem;
         }
 
         .package-header h3 {
             font-family: 'Playfair Display', serif;
             color: white;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            line-height: 1.2;
+            font-size: 1.3rem;
+            margin-bottom: 0.45rem;
+            font-weight: 700;
+            line-height: 1.25;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.4);
         }
 
         .package-duration {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255,255,255,0.3);
             color: white;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.82rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
         }
 
+        /* ---- Badge ---- */
+        .package-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            z-index: 3;
+            background: #27ae60;
+            color: white;
+            padding: 0.3rem 0.85rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.72rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .package-badge.premium {
+            background: linear-gradient(135deg, #f6a623, #e67e22);
+        }
+
+        /* ---- Card content ---- */
         .package-content {
-            padding: 2rem;
+            padding: 1.6rem 1.8rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            gap: 0.5rem;
         }
 
         .package-price {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            background: #f8f9fa;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #edf7f1;
+            border: 1px solid #c3e6cb;
             border-radius: 10px;
-            flex-wrap: wrap;
-        }
-
-        .price-item {
-            text-align: center;
-            flex: 1;
-            min-width: 100px;
+            padding: 0.55rem 1rem;
+            margin-bottom: 0.5rem;
+            width: fit-content;
         }
 
         .price-label {
-            font-size: 0.85rem;
-            color: #666;
-            margin-bottom: 0.25rem;
-            font-weight: 500;
+            font-size: 0.78rem;
+            color: #555;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
         }
 
         .price-amount {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #27ae60;
+            font-size: 1rem;
+            font-weight: 800;
+            color: #1e8449;
         }
 
         .package-summary {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 1.2rem;
-            font-size: 0.95rem;
+            color: #5a6472;
+            line-height: 1.65;
+            font-size: 0.9rem;
+            flex-shrink: 0;
         }
 
         .package-highlights {
-            margin-bottom: 1.2rem;
             flex-grow: 1;
         }
 
         .package-highlights h4 {
-            color: #333;
-            margin-bottom: 0.8rem;
-            font-weight: 600;
-            font-size: 1rem;
+            color: #222;
+            margin-bottom: 0.65rem;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #27ae60;
         }
 
         .highlights-list {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 0.4rem;
+            gap: 0.35rem;
         }
 
         .highlight-item {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            color: #666;
-            font-size: 0.9rem;
+            gap: 0.45rem;
+            color: #555;
+            font-size: 0.84rem;
         }
 
         .highlight-item i {
             color: #27ae60;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
+            flex-shrink: 0;
         }
 
+        /* ---- Card actions ---- */
         .package-actions {
             display: flex;
-            gap: 0.8rem;
-            margin-top: auto;
+            gap: 0.7rem;
+            margin-top: 0.5rem;
         }
 
         .btn-details {
             flex: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
             background: transparent;
-            border: 2px solid #27ae60;
+            border: 1.5px solid #27ae60;
             color: #27ae60;
-            padding: 0.7rem 1rem;
+            padding: 0.65rem 1rem;
             border-radius: 50px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
+            transition: all 0.25s ease;
+            font-size: 0.85rem;
+            font-family: 'Inter', sans-serif;
         }
 
         .btn-details:hover {
             background: #27ae60;
             color: white;
+            box-shadow: 0 4px 14px rgba(39,174,96,0.3);
         }
 
         .btn-book {
             flex: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
             background: #27ae60;
             color: white;
             border: none;
-            padding: 0.7rem 1rem;
+            padding: 0.65rem 1rem;
             border-radius: 50px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
+            transition: all 0.25s ease;
+            font-size: 0.85rem;
+            font-family: 'Inter', sans-serif;
+            box-shadow: 0 4px 14px rgba(39,174,96,0.3);
         }
 
         .btn-book:hover {
-            background: #c0392b;
+            background: #e74c3c;
+            box-shadow: 0 6px 20px rgba(231,76,60,0.35);
             transform: translateY(-2px);
         }
 
-        /* Modal Styles */
+        /* ---- Modal ---- */
         .package-modal {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            inset: 0;
+            background: rgba(0,0,0,0.75);
+            backdrop-filter: blur(4px);
             display: none;
             justify-content: center;
             align-items: center;
             z-index: 10000;
-            padding: 2rem;
+            padding: 1.5rem;
         }
 
         .package-modal.active {
             display: flex;
+            animation: modalIn 0.3s ease;
+        }
+
+        @keyframes modalIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to   { opacity: 1; transform: scale(1); }
         }
 
         .modal-content {
-            background: white;
+            background: #fff;
             border-radius: 20px;
-            max-width: 900px;
+            width: 100%;
+            max-width: 860px;
             max-height: 90vh;
             overflow-y: auto;
             position: relative;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.35);
         }
 
         .modal-header {
-            background: #27ae60;
+            background: linear-gradient(135deg, #1e8449 0%, #27ae60 60%, #2ecc71 100%);
             color: white;
-            padding: 2rem;
+            padding: 2rem 2rem 1.6rem;
             border-radius: 20px 20px 0 0;
-            position: relative;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .modal-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            padding-right: 2.5rem;
+            line-height: 1.3;
+        }
+
+        .modal-header p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin-top: 0.3rem;
         }
 
         .modal-close {
             position: absolute;
             top: 1rem;
             right: 1rem;
-            background: none;
+            background: rgba(255,255,255,0.2);
             border: none;
             color: white;
-            font-size: 2rem;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 1.3rem;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .modal-close:hover {
+            background: rgba(255,255,255,0.35);
         }
 
         .modal-body {
@@ -292,90 +501,175 @@
         }
 
         .itinerary-day {
-            margin-bottom: 2rem;
-            border-left: 3px solid #27ae60;
-            padding-left: 1rem;
+            margin-bottom: 1.75rem;
+            padding: 1rem 1.25rem;
+            border-left: 4px solid #27ae60;
+            background: #f9fbfa;
+            border-radius: 0 10px 10px 0;
         }
 
         .day-header {
             font-family: 'Playfair Display', serif;
-            font-size: 1.25rem;
-            color: #27ae60;
+            font-size: 1.05rem;
+            color: #1e8449;
             margin-bottom: 0.5rem;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .day-activities {
-            color: #666;
-            line-height: 1.6;
+            color: #555;
+            line-height: 1.7;
+            font-size: 0.92rem;
         }
 
         .pricing-section {
-            background: #f8f9fa;
+            background: #edf7f1;
+            border: 1px solid #c3e6cb;
             padding: 1.5rem;
-            border-radius: 15px;
-            margin: 2rem 0;
+            border-radius: 14px;
+            margin: 1.5rem 0;
+        }
+
+        .pricing-section h3 {
+            font-family: 'Playfair Display', serif;
         }
 
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1rem;
+            margin-top: 1rem;
         }
 
         .pricing-item {
             background: white;
-            padding: 1rem;
+            padding: 1.1rem;
             border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        /* ---- CTA Strip ---- */
+        .packages-cta {
+            background: linear-gradient(135deg, #1a5c36 0%, #27ae60 50%, #1e8449 100%);
+            color: white;
+            padding: 4rem 0;
             text-align: center;
         }
 
-        /* Responsive Design */
+        .packages-cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .packages-cta p {
+            font-size: 1rem;
+            opacity: 0.85;
+            margin-bottom: 2rem;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .packages-cta .cta-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .packages-cta .cta-primary {
+            background: white;
+            color: #1e8449;
+            border: none;
+            padding: 0.9rem 2.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.25s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .packages-cta .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 28px rgba(0,0,0,0.2);
+        }
+
+        .packages-cta .cta-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.6);
+            padding: 0.9rem 2.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.25s;
+        }
+
+        .packages-cta .cta-secondary:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: white;
+        }
+
+        /* ---- Responsive ---- */
         @media (max-width: 1024px) {
             .package-card {
-                grid-template-columns: 300px 1fr;
+                grid-template-columns: 280px 1fr;
             }
         }
-        
+
         @media (max-width: 768px) {
             .packages-hero {
-                height: 50vh;
+                height: auto;
+                padding: 5rem 1rem 0;
+                background-attachment: scroll;
             }
 
             .package-categories {
-                justify-content: center;
-                gap: 0.5rem;
+                gap: 0.45rem;
             }
 
             .category-btn {
                 padding: 0.5rem 1rem;
-                font-size: 0.9rem;
+                font-size: 0.82rem;
             }
-            
+
             .package-card {
                 grid-template-columns: 1fr;
                 min-height: auto;
             }
-            
+
             .package-header {
-                height: 200px;
+                height: 220px;
             }
 
             .package-actions {
                 flex-direction: column;
             }
 
-            .package-price {
-                justify-content: center;
-            }
-            
             .highlights-list {
                 grid-template-columns: 1fr;
             }
 
             .modal-content {
-                margin: 1rem;
-                max-height: 85vh;
+                max-height: 88vh;
+            }
+
+            .hero-stat {
+                min-width: 90px;
+                padding: 0.7rem 0.6rem;
             }
         }
     </style>
@@ -407,8 +701,33 @@
     <!-- Packages Hero Section -->
     <section class="packages-hero">
         <div class="hero-content">
+            <div class="hero-breadcrumb">
+                <i class="fas fa-home"></i> Home &rsaquo; All Tour Packages
+            </div>
             <h1>Our Tour Packages</h1>
-            <p>Discover Uganda and East Africa with our carefully crafted safari experiences</p>
+            <p>Discover Uganda & East Africa through 15 hand-crafted safari adventures — from quick gorilla treks to grand 14-day expeditions.</p>
+        </div>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <div class="hero-stat-num">15</div>
+                <div class="hero-stat-label">Packages</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-num">2</div>
+                <div class="hero-stat-label">Countries</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-num">2–14</div>
+                <div class="hero-stat-label">Days Range</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-num">10+</div>
+                <div class="hero-stat-label">Nat'l Parks</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-num">100%</div>
+                <div class="hero-stat-label">Private Tours</div>
+            </div>
         </div>
     </section>
 
@@ -422,11 +741,16 @@
 
             <!-- Package Categories -->
             <div class="package-categories">
-                <button class="category-btn active" data-category="all">All Packages</button>
-                <button class="category-btn" data-category="multi-day">Multi-Day Safaris</button>
-                <button class="category-btn" data-category="short">Short Escapes</button>
-                <button class="category-btn" data-category="gorilla">Gorilla Trekking</button>
-                <button class="category-btn" data-category="cultural">Cultural Tours</button>
+                <button class="category-btn active" data-category="all"><i class="fas fa-globe-africa"></i> All Packages</button>
+                <button class="category-btn" data-category="multi-day"><i class="fas fa-route"></i> Multi-Day Safaris</button>
+                <button class="category-btn" data-category="short"><i class="fas fa-bolt"></i> Short Escapes</button>
+                <button class="category-btn" data-category="gorilla"><i class="fas fa-paw"></i> Gorilla Trekking</button>
+                <button class="category-btn" data-category="cultural"><i class="fas fa-landmark"></i> Cultural Tours</button>
+            </div>
+
+            <!-- Results bar -->
+            <div class="results-bar">
+                <p class="results-count">Showing <span id="visibleCount">15</span> of 15 packages</p>
             </div>
 
             <!-- Packages Grid -->
@@ -991,11 +1315,23 @@
         </div>
     </section>
 
+    <!-- CTA Strip -->
+    <section class="packages-cta">
+        <div class="container">
+            <h2>Can't Find Your Perfect Safari?</h2>
+            <p>Every journey is unique. Let our experts craft a custom itinerary tailored exactly to your dates, budget, and dream destinations.</p>
+            <div class="cta-btns">
+                <a href="index.html#contact" class="cta-primary"><i class="fas fa-paper-plane"></i> Request Custom Package</a>
+                <a href="tel:+256393101000" class="cta-secondary"><i class="fas fa-phone"></i> Call Us Now</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Package Details Modal -->
     <div class="package-modal" id="packageModal">
         <div class="modal-content">
             <div class="modal-header">
-                <button class="modal-close" onclick="closePackageModal()">&times;</button>
+                <button class="modal-close" onclick="closePackageModal()"><i class="fas fa-times"></i></button>
                 <h2 id="modalTitle"></h2>
                 <p id="modalDuration"></p>
             </div>
