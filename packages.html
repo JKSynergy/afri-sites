@@ -431,195 +431,384 @@
 
             <!-- Packages Grid -->
             <div class="packages-grid" id="packagesGrid">
-                
-                <!-- 5-Day Kidepo & Murchison Falls -->
-                <div id="kidepo-murchison" class="package-card premium" data-category="multi-day">
-                    <div class="package-badge premium">Premium Safari</div>
-                    <div class="package-header" style="background-image: url('https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+
+                <!-- 2-Day Gorilla Trekking Safari – Bwindi -->
+                <div id="gorilla-2day" class="package-card" data-category="short gorilla">
+                    <div class="package-badge">Quick Trek</div>
+                    <div class="package-header" style="background-image: url('https://images.unsplash.com/photo-1564760055775-d63b17a55c44?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
                         <div class="package-header-content">
-                            <h3>Kidepo Valley & Murchison Falls</h3>
+                            <h3>2-Day Gorilla Trekking – Bwindi</h3>
+                            <div class="package-duration">2 Days / 1 Night</div>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-price">
+                            <div class="price-item">
+                                <div class="price-label">Per Person</div>
+                                <div class="price-amount">Contact Us</div>
+                            </div>
+                        </div>
+                        <div class="package-summary">
+                            A last-minute gorilla trekking option starting from Kigali, Rwanda. Drive to Bwindi Impenetrable National Park to encounter endangered mountain gorillas in their natural habitat.
+                        </div>
+                        <div class="package-highlights">
+                            <h4>Package Highlights</h4>
+                            <div class="highlights-list">
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Gorilla trekking in Bwindi</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Starts & ends in Kigali</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Private mid-range lodge</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Can start any day</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Private tour</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Customizable</span></div>
+                            </div>
+                        </div>
+                        <div class="package-actions">
+                            <button class="btn-details" onclick="showPackageDetails('gorilla-2day')">View Details</button>
+                            <button class="btn-book" onclick="bookPackage('2-Day Gorilla Trekking – Bwindi')">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3-Day Gorilla Trekking & Batwa Experience -->
+                <div id="gorilla-3day-batwa" class="package-card" data-category="short gorilla cultural">
+                    <div class="package-badge">Cultural</div>
+                    <div class="package-header" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="package-header-content">
+                            <h3>3-Day Gorilla & Batwa Experience – Bwindi</h3>
+                            <div class="package-duration">3 Days / 2 Nights</div>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-price">
+                            <div class="price-item">
+                                <div class="price-label">Per Person</div>
+                                <div class="price-amount">Contact Us</div>
+                            </div>
+                        </div>
+                        <div class="package-summary">
+                            Combine a gorilla trek in Bwindi Impenetrable Forest with an authentic cultural encounter with the Batwa people. Full board lodges with private facilities throughout.
+                        </div>
+                        <div class="package-highlights">
+                            <h4>Package Highlights</h4>
+                            <div class="highlights-list">
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Bwindi gorilla trekking</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Batwa cultural experience</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Full board accommodation</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>En-suite lodges</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Can start any day</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Wildlife safari extension possible</span></div>
+                            </div>
+                        </div>
+                        <div class="package-actions">
+                            <button class="btn-details" onclick="showPackageDetails('gorilla-3day-batwa')">View Details</button>
+                            <button class="btn-book" onclick="bookPackage('3-Day Gorilla & Batwa Experience – Bwindi')">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4-Day GORILLA & Chimpanzee Trekking -->
+                <div id="gorilla-chimp-4day" class="package-card" data-category="short gorilla">
+                    <div class="package-badge">Primates</div>
+                    <div class="package-header" style="background-image: url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="package-header-content">
+                            <h3>4-Day Gorillas & Chimpanzee Trekking</h3>
+                            <div class="package-duration">4 Days / 3 Nights</div>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-price">
+                            <div class="price-item">
+                                <div class="price-label">Per Person</div>
+                                <div class="price-amount">Contact Us</div>
+                            </div>
+                        </div>
+                        <div class="package-summary">
+                            Track endangered mountain gorillas in Bwindi and chimpanzees in Kibale National Park, then relax at the stunning Lake Bunyonyi. Excellent birdwatching throughout.
+                        </div>
+                        <div class="package-highlights">
+                            <h4>Package Highlights</h4>
+                            <div class="highlights-list">
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Bwindi gorilla trekking</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Kibale chimp trekking</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Lake Bunyonyi relaxation</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Birdwatching opportunities</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Private tour</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Mid-range lodges & hotels</span></div>
+                            </div>
+                        </div>
+                        <div class="package-actions">
+                            <button class="btn-details" onclick="showPackageDetails('gorilla-chimp-4day')">View Details</button>
+                            <button class="btn-book" onclick="bookPackage('4-Day Gorillas & Chimpanzee Trekking')">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4-Day Primate Safari Uganda-Rwanda -->
+                <div id="primate-4day-rw" class="package-card" data-category="short gorilla">
+                    <div class="package-badge">Uganda+Rwanda</div>
+                    <div class="package-header" style="background-image: url('https://images.unsplash.com/photo-1549366021-9f761d040ed2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="package-header-content">
+                            <h3>4-Day Primate Safari – Uganda & Rwanda</h3>
+                            <div class="package-duration">4 Days / 3 Nights</div>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-price">
+                            <div class="price-item">
+                                <div class="price-label">Per Person</div>
+                                <div class="price-amount">Contact Us</div>
+                            </div>
+                        </div>
+                        <div class="package-summary">
+                            Discover the beauty of Rwanda and Uganda in 4 days: Kigali city tour, gorilla trekking in Bwindi, chimpanzee trekking in Kibale, and scenic Lake Bunyonyi. Start or end in either country.
+                        </div>
+                        <div class="package-highlights">
+                            <h4>Package Highlights</h4>
+                            <div class="highlights-list">
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Kigali Rwanda city tour</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Bwindi gorilla trekking</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Kibale chimp trekking</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Lake Bunyonyi</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Flexible start country</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Mid-range lodges & resorts</span></div>
+                            </div>
+                        </div>
+                        <div class="package-actions">
+                            <button class="btn-details" onclick="showPackageDetails('primate-4day-rw')">View Details</button>
+                            <button class="btn-book" onclick="bookPackage('4-Day Primate Safari – Uganda & Rwanda')">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5-Day Gorilla Trekking & Wildlife Safari -->
+                <div id="gorilla-wildlife-5day" class="package-card" data-category="multi-day gorilla">
+                    <div class="package-badge">Wildlife</div>
+                    <div class="package-header" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="package-header-content">
+                            <h3>5-Day Gorilla Trekking & Wildlife Safari</h3>
                             <div class="package-duration">5 Days / 4 Nights</div>
                         </div>
                     </div>
                     <div class="package-content">
                         <div class="package-price">
                             <div class="price-item">
-                                <div class="price-label">Single Traveler</div>
-                                <div class="price-amount">$2,200</div>
-                            </div>
-                            <div class="price-item">
-                                <div class="price-label">Couple</div>
-                                <div class="price-amount">$3,800</div>
-                            </div>
-                            <div class="price-item">
-                                <div class="price-label">Group (8+)</div>
-                                <div class="price-amount">$1,800 pp</div>
+                                <div class="price-label">Per Person</div>
+                                <div class="price-amount">Contact Us</div>
                             </div>
                         </div>
                         <div class="package-summary">
-                            Embark on a thrilling 5-day expedition through Kidepo Valley and Murchison Falls National Parks, where breathtaking landscapes, rich wildlife, and unforgettable safari adventures await.
+                            Visit UNESCO World Heritage Bwindi for gorilla trekking, enjoy the Kazinga Channel boat safari in Queen Elizabeth NP, and experience a unique walking safari in Lake Mburo National Park.
                         </div>
                         <div class="package-highlights">
                             <h4>Package Highlights</h4>
                             <div class="highlights-list">
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Rhino tracking at Ziwa Sanctuary</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Murchison Falls viewpoint</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Kidepo Valley game drives</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Karamojong cultural visit</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>All meals & accommodation</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Professional guide</span>
-                                </div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Bwindi gorilla trekking</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Kazinga Channel boat safari</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Lake Mburo walking safari</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Queen Elizabeth NP game drives</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Can start any day</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Private tour & mid-range lodges</span></div>
                             </div>
                         </div>
                         <div class="package-actions">
-                            <button class="btn-details" onclick="showPackageDetails('kidepo-murchison')">View Details</button>
-                            <button class="btn-book" onclick="bookPackage('Kidepo Valley & Murchison Falls')">Book Now</button>
+                            <button class="btn-details" onclick="showPackageDetails('gorilla-wildlife-5day')">View Details</button>
+                            <button class="btn-book" onclick="bookPackage('5-Day Gorilla Trekking & Wildlife Safari')">Book Now</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- 7-Day Uganda & Rwanda Gorilla Safari -->
-                <div id="gorilla-safari" class="package-card premium" data-category="multi-day gorilla">
-                    <div class="package-badge premium">Most Popular</div>
-                    <div class="package-header" style="background-image: url('https://images.unsplash.com/photo-1564760055775-d63b17a55c44?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                <!-- 6-Day Flying Safari -->
+                <div id="flying-6day" class="package-card premium" data-category="multi-day gorilla">
+                    <div class="package-badge premium">Flying Safari</div>
+                    <div class="package-header" style="background-image: url('https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
                         <div class="package-header-content">
-                            <h3>Uganda & Rwanda Gorilla Safari</h3>
+                            <h3>6-Day Flying Safari – Gorillas, Chimps & Wildlife</h3>
+                            <div class="package-duration">6 Days / 5 Nights</div>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-price">
+                            <div class="price-item">
+                                <div class="price-label">Per Person</div>
+                                <div class="price-amount">Contact Us</div>
+                            </div>
+                        </div>
+                        <div class="package-summary">
+                            Save time and see more with 3 internal flights connecting Bwindi, Queen Elizabeth, and Kibale National Parks. An efficient premium safari experience across Uganda's top attractions.
+                        </div>
+                        <div class="package-highlights">
+                            <h4>Package Highlights</h4>
+                            <div class="highlights-list">
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>3 internal charter flights</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Bwindi gorilla trekking</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Queen Elizabeth NP game drives</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Kibale chimp trekking</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Private tour</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Mid-range lodges</span></div>
+                            </div>
+                        </div>
+                        <div class="package-actions">
+                            <button class="btn-details" onclick="showPackageDetails('flying-6day')">View Details</button>
+                            <button class="btn-book" onclick="bookPackage('6-Day Flying Safari – Gorillas, Chimps & Wildlife')">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7-Day Chimps, Gorillas & Big 5 -->
+                <div id="chimps-gorilla-big5-7day" class="package-card premium" data-category="multi-day gorilla">
+                    <div class="package-badge premium">Most Popular</div>
+                    <div class="package-header" style="background-image: url('https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="package-header-content">
+                            <h3>7-Day Chimpanzee, Gorillas & Big 5 Safari</h3>
                             <div class="package-duration">7 Days / 6 Nights</div>
                         </div>
                     </div>
                     <div class="package-content">
                         <div class="package-price">
                             <div class="price-item">
-                                <div class="price-label">Single Traveler</div>
-                                <div class="price-amount">$3,400</div>
-                            </div>
-                            <div class="price-item">
-                                <div class="price-label">Couple</div>
-                                <div class="price-amount">$5,800</div>
-                            </div>
-                            <div class="price-item">
-                                <div class="price-label">Group (8+)</div>
-                                <div class="price-amount">$2,700 pp</div>
+                                <div class="price-label">Per Person</div>
+                                <div class="price-amount">Contact Us</div>
                             </div>
                         </div>
                         <div class="package-summary">
-                            Discover the wild heart of Africa on a 7-day Pristine Adventures safari through Uganda and Rwanda, featuring unforgettable gorilla trekking and diverse wildlife encounters.
+                            An immersive 7-day journey through Kibale, Queen Elizabeth, and Bwindi National Parks. Witness chimpanzees, mountain gorillas, and the iconic Big 5 wildlife in their natural habitats.
                         </div>
                         <div class="package-highlights">
                             <h4>Package Highlights</h4>
                             <div class="highlights-list">
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Bwindi gorilla trekking</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Rwanda Volcanoes National Park</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Golden monkey trekking</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Lake Kivu boat cruise</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Cultural village visits</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Gorilla permits included</span>
-                                </div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Kibale chimp trekking</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Queen Elizabeth big game drives</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Bwindi gorilla trekking</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Big Five wildlife viewing</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Kazinga Channel cruise</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>All meals & accommodation</span></div>
                             </div>
                         </div>
                         <div class="package-actions">
-                            <button class="btn-details" onclick="showPackageDetails('uganda-rwanda-gorilla')">View Details</button>
-                            <button class="btn-book" onclick="bookPackage('Uganda & Rwanda Gorilla Safari')">Book Now</button>
+                            <button class="btn-details" onclick="showPackageDetails('chimps-gorilla-big5-7day')">View Details</button>
+                            <button class="btn-book" onclick="bookPackage('7-Day Chimpanzee, Gorillas & Big 5 Safari')">Book Now</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- 5-Day Uganda Big Five -->
-                <div id="big-five-safari" class="package-card" data-category="multi-day">
-                    <div class="package-badge">Big Five</div>
+                <!-- 7-Day Rwanda Golden Monkeys, Uganda Gorillas & Chimps -->
+                <div id="rwanda-7day" class="package-card" data-category="multi-day gorilla">
+                    <div class="package-badge">Rwanda+Uganda</div>
+                    <div class="package-header" style="background-image: url('https://images.unsplash.com/photo-1564760055775-d63b17a55c44?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="package-header-content">
+                            <h3>7-Day Rwanda Golden Monkeys, Gorillas & Chimps</h3>
+                            <div class="package-duration">7 Days / 6 Nights</div>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-price">
+                            <div class="price-item">
+                                <div class="price-label">Per Person</div>
+                                <div class="price-amount">Contact Us</div>
+                            </div>
+                        </div>
+                        <div class="package-summary">
+                            Combines golden monkey tracking at Rwanda's Volcanoes NP, gorilla trekking in Bwindi, wildlife viewing at Queen Elizabeth NP, and chimpanzee trekking in Kibale — the ideal short East Africa safari.
+                        </div>
+                        <div class="package-highlights">
+                            <h4>Package Highlights</h4>
+                            <div class="highlights-list">
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Rwanda Volcanoes NP golden monkeys</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Bwindi gorilla trekking</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Queen Elizabeth NP game drives</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Kibale chimp trekking</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Starts in Kigali</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Private mid-range lodges</span></div>
+                            </div>
+                        </div>
+                        <div class="package-actions">
+                            <button class="btn-details" onclick="showPackageDetails('rwanda-7day')">View Details</button>
+                            <button class="btn-book" onclick="bookPackage('7-Day Rwanda Golden Monkeys, Gorillas & Chimps')">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8-Day Best Uganda Gorilla & Chimp Trekking -->
+                <div id="uganda-8day" class="package-card premium" data-category="multi-day gorilla">
+                    <div class="package-badge premium">Best Seller</div>
+                    <div class="package-header" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="package-header-content">
+                            <h3>8-Day Best Uganda Gorilla & Chimp Trekking Safari</h3>
+                            <div class="package-duration">8 Days / 7 Nights</div>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-price">
+                            <div class="price-item">
+                                <div class="price-label">Per Person</div>
+                                <div class="price-amount">Contact Us</div>
+                            </div>
+                        </div>
+                        <div class="package-summary">
+                            Features in-vehicle Wi-Fi and visits Murchison Falls, Kibale, Queen Elizabeth's Ishasha tree-climbing lions sector, Bwindi gorillas, and a relaxing day at Lake Bunyonyi.
+                        </div>
+                        <div class="package-highlights">
+                            <h4>Package Highlights</h4>
+                            <div class="highlights-list">
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Murchison Falls NP</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Kibale chimp trekking</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Ishasha tree-climbing lions</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Bwindi gorilla trekking</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Lake Bunyonyi relaxation</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>In-vehicle Wi-Fi included</span></div>
+                            </div>
+                        </div>
+                        <div class="package-actions">
+                            <button class="btn-details" onclick="showPackageDetails('uganda-8day')">View Details</button>
+                            <button class="btn-book" onclick="bookPackage('8-Day Best Uganda Gorilla & Chimp Trekking Safari')">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9-Day Best Uganda Gorilla, Chimps & Wildlife -->
+                <div id="uganda-9day" class="package-card" data-category="multi-day gorilla">
+                    <div class="package-badge">Wildlife</div>
+                    <div class="package-header" style="background-image: url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="package-header-content">
+                            <h3>9-Day Best Uganda Gorilla, Chimps & Wildlife</h3>
+                            <div class="package-duration">9 Days / 8 Nights</div>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-price">
+                            <div class="price-item">
+                                <div class="price-label">Per Person</div>
+                                <div class="price-amount">Contact Us</div>
+                            </div>
+                        </div>
+                        <div class="package-summary">
+                            Track chimpanzees in Kibale, explore Semuliki and Queen Elizabeth National Parks, trek gorillas in Bwindi with a Batwa cultural experience, then finish with a canoe tour at Lake Bunyonyi.
+                        </div>
+                        <div class="package-highlights">
+                            <h4>Package Highlights</h4>
+                            <div class="highlights-list">
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Kibale chimp trekking</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Semuliki NP explore</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Queen Elizabeth NP game drives</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Bwindi gorilla & Batwa experience</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Lake Bunyonyi canoe tour</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Mid-range lodges & resorts</span></div>
+                            </div>
+                        </div>
+                        <div class="package-actions">
+                            <button class="btn-details" onclick="showPackageDetails('uganda-9day')">View Details</button>
+                            <button class="btn-book" onclick="bookPackage('9-Day Best Uganda Gorilla, Chimps & Wildlife')">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10-Day Gorillas, Chimps & Big 5 -->
+                <div id="gorilla-chimp-big5-10day" class="package-card premium" data-category="multi-day gorilla">
+                    <div class="package-badge premium">Big Five</div>
                     <div class="package-header" style="background-image: url('https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
                         <div class="package-header-content">
-                            <h3>Uganda Big Five Safari</h3>
-                            <div class="package-duration">5 Days / 4 Nights</div>
-                        </div>
-                    </div>
-                    <div class="package-content">
-                        <div class="package-price">
-                            <div class="price-item">
-                                <div class="price-label">Per Person</div>
-                                <div class="price-amount">$1,200</div>
-                            </div>
-                        </div>
-                        <div class="package-summary">
-                            Experience the thrill of tracking Africa's iconic Big Five on a 5-day, 4-night Ugandan safari, exploring stunning savannahs and vibrant national parks teeming with wildlife.
-                        </div>
-                        <div class="package-highlights">
-                            <h4>Package Highlights</h4>
-                            <div class="highlights-list">
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Rhino tracking at Ziwa</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Murchison Falls game drives</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Nile boat cruise</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Cultural community visit</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Full board accommodation</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>4WD safari vehicle</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="package-actions">
-                            <button class="btn-details" onclick="showPackageDetails('big-five')">View Details</button>
-                            <button class="btn-book" onclick="bookPackage('Uganda Big Five Safari')">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Lake Bunyonyi Escape -->
-                <div class="package-card" data-category="short cultural">
-                    <div class="package-badge">Relaxation</div>
-                    <div class="package-header" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
-                        <div class="package-header-content">
-                            <h3>Lake Bunyonyi Escape</h3>
-                            <div class="package-duration">3 Days / 2 Nights</div>
+                            <h3>10-Day Gorillas, Chimps & the Big 5</h3>
+                            <div class="package-duration">10 Days / 9 Nights</div>
                         </div>
                     </div>
                     <div class="package-content">
@@ -630,51 +819,144 @@
                             </div>
                         </div>
                         <div class="package-summary">
-                            Embark on a refreshing 3-day getaway to the tranquil shores of Lake Bunyonyi, complemented by nearby cultural attractions and breathtaking scenic views.
+                            A comprehensive 10-day Uganda adventure covering Murchison Falls, Kibale Forest, Queen Elizabeth, and Bwindi — encountering mountain gorillas, chimpanzees, and Uganda's Big 5 wildlife.
                         </div>
                         <div class="package-highlights">
                             <h4>Package Highlights</h4>
                             <div class="highlights-list">
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Lakeside lodge accommodation</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Boat rides & island tours</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Village cultural visits</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Scenic viewpoint hikes</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Photography opportunities</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Full board meals</span>
-                                </div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Murchison Falls NP</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Kibale chimp trekking</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Queen Elizabeth NP Big Five</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Bwindi gorilla trekking</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Private customizable tour</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Mid-range lodges & resorts</span></div>
                             </div>
                         </div>
                         <div class="package-actions">
-                            <button class="btn-details" onclick="showPackageDetails('lake-bunyonyi')">View Details</button>
-                            <button class="btn-book" onclick="bookPackage('Lake Bunyonyi Escape')">Book Now</button>
+                            <button class="btn-details" onclick="showPackageDetails('gorilla-chimp-big5-10day')">View Details</button>
+                            <button class="btn-book" onclick="bookPackage('10-Day Gorillas, Chimps & the Big 5')">Book Now</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Queen Elizabeth Escape -->
-                <div class="package-card" data-category="short">
-                    <div class="package-badge">Wildlife</div>
+                <!-- 11-Day Uganda Primates & Big Five -->
+                <div id="primates-big5-11day" class="package-card premium" data-category="multi-day gorilla">
+                    <div class="package-badge premium">Premium</div>
+                    <div class="package-header" style="background-image: url('https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="package-header-content">
+                            <h3>11-Day Uganda Primates & Big Five Safari</h3>
+                            <div class="package-duration">11 Days / 10 Nights</div>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-price">
+                            <div class="price-item">
+                                <div class="price-label">Per Person</div>
+                                <div class="price-amount">Contact Us</div>
+                            </div>
+                        </div>
+                        <div class="package-summary">
+                            The ultimate Uganda safari: Shoebill boat safari at Mabamba, rhino tracking at Ziwa, Murchison Falls, Kibale chimp trek, Queen Elizabeth, Bwindi gorilla trek, Mgahinga golden monkeys, and Lake Mburo.
+                        </div>
+                        <div class="package-highlights">
+                            <h4>Package Highlights</h4>
+                            <div class="highlights-list">
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Shoebill boat safari</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Rhino tracking at Ziwa</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Gorilla & chimp trekking</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Mgahinga golden monkeys</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Kazinga Channel cruise</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Lake Mburo NP</span></div>
+                            </div>
+                        </div>
+                        <div class="package-actions">
+                            <button class="btn-details" onclick="showPackageDetails('primates-big5-11day')">View Details</button>
+                            <button class="btn-book" onclick="bookPackage('11-Day Uganda Primates & Big Five Safari')">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12-Day Eastern & Northern Uganda Discovery Safari -->
+                <div id="eastern-northern-12day" class="package-card" data-category="multi-day cultural">
+                    <div class="package-badge">Cultural</div>
+                    <div class="package-header" style="background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="package-header-content">
+                            <h3>12-Day Eastern & Northern Uganda Discovery Safari</h3>
+                            <div class="package-duration">12 Days / 11 Nights</div>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-price">
+                            <div class="price-item">
+                                <div class="price-label">Per Person</div>
+                                <div class="price-amount">Contact Us</div>
+                            </div>
+                        </div>
+                        <div class="package-summary">
+                            A relaxed-pace cultural journey across Eastern and Northern Uganda — blending heritage sites, dramatic waterfalls, ancient rock art, and classic savannah wildlife beyond the usual safari routes.
+                        </div>
+                        <div class="package-highlights">
+                            <h4>Package Highlights</h4>
+                            <div class="highlights-list">
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Cultural heritage sites</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Dramatic waterfalls</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Ancient rock art</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Savannah wildlife viewing</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Relaxed pace itinerary</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Mid-range accommodation</span></div>
+                            </div>
+                        </div>
+                        <div class="package-actions">
+                            <button class="btn-details" onclick="showPackageDetails('eastern-northern-12day')">View Details</button>
+                            <button class="btn-book" onclick="bookPackage('12-Day Eastern & Northern Uganda Discovery Safari')">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12-Day Gorillas, Chimps & Wildlife Epic Safari -->
+                <div id="gorilla-chimp-wildlife-12day" class="package-card premium" data-category="multi-day gorilla">
+                    <div class="package-badge premium">Epic Safari</div>
+                    <div class="package-header" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="package-header-content">
+                            <h3>12-Day Gorillas, Chimps & Wildlife Epic Safari</h3>
+                            <div class="package-duration">12 Days / 11 Nights</div>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-price">
+                            <div class="price-item">
+                                <div class="price-label">Per Person</div>
+                                <div class="price-amount">Contact Us</div>
+                            </div>
+                        </div>
+                        <div class="package-summary">
+                            The best of Uganda — gorilla, chimp, and golden monkey treks alongside rhinos, lions, hippos, buffaloes, leopards, elephants, and hundreds of bird species. Includes Murchison Falls crater lakes.
+                        </div>
+                        <div class="package-highlights">
+                            <h4>Package Highlights</h4>
+                            <div class="highlights-list">
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Murchison Falls NP</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Kibale chimp trekking</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Queen Elizabeth NP lions</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Bwindi & Mgahinga gorillas</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Western Uganda crater lakes</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Lake Mburo NP</span></div>
+                            </div>
+                        </div>
+                        <div class="package-actions">
+                            <button class="btn-details" onclick="showPackageDetails('gorilla-chimp-wildlife-12day')">View Details</button>
+                            <button class="btn-book" onclick="bookPackage('12-Day Gorillas, Chimps & Wildlife Epic Safari')">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 14-Day Rwanda & Uganda Grand Tour -->
+                <div id="rwanda-uganda-14day" class="package-card premium" data-category="multi-day gorilla">
+                    <div class="package-badge premium">Grand Tour</div>
                     <div class="package-header" style="background-image: url('https://images.unsplash.com/photo-1549366021-9f761d040ed2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
                         <div class="package-header-content">
-                            <h3>Queen Elizabeth Wildlife Adventure</h3>
-                            <div class="package-duration">3 Days / 2 Nights</div>
+                            <h3>14-Day Rwanda & Uganda – Gorillas, Chimps & Big Five</h3>
+                            <div class="package-duration">14 Days / 13 Nights</div>
                         </div>
                     </div>
                     <div class="package-content">
@@ -685,46 +967,26 @@
                             </div>
                         </div>
                         <div class="package-summary">
-                            Explore Queen Elizabeth National Park's rich wildlife diversity including elephants, buffaloes, and the famous Kazinga Channel boat cruise.
+                            The ultimate East Africa adventure: Kigali Genocide Memorial, Akagera NP wildlife in Rwanda, then gorilla trekking, chimp tracking, Queen Elizabeth NP, and Murchison Falls in Uganda.
                         </div>
                         <div class="package-highlights">
                             <h4>Package Highlights</h4>
                             <div class="highlights-list">
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Game drives in QE Park</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Kazinga Channel boat cruise</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Hippo & crocodile viewing</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Bird watching opportunities</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Lodge accommodation</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Professional guide</span>
-                                </div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Kigali Genocide Memorial</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Akagera NP – Rwanda wildlife</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Bwindi gorilla trekking</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Queen Elizabeth NP game drives</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Kibale chimp trekking</span></div>
+                                <div class="highlight-item"><i class="fas fa-check"></i><span>Murchison Falls NP</span></div>
                             </div>
                         </div>
                         <div class="package-actions">
-                            <button class="btn-details" onclick="showPackageDetails('queen-elizabeth')">View Details</button>
-                            <button class="btn-book" onclick="bookPackage('Queen Elizabeth Wildlife Adventure')">Book Now</button>
+                            <button class="btn-details" onclick="showPackageDetails('rwanda-uganda-14day')">View Details</button>
+                            <button class="btn-book" onclick="bookPackage('14-Day Rwanda & Uganda – Gorillas, Chimps & Big Five')">Book Now</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- More packages can be added here -->
-                
             </div>
         </div>
     </section>
@@ -773,10 +1035,10 @@
                 <div class="footer-section">
                     <h4>Popular Packages</h4>
                     <ul>
-                        <li><a href="packages.html">Gorilla Trekking Safari</a></li>
-                        <li><a href="packages.html">Big Five Safari</a></li>
-                        <li><a href="packages.html">Kidepo & Murchison</a></li>
-                        <li><a href="packages.html">Lake Bunyonyi Escape</a></li>
+                        <li><a href="packages.html#chimps-gorilla-big5-7day">7-Day Gorillas, Chimps & Big 5</a></li>
+                        <li><a href="packages.html#rwanda-7day">7-Day Rwanda & Uganda</a></li>
+                        <li><a href="packages.html#uganda-8day">8-Day Best of Uganda</a></li>
+                        <li><a href="packages.html#rwanda-uganda-14day">14-Day Grand Tour</a></li>
                     </ul>
                 </div>
 

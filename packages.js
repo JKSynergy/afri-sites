@@ -31,6 +31,738 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Package details data
     const packageDetails = {
+        'gorilla-2day': {
+            title: '2-Day Gorilla Trekking Safari – Bwindi National Park',
+            duration: '2 Days / 1 Night',
+            itinerary: [
+                {
+                    day: 'Day 1: Kigali → Bwindi Impenetrable National Park',
+                    activities: `
+                        <strong>Morning:</strong> Pickup from your hotel in Kigali, Rwanda. Drive through scenic landscapes crossing the Uganda-Rwanda border.<br>
+                        <strong>Afternoon:</strong> Arrive at Bwindi Impenetrable National Park. Check in at your mid-range lodge near the park.<br>
+                        <strong>Evening:</strong> Briefing from your guide on gorilla trekking rules and expectations. Dinner and overnight at lodge.
+                    `
+                },
+                {
+                    day: 'Day 2: Gorilla Trekking → Return to Kigali',
+                    activities: `
+                        <strong>Early Morning:</strong> Hearty breakfast before trekking begins. Report to the Uganda Wildlife Authority briefing point.<br>
+                        <strong>Morning:</strong> Guided trek into Bwindi's dense forest to find and spend one hour with a mountain gorilla family.<br>
+                        <strong>Afternoon:</strong> Return to lodge for lunch. Drive back to Kigali, Rwanda, arriving in the evening.
+                    `
+                }
+            ],
+            pricing: [
+                { type: 'Per Person', price: 'Contact Us', includes: 'Gorilla trekking permit, lodge accommodation (full board), private guide, driver/vehicle, park entry fees, and border crossing assistance.' }
+            ]
+        },
+        'gorilla-3day-batwa': {
+            title: '3-Day Gorilla Trekking & Batwa Experience – Bwindi NP',
+            duration: '3 Days / 2 Nights',
+            itinerary: [
+                {
+                    day: 'Day 1: Entebbe/Kampala → Bwindi Impenetrable Forest',
+                    activities: `
+                        <strong>Morning:</strong> Depart Kampala or Entebbe early morning. Scenic drive through Uganda's rolling hills and lush countryside.<br>
+                        <strong>Afternoon:</strong> Arrive at Bwindi. Check in at your lodge with private en-suite facilities and hot water. Full board.<br>
+                        <strong>Evening:</strong> Trek briefing with your guide. Dinner and overnight at lodge.
+                    `
+                },
+                {
+                    day: 'Day 2: Gorilla Trekking & Batwa Cultural Visit',
+                    activities: `
+                        <strong>Early Morning:</strong> Breakfast and transfer to briefing point at Uganda Wildlife Authority headquarters.<br>
+                        <strong>Morning:</strong> Trek into Bwindi Impenetrable Forest to encounter a habituated mountain gorilla family. Spend 1 hour observing and photographing these magnificent primates.<br>
+                        <strong>Afternoon:</strong> Visit the Batwa pygmies — the original forest-dwellers of Bwindi. Experience traditional dances, medicinal plant knowledge, and forest skills.
+                    `
+                },
+                {
+                    day: 'Day 3: Return to Entebbe/Kampala',
+                    activities: `
+                        <strong>Morning:</strong> Leisurely breakfast. Optional nature walk around the lodge grounds.<br>
+                        <strong>Afternoon:</strong> Drive back to Entebbe or Kampala, with stops along the way for lunch and scenic views.
+                    `
+                }
+            ],
+            pricing: [
+                { type: 'Per Person', price: 'Contact Us', includes: 'Gorilla trekking permit, Batwa cultural experience, full board lodge accommodation with private facilities, professional guide, and private 4WD vehicle.' }
+            ]
+        },
+        'gorilla-chimp-4day': {
+            title: '4-Day Gorillas & Chimpanzee Trekking Safari in Uganda',
+            duration: '4 Days / 3 Nights',
+            itinerary: [
+                {
+                    day: 'Day 1: Entebbe → Kibale National Park',
+                    activities: `
+                        <strong>Morning:</strong> Depart from Entebbe/Kampala heading to Kibale National Park — the primate capital of the world.<br>
+                        <strong>Afternoon:</strong> Arrive and check in at your lodge. Rest and settle in.<br>
+                        <strong>Evening:</strong> Dinner and safari briefing.
+                    `
+                },
+                {
+                    day: 'Day 2: Chimp Trekking in Kibale → Bwindi Impenetrable NP',
+                    activities: `
+                        <strong>Early Morning:</strong> Chimpanzee trekking in Kibale Forest — home to over 1,500 chimps. Also look out for red-tailed monkeys, grey-cheeked mangabeys, and 350+ bird species.<br>
+                        <strong>Afternoon:</strong> Drive to Bwindi Impenetrable National Park. Check in at Lodge near the park.
+                    `
+                },
+                {
+                    day: 'Day 3: Gorilla Trekking in Bwindi',
+                    activities: `
+                        <strong>Early Morning:</strong> Briefing at Uganda Wildlife Authority. Trek into the dense forest in search of a habituated mountain gorilla family.<br>
+                        <strong>Morning/Afternoon:</strong> One magical hour with the gorillas. Return to lodge for lunch and relaxation.<br>
+                        <strong>Late Afternoon:</strong> Drive to scenic Lake Bunyonyi.
+                    `
+                },
+                {
+                    day: 'Day 4: Lake Bunyonyi → Entebbe/Kampala',
+                    activities: `
+                        <strong>Morning:</strong> Breakfast overlooking stunning Lake Bunyonyi. Optional boat ride or canoe trip on the lake's calm waters.<br>
+                        <strong>Afternoon:</strong> Drive back to Entebbe or Kampala. End of safari.
+                    `
+                }
+            ],
+            pricing: [
+                { type: 'Per Person', price: 'Contact Us', includes: 'Gorilla permit, chimp trekking permit, mid-range lodge & hotel accommodation, meals, private 4WD vehicle, professional driver/guide, and all park entry fees.' }
+            ]
+        },
+        'primate-4day-rw': {
+            title: '4-Day Primate Safari – Uganda & Rwanda',
+            duration: '4 Days / 3 Nights',
+            itinerary: [
+                {
+                    day: 'Day 1: Kigali City Tour → Bwindi Impenetrable NP',
+                    activities: `
+                        <strong>Morning:</strong> Arrive in Kigali or start from Entebbe — flexible start country. Optional Kigali city tour including local markets and cultural sites.<br>
+                        <strong>Afternoon:</strong> Drive to Bwindi Impenetrable National Park crossing the Uganda-Rwanda border. Check in at lodge.
+                    `
+                },
+                {
+                    day: 'Day 2: Gorilla Trekking in Bwindi',
+                    activities: `
+                        <strong>Early Morning:</strong> Report to the UWA briefing point. Trek into Bwindi in search of mountain gorillas.<br>
+                        <strong>Morning:</strong> Spend one unforgettable hour with a gorilla family in their natural habitat.<br>
+                        <strong>Afternoon:</strong> Return to lodge. Drive to the beautiful Lake Bunyonyi.
+                    `
+                },
+                {
+                    day: 'Day 3: Lake Bunyonyi → Kibale National Park',
+                    activities: `
+                        <strong>Morning:</strong> Relaxing breakfast at Lake Bunyonyi. Optional boat ride.<br>
+                        <strong>Afternoon:</strong> Drive to Kibale National Park — primate capital of the world. Check in at lodge near the park.
+                    `
+                },
+                {
+                    day: 'Day 4: Chimpanzee Trekking → Entebbe',
+                    activities: `
+                        <strong>Early Morning:</strong> Chimp trekking in Kibale Forest — encounter hundreds of chimpanzees along with other primates.<br>
+                        <strong>Afternoon:</strong> Drive back to Entebbe International Airport. End of tour.
+                    `
+                }
+            ],
+            pricing: [
+                { type: 'Per Person', price: 'Contact Us', includes: 'Gorilla & chimp trekking permits, mid-range lodge accommodation (full board), private guide/driver, private 4WD vehicle, and all park/border fees.' }
+            ]
+        },
+        'gorilla-wildlife-5day': {
+            title: '5-Day Amazing Wildlife & Gorilla Trekking Safari',
+            duration: '5 Days / 4 Nights',
+            itinerary: [
+                {
+                    day: 'Day 1: Entebbe → Queen Elizabeth National Park',
+                    activities: `
+                        <strong>Morning:</strong> Depart Entebbe. Drive through Uganda's scenic landscapes to Queen Elizabeth National Park.<br>
+                        <strong>Afternoon:</strong> Arrive at QE NP. Afternoon game drive spotting elephants, buffaloes, and the famous tree-climbing lions of Ishasha sector.<br>
+                        <strong>Overnight:</strong> Mid-range lodge near QE NP.
+                    `
+                },
+                {
+                    day: 'Day 2: Kazinga Channel Boat Safari & Game Drive',
+                    activities: `
+                        <strong>Morning:</strong> Early morning game drive in QE NP.<br>
+                        <strong>Afternoon:</strong> Boat safari along the legendary Kazinga Channel — spot hippos, crocodiles, elephants, and over 600 bird species.<br>
+                        <strong>Overnight:</strong> Same lodge.
+                    `
+                },
+                {
+                    day: 'Day 3–4: Bwindi Impenetrable NP – Gorilla Trekking',
+                    activities: `
+                        <strong>Day 3 Morning:</strong> Drive to Bwindi Impenetrable National Park (UNESCO World Heritage Site). Check in at forest lodge.<br>
+                        <strong>Day 4 Morning:</strong> Gorilla trekking — guided trek through the dense forest to spend one hour with a habituated gorilla family. Afternoon: relax, photography, and cultural interactions.
+                    `
+                },
+                {
+                    day: 'Day 5: Lake Mburo NP Walking Safari → Entebbe',
+                    activities: `
+                        <strong>Morning:</strong> Drive to Lake Mburo National Park — the only park in Uganda where walking safaris inside the park are possible. Spot zebras, impalas, elands, and hippos on foot.<br>
+                        <strong>Afternoon:</strong> Continue to Entebbe/Kampala. End of safari.
+                    `
+                }
+            ],
+            pricing: [
+                { type: 'Per Person', price: 'Contact Us', includes: 'Gorilla trekking permit, mid-range lodges (full board), private 4WD vehicle with guide, Kazinga Channel boat cruise, walking safari fees, and all park entry fees.' }
+            ]
+        },
+        'flying-6day': {
+            title: '6-Day Flying Safari – Gorillas, Chimps and Wildlife',
+            duration: '6 Days / 5 Nights',
+            itinerary: [
+                {
+                    day: 'Day 1: Entebbe → Bwindi (by charter flight)',
+                    activities: `
+                        <strong>Morning:</strong> Transfer to Entebbe airport for charter flight to an airstrip near Bwindi Impenetrable National Park.<br>
+                        <strong>Afternoon:</strong> Check in at your lodge. Briefing on gorilla trekking rules.<br>
+                        <strong>Overnight:</strong> Mid-range lodge near Bwindi.
+                    `
+                },
+                {
+                    day: 'Day 2: Gorilla Trekking in Bwindi',
+                    activities: `
+                        <strong>Morning:</strong> Trek into Bwindi's impenetrable forest to track a habituated mountain gorilla family. Spend one hour observing these gentle giants.<br>
+                        <strong>Afternoon:</strong> Return to lodge. Optional community walks or relaxation.<br>
+                        <strong>Overnight:</strong> Same lodge.
+                    `
+                },
+                {
+                    day: 'Day 3: Bwindi → Queen Elizabeth NP (by charter flight)',
+                    activities: `
+                        <strong>Morning:</strong> Depart by charter flight to Queen Elizabeth National Park.<br>
+                        <strong>Afternoon:</strong> Arrive and embark on an afternoon game drive — home to elephants, lions, leopards, buffaloes, and the famous Kazinga Channel.<br>
+                        <strong>Overnight:</strong> Mid-range lodge in QE NP.
+                    `
+                },
+                {
+                    day: 'Day 4: Queen Elizabeth NP – Game Drives & Boat Cruise',
+                    activities: `
+                        <strong>Morning:</strong> Full morning game drive in Queen Elizabeth NP.<br>
+                        <strong>Afternoon:</strong> Kazinga Channel boat cruise — an iconic wildlife experience with hippos, elephants, and 600+ bird species along the shores.<br>
+                        <strong>Overnight:</strong> Same lodge.
+                    `
+                },
+                {
+                    day: 'Day 5: QE NP → Kibale NP (by charter flight)',
+                    activities: `
+                        <strong>Morning:</strong> Charter flight to Kibale National Park — the primate capital of the world.<br>
+                        <strong>Afternoon:</strong> Afternoon guided nature walk in Bigodi Wetland Sanctuary.<br>
+                        <strong>Overnight:</strong> Mid-range lodge near Kibale.
+                    `
+                },
+                {
+                    day: 'Day 6: Chimp Trekking → Entebbe',
+                    activities: `
+                        <strong>Morning:</strong> Chimpanzee trekking in Kibale Forest — encounter large chimp communities in their natural forest habitat.<br>
+                        <strong>Afternoon:</strong> Drive or fly back to Entebbe International Airport. End of safari.
+                    `
+                }
+            ],
+            pricing: [
+                { type: 'Per Person', price: 'Contact Us', includes: '3 internal charter flights, gorilla & chimp trekking permits, mid-range lodge accommodation (full board), game drives, Kazinga Channel cruise, and all park entry fees.' }
+            ]
+        },
+        'chimps-gorilla-big5-7day': {
+            title: '7-Day Chimpanzee, Gorillas and Big 5 Safari',
+            duration: '7 Days / 6 Nights',
+            itinerary: [
+                {
+                    day: 'Day 1: Entebbe → Kibale National Park',
+                    activities: `
+                        <strong>Morning:</strong> Depart Entebbe/Kampala. Head southwest to Kibale National Park — home to the world's largest concentration of primates.<br>
+                        <strong>Afternoon:</strong> Arrive and check in at lodge. Afternoon Bigodi Wetland nature walk (optional).<br>
+                        <strong>Overnight:</strong> Mid-range lodge near Kibale.
+                    `
+                },
+                {
+                    day: 'Day 2: Chimp Trekking in Kibale → Queen Elizabeth NP',
+                    activities: `
+                        <strong>Morning:</strong> Chimpanzee trekking in Kibale Forest — observe chimps, colobus monkeys, red-tailed monkeys, and 350+ bird species.<br>
+                        <strong>Afternoon:</strong> Drive to Queen Elizabeth National Park — home to big game including the famous tree-climbing lions of Ishasha.<br>
+                        <strong>Overnight:</strong> Lodge in QE NP.
+                    `
+                },
+                {
+                    day: 'Day 3: Queen Elizabeth NP – Big Five Game Drives & Kazinga Cruise',
+                    activities: `
+                        <strong>Morning:</strong> Early morning game drive in QE NP's Kasenyi plains — spot elephants, lions, leopards, buffaloes, and hippos.<br>
+                        <strong>Afternoon:</strong> Kazinga Channel boat cruise. Hundreds of hippos, crocodiles, and enormous diversity of birdlife along the water's edge.<br>
+                        <strong>Overnight:</strong> Same QE NP lodge.
+                    `
+                },
+                {
+                    day: 'Days 4–5: Bwindi Impenetrable NP – Gorilla Trekking',
+                    activities: `
+                        <strong>Day 4 Morning:</strong> Drive to Bwindi Impenetrable National Park (UNESCO World Heritage Site). Scenic views of the Albertine Rift Valley en route.<br>
+                        <strong>Day 5 Morning:</strong> Gorilla trekking — guided expedition into Bwindi forest to find and spend one hour with a habituated mountain gorilla family.
+                    `
+                },
+                {
+                    day: 'Day 6: Return Journey & Cultural Encounter',
+                    activities: `
+                        <strong>Morning:</strong> Optional community walk or Batwa cultural visit in Bwindi.<br>
+                        <strong>Afternoon:</strong> Drive toward Kampala, stopping at local markets and scenic viewpoints.
+                    `
+                },
+                {
+                    day: 'Day 7: Kampala City Tour → Entebbe Departure',
+                    activities: `
+                        <strong>Morning:</strong> Optional Kampala city tour — visit markets, cultural sites, and the Uganda Museum.<br>
+                        <strong>Afternoon:</strong> Transfer to Entebbe International Airport for departure.
+                    `
+                }
+            ],
+            pricing: [
+                { type: 'Per Person', price: 'Contact Us', includes: 'Gorilla & chimp trekking permits, mid-range lodge accommodation (full board), private 4WD safari vehicle with guide, game drives, boat cruise, and all park entry fees.' }
+            ]
+        },
+        'rwanda-7day': {
+            title: '7-Day Rwanda Golden Monkeys, Uganda Gorillas & Chimps',
+            duration: '7 Days / 6 Nights',
+            itinerary: [
+                {
+                    day: 'Day 1: Kigali → Volcanoes National Park',
+                    activities: `
+                        <strong>Morning:</strong> Arrive in Kigali. Briefing and transfer to Volcanoes National Park in northern Rwanda.<br>
+                        <strong>Afternoon:</strong> Check in at lodge with views of the Virunga volcanoes. Optional village walk.<br>
+                        <strong>Overnight:</strong> Mid-range lodge near Volcanoes NP.
+                    `
+                },
+                {
+                    day: 'Day 2: Golden Monkey Tracking → Cross to Uganda',
+                    activities: `
+                        <strong>Morning:</strong> Track the endangered golden monkeys in Rwanda's Volcanoes NP — playful and highly photogenic primates unique to the Virunga region.<br>
+                        <strong>Afternoon:</strong> Cross the Rwanda-Uganda border. Drive to Bwindi Impenetrable National Park.
+                    `
+                },
+                {
+                    day: 'Days 3–4: Gorilla Trekking in Bwindi',
+                    activities: `
+                        <strong>Day 3:</strong> Arrive in Bwindi. Check in and afternoon rest or community walk.<br>
+                        <strong>Day 4 Morning:</strong> Guided gorilla trek in Bwindi Impenetrable Forest. One hour with a mountain gorilla family — one of Africa's greatest wildlife experiences.
+                    `
+                },
+                {
+                    day: 'Days 5–6: Queen Elizabeth National Park',
+                    activities: `
+                        <strong>Day 5:</strong> Drive to Queen Elizabeth NP. Afternoon game drive in the Kasenyi sector — spot lions, elephants, and buffaloes.<br>
+                        <strong>Day 6:</strong> Morning game drive. Afternoon Kazinga Channel boat cruise with spectacular wildlife viewing.
+                    `
+                },
+                {
+                    day: 'Day 7: Kibale NP Chimp Trekking → Entebbe',
+                    activities: `
+                        <strong>Morning:</strong> Chimpanzee trekking in Kibale National Park — the primate capital of East Africa.<br>
+                        <strong>Afternoon:</strong> Drive to Entebbe International Airport. End of memorable East Africa safari.
+                    `
+                }
+            ],
+            pricing: [
+                { type: 'Per Person', price: 'Contact Us', includes: 'Golden monkey tracking permit, gorilla trekking permit, chimp trekking permit, mid-range lodge accommodation (full board), private guide/driver, 4WD vehicle, game drives, boat cruise, and all park/border fees.' }
+            ]
+        },
+        'uganda-8day': {
+            title: '8-Day Best of Uganda Gorilla and Chimp Trekking Safari',
+            duration: '8 Days / 7 Nights',
+            itinerary: [
+                {
+                    day: 'Days 1–2: Entebbe → Murchison Falls National Park',
+                    activities: `
+                        <strong>Day 1 Morning:</strong> Depart Entebbe in a private vehicle with complimentary Wi-Fi. Stop at Ziwa Rhino Sanctuary for white rhino tracking.<br>
+                        <strong>Day 1 Afternoon:</strong> Arrive at Murchison Falls NP — Uganda's largest national park. Check in at lodge.<br>
+                        <strong>Day 2:</strong> Morning game drive spotting lions, elephants, giraffes, and buffaloes. Afternoon Nile boat cruise to the base of Murchison Falls — spot hippos, Nile crocodiles, and birds.
+                    `
+                },
+                {
+                    day: 'Day 3: Kibale National Park – Chimpanzee Trekking',
+                    activities: `
+                        <strong>Morning:</strong> Drive south to Kibale National Park.<br>
+                        <strong>Afternoon:</strong> Arrive and check in. Optional late afternoon nature walk or Bigodi wetland sanctuary visit.
+                    `
+                },
+                {
+                    day: 'Day 4: Chimp Trekking → Queen Elizabeth NP',
+                    activities: `
+                        <strong>Morning:</strong> Chimp trekking in Kibale Forest — engage with habituated chimp communities.<br>
+                        <strong>Afternoon:</strong> Drive to Queen Elizabeth National Park. Check in at lodge.
+                    `
+                },
+                {
+                    day: 'Days 5–6: Queen Elizabeth NP – Ishasha Tree-Climbing Lions',
+                    activities: `
+                        <strong>Day 5:</strong> Explore Ishasha sector — famous for Uganda's unique tree-climbing lions lounging in fig trees. Afternoon Kazinga Channel boat cruise.<br>
+                        <strong>Day 6:</strong> Full-day game drives in Kasenyi plains and Mweya Peninsula area.
+                    `
+                },
+                {
+                    day: 'Day 7: Bwindi Impenetrable NP – Gorilla Trekking',
+                    activities: `
+                        <strong>Morning:</strong> Drive to Bwindi. Report to UWA briefing point and trek into the impenetrable forest.<br>
+                        <strong>Morning/Afternoon:</strong> One hour with mountain gorillas. Return to lodge. Afternoon relaxation by Lake Bunyonyi.
+                    `
+                },
+                {
+                    day: 'Day 8: Lake Bunyonyi → Entebbe',
+                    activities: `
+                        <strong>Morning:</strong> Leisurely breakfast on the shores of spectacular Lake Bunyonyi. Optional canoe ride.<br>
+                        <strong>Afternoon:</strong> Drive back to Entebbe/Kampala. End of safari.
+                    `
+                }
+            ],
+            pricing: [
+                { type: 'Per Person', price: 'Contact Us', includes: 'Complimentary in-vehicle Wi-Fi, gorilla & chimp trekking permits, mid-range lodge accommodation (full board), private 4WD safari vehicle with guide, Nile boat cruise, Kazinga boat cruise, rhino tracking, and all park entry fees.' }
+            ]
+        },
+        'uganda-9day': {
+            title: '9-Day Best of Uganda Gorilla, Chimps & Wildlife',
+            duration: '9 Days / 8 Nights',
+            itinerary: [
+                {
+                    day: 'Day 1: Entebbe → Kampala',
+                    activities: `
+                        <strong>Afternoon:</strong> Arrive at Entebbe International Airport. Meet your guide and transfer to your hotel in Kampala.<br>
+                        <strong>Evening:</strong> Orientation briefing, dinner, and rest.
+                    `
+                },
+                {
+                    day: 'Days 2–3: Kibale National Park – Chimp Trekking',
+                    activities: `
+                        <strong>Day 2:</strong> Drive from Kampala to Kibale National Park. Afternoon Bigodi Wetland Sanctuary walk.<br>
+                        <strong>Day 3:</strong> Full-day chimp trekking experience in Kibale Forest. Track habituated chimpanzee communities alongside other primates.
+                    `
+                },
+                {
+                    day: 'Days 4–5: Semuliki & Queen Elizabeth National Parks',
+                    activities: `
+                        <strong>Day 4:</strong> Visit Semuliki National Park — a lowland rainforest harboring Central African forest species. Guided forest walk.<br>
+                        <strong>Day 5:</strong> Queen Elizabeth NP game drives and Kazinga Channel boat cruise. Spot Big Five wildlife.
+                    `
+                },
+                {
+                    day: 'Day 6: Bwindi Impenetrable NP – Gorilla Trekking & Batwa Experience',
+                    activities: `
+                        <strong>Morning:</strong> Gorilla trekking in Bwindi Impenetrable Forest. One unforgettable hour with a mountain gorilla family.<br>
+                        <strong>Afternoon:</strong> Batwa cultural experience — join the original Bwindi forest dwellers and learn about their forest knowledge and heritage.
+                    `
+                },
+                {
+                    day: 'Days 7–8: Lake Bunyonyi – Canoe & Relaxation',
+                    activities: `
+                        <strong>Day 7:</strong> Drive to Lake Bunyonyi — one of Africa's most scenic lakes. Check in at lakeside lodge.<br>
+                        <strong>Day 8:</strong> Full day canoe tour on Lake Bunyonyi — paddle to hilltop islands, visit local communities, and enjoy stunning scenery.
+                    `
+                },
+                {
+                    day: 'Day 9: Lake Bunyonyi → Entebbe Departure',
+                    activities: `
+                        <strong>Morning:</strong> Final breakfast at Lake Bunyonyi. Drive back to Entebbe International Airport.<br>
+                        <strong>Afternoon:</strong> Arrive at Entebbe. End of 9-day Uganda safari.
+                    `
+                }
+            ],
+            pricing: [
+                { type: 'Per Person', price: 'Contact Us', includes: 'Gorilla & chimp trekking permits, Batwa cultural experience, mid-range lodge accommodation (full board), private 4WD safari vehicle with guide, all game drives, boat cruise, canoe tour, and park entry fees.' }
+            ]
+        },
+        'gorilla-chimp-big5-10day': {
+            title: "10-Day Gorillas, Chimps & the Big 5",
+            duration: '10 Days / 9 Nights',
+            itinerary: [
+                {
+                    day: 'Day 1: Arrival in Entebbe',
+                    activities: `
+                        <strong>Afternoon:</strong> Arrive at Entebbe International Airport. Meet your Afrisites Tours representative. Transfer to hotel for rest.<br>
+                        <strong>Evening:</strong> Briefing for the 10-day adventure ahead.
+                    `
+                },
+                {
+                    day: 'Days 2–3: Murchison Falls National Park',
+                    activities: `
+                        <strong>Day 2:</strong> Drive north to Murchison Falls NP, stopping at Ziwa Rhino Sanctuary for white rhino tracking.<br>
+                        <strong>Day 3:</strong> Full game drive on the northern bank. Nile boat cruise to the base of the thundering Murchison Falls.
+                    `
+                },
+                {
+                    day: 'Days 4–5: Kibale National Park – Chimpanzee Trekking',
+                    activities: `
+                        <strong>Day 4:</strong> Drive south to Kibale National Park. Afternoon Bigodi Wetland walk.<br>
+                        <strong>Day 5:</strong> Chimpanzee trekking in Kibale Forest. Observe hundreds of chimps and other primates in their natural forest home.
+                    `
+                },
+                {
+                    day: 'Days 6–7: Queen Elizabeth National Park',
+                    activities: `
+                        <strong>Day 6:</strong> Drive to Queen Elizabeth NP. Afternoon game drive — spot lions, elephants, leopards, buffaloes, and hippos.<br>
+                        <strong>Day 7:</strong> Kazinga Channel boat cruise & Ishasha tree-climbing lions sector.
+                    `
+                },
+                {
+                    day: 'Days 8–9: Bwindi Impenetrable NP – Gorilla Trekking',
+                    activities: `
+                        <strong>Day 8:</strong> Drive to Bwindi Impenetrable NP. Afternoon community walk or Batwa experience.<br>
+                        <strong>Day 9:</strong> Gorilla trekking — trek into the ancient forest to encounter Uganda's mountain gorillas.
+                    `
+                },
+                {
+                    day: 'Day 10: Return to Entebbe',
+                    activities: `
+                        <strong>Morning:</strong> Drive from Bwindi back toward Entebbe, stopping along the way for lunch and scenic photography.<br>
+                        <strong>Afternoon/Evening:</strong> Arrive at Entebbe. Transfer to airport for departure.
+                    `
+                }
+            ],
+            pricing: [
+                { type: 'Per Person', price: 'Contact Us', includes: 'Gorilla & chimp trekking permits, rhino tracking, mid-range lodge accommodation (full board), private 4WD safari vehicle with guide, Nile boat cruise, Kazinga Channel cruise, and all park entry fees.' }
+            ]
+        },
+        'primates-big5-11day': {
+            title: '11-Day Uganda Primates & Big Five Safari',
+            duration: '11 Days / 10 Nights',
+            itinerary: [
+                {
+                    day: 'Day 1: Arrival in Entebbe',
+                    activities: `
+                        <strong>Afternoon:</strong> Arrive at Entebbe International Airport. Transfer to hotel. Evening briefing.
+                    `
+                },
+                {
+                    day: 'Day 2: Mabamba Swamp – Shoebill Boat Safari',
+                    activities: `
+                        <strong>Morning:</strong> Boat safari in Mabamba Swamp — one of the best places in the world to spot the prehistoric-looking Shoebill stork. Also see papyrus birds and wetland wildlife.
+                    `
+                },
+                {
+                    day: 'Days 3–4: Murchison Falls National Park',
+                    activities: `
+                        <strong>Day 3:</strong> Drive north with a stop at Ziwa Rhino Sanctuary for white rhino tracking.<br>
+                        <strong>Day 4:</strong> Morning game drive + Nile boat cruise to the base of Murchison Falls. Spot lions, elephants, giraffes, and massive crocodiles.
+                    `
+                },
+                {
+                    day: 'Day 5: Kibale National Park – Chimp Trekking',
+                    activities: `
+                        <strong>Morning:</strong> Drive to Kibale NP. Afternoon chimp trekking — encounter habituated chimp communities in their rainforest home.
+                    `
+                },
+                {
+                    day: 'Day 6: Queen Elizabeth National Park',
+                    activities: `
+                        <strong>Morning:</strong> Game drives in QE NP. Afternoon Kazinga Channel boat cruise — world-class hippo, croc, and bird viewing.
+                    `
+                },
+                {
+                    day: 'Days 7–9: Bwindi Impenetrable NP – Gorilla Trekking',
+                    activities: `
+                        <strong>Day 7:</strong> Drive to Bwindi. Afternoon optional Batwa cultural experience.<br>
+                        <strong>Day 8:</strong> Gorilla trekking — trek into Bwindi's dense forest for one hour with mountain gorillas.<br>
+                        <strong>Day 9:</strong> Drive to Mgahinga Gorilla National Park — spot golden monkeys and enjoy scenic Virunga volcano views.
+                    `
+                },
+                {
+                    day: 'Day 10: Lake Mburo National Park',
+                    activities: `
+                        <strong>Morning:</strong> Drive to Lake Mburo NP. Game drive spotting zebras, impalas, topis, and hippos. Afternoon lake boat cruise.
+                    `
+                },
+                {
+                    day: 'Day 11: Return to Entebbe',
+                    activities: `
+                        <strong>Morning:</strong> Morning game walk in Lake Mburo. Drive back to Entebbe for departure.
+                    `
+                }
+            ],
+            pricing: [
+                { type: 'Per Person', price: 'Contact Us', includes: 'All primate trekking permits (gorilla, chimp, golden monkey), rhino tracking, Shoebill boat safari, mid-range lodge accommodation (full board), private 4WD safari vehicle, game drives, boat cruises, and all park entry fees.' }
+            ]
+        },
+        'eastern-northern-12day': {
+            title: '12-Day Eastern & Northern Uganda Discovery Safari',
+            duration: '12 Days / 11 Nights',
+            itinerary: [
+                {
+                    day: 'Day 1: Arrival in Kampala',
+                    activities: `
+                        <strong>Afternoon:</strong> Arrive at Entebbe and meet your guide. Transfer to Kampala hotel.<br>
+                        <strong>Evening:</strong> Orientation and briefing for the cultural & heritage journey ahead.
+                    `
+                },
+                {
+                    day: 'Days 2–3: Eastern Uganda – Cultural Heritage',
+                    activities: `
+                        <strong>Day 2:</strong> Drive east to Jinja — the source of the Nile. Visit Bujagali Falls area and local craft markets. Optional white-water rafting.<br>
+                        <strong>Day 3:</strong> Explore Mount Elgon National Park foothills. Visit the Sipi Falls — a dramatic set of three waterfalls. Hike to the base and surrounding viewpoints.
+                    `
+                },
+                {
+                    day: 'Days 4–5: Kidepo Valley National Park',
+                    activities: `
+                        <strong>Day 4:</strong> Long, scenic drive north through Karamoja region to Kidepo Valley NP — Uganda's most remote and spectacular park.<br>
+                        <strong>Day 5:</strong> Full day game drives in Kidepo. Spot cheetahs, ostriches, lions, Burchell's zebras, and more — wildlife rarely found in other Uganda parks.
+                    `
+                },
+                {
+                    day: 'Days 6–7: Karamojong Cultural Experience & Rock Art',
+                    activities: `
+                        <strong>Day 6:</strong> Visit a traditional Karamojong homestead (manyatta). Experience warrior dances, beadwork crafts, and pastoral culture.<br>
+                        <strong>Day 7:</strong> Explore ancient Karamoja rock art sites — some of the oldest rock paintings in East Africa.
+                    `
+                },
+                {
+                    day: 'Days 8–9: Murchison Falls National Park',
+                    activities: `
+                        <strong>Day 8:</strong> Drive from Kidepo through northern Uganda to Murchison Falls NP. Stop at Karuma Falls en route.<br>
+                        <strong>Day 9:</strong> Game drives and Nile boat cruise. View the powerful Murchison Falls.
+                    `
+                },
+                {
+                    day: 'Days 10–11: Ziwa Rhino Sanctuary & Return',
+                    activities: `
+                        <strong>Day 10:</strong> Rhino tracking at Ziwa Rhino Sanctuary — walk with southern white rhinos on foot.<br>
+                        <strong>Day 11:</strong> Drive back toward Kampala. Cultural lunch stop in Luwero. Arrive Kampala/Entebbe.
+                    `
+                },
+                {
+                    day: 'Day 12: Departure',
+                    activities: `
+                        <strong>Morning:</strong> Final breakfast. Transfer to Entebbe International Airport. End of eastern and northern Uganda discovery safari.
+                    `
+                }
+            ],
+            pricing: [
+                { type: 'Per Person', price: 'Contact Us', includes: 'Mid-range lodge & hotel accommodation (full board), private 4WD safari vehicle, professional cultural & wildlife guide, all park entry fees, rhino tracking, community visits, and cultural activity fees.' }
+            ]
+        },
+        'gorilla-chimp-wildlife-12day': {
+            title: '12-Day Gorillas, Chimps & Wildlife Epic Safari',
+            duration: '12 Days / 11 Nights',
+            itinerary: [
+                {
+                    day: 'Day 1: Arrival in Entebbe',
+                    activities: `
+                        <strong>Afternoon:</strong> Arrive in Entebbe. Meet guide. Transfer to hotel. Rest and briefing.
+                    `
+                },
+                {
+                    day: 'Days 2–3: Murchison Falls National Park',
+                    activities: `
+                        <strong>Day 2:</strong> Drive north, stopping at Ziwa Rhino Sanctuary for rhino tracking. Arrive Murchison Falls NP.<br>
+                        <strong>Day 3:</strong> Game drive and Nile boat cruise to the base of the thundering Murchison Falls.
+                    `
+                },
+                {
+                    day: 'Days 4–5: Kibale National Park',
+                    activities: `
+                        <strong>Day 4:</strong> Drive to Kibale NP. Bigodi Wetland birdwatching walk.<br>
+                        <strong>Day 5:</strong> Chimpanzee trekking in Kibale Forest, including L'Hoest's monkeys and other primates.
+                    `
+                },
+                {
+                    day: 'Days 6–7: Queen Elizabeth National Park',
+                    activities: `
+                        <strong>Day 6:</strong> Morning game drive. Afternoon Kazinga Channel boat cruise for hippos, crocs, and hundreds of bird species.<br>
+                        <strong>Day 7:</strong> Ishasha sector — Victoria Nile and the famous tree-climbing lions of Ishasha.
+                    `
+                },
+                {
+                    day: 'Days 8–9: Bwindi & Mgahinga – Gorilla Trekking',
+                    activities: `
+                        <strong>Day 8:</strong> Drive to Bwindi Impenetrable NP. Community walk and afternoon rest.<br>
+                        <strong>Day 9:</strong> Gorilla trekking in Bwindi. One hour with mountain gorillas deep in the ancient forest.
+                    `
+                },
+                {
+                    day: 'Day 10: Mgahinga Gorilla NP – Golden Monkeys',
+                    activities: `
+                        <strong>Morning:</strong> Drive to Mgahinga Gorilla NP at the foot of the Virunga volcanoes. Track golden monkeys through bamboo forest.<br>
+                        <strong>Afternoon:</strong> Batwa cultural experience and volcano hike options.
+                    `
+                },
+                {
+                    day: 'Day 11: Lake Mburo National Park',
+                    activities: `
+                        <strong>Morning:</strong> Drive to Lake Mburo NP. Afternoon game drive — spot zebras, impalas, elands, topis, hippos, and Burchell's zebras.
+                    `
+                },
+                {
+                    day: 'Day 12: Return to Entebbe',
+                    activities: `
+                        <strong>Morning:</strong> Lake Mburo morning game walk. Drive to Entebbe for departure.
+                    `
+                }
+            ],
+            pricing: [
+                { type: 'Per Person', price: 'Contact Us', includes: 'Gorilla & chimp trekking permits, golden monkey tracking permit, rhino tracking, mid-range lodge accommodation (full board), private 4WD vehicle with guide, Nile boat cruise, Kazinga Channel cruise, and all park entry fees.' }
+            ]
+        },
+        'rwanda-uganda-14day': {
+            title: '14-Day Rwanda and Uganda with Gorillas, Chimps & Big Five',
+            duration: '14 Days / 13 Nights',
+            itinerary: [
+                {
+                    day: 'Day 1: Arrival in Kigali, Rwanda',
+                    activities: `
+                        <strong>Afternoon:</strong> Arrive at Kigali International Airport. Meet your guide and transfer to hotel.<br>
+                        <strong>Evening:</strong> Kigali city orientation and briefing for the 14-day adventure.
+                    `
+                },
+                {
+                    day: 'Days 2–3: Akagera National Park – Rwanda Wildlife',
+                    activities: `
+                        <strong>Day 2:</strong> Drive to Akagera NP in eastern Rwanda. Afternoon game drive — spot lions, elephants, giraffes, buffaloes, and Rwanda's recently reintroduced rhinos.<br>
+                        <strong>Day 3:</strong> Morning boat cruise on Lake Ihema — excellent birding with hippos and crocodile viewing.
+                    `
+                },
+                {
+                    day: 'Day 4: Lake Bunyonyi, Uganda',
+                    activities: `
+                        <strong>Morning:</strong> Cross into Uganda. Drive to the stunning Lake Bunyonyi for a rest day.<br>
+                        <strong>Afternoon:</strong> Boat ride on the lake and relax at lakeside lodge.
+                    `
+                },
+                {
+                    day: 'Days 5–6: Bwindi Impenetrable NP – Gorilla Trekking',
+                    activities: `
+                        <strong>Day 5:</strong> Drive to Bwindi. Afternoon Batwa cultural experience.<br>
+                        <strong>Day 6:</strong> Gorilla trekking — one incredible hour with a mountain gorilla family in the dense Bwindi forest.
+                    `
+                },
+                {
+                    day: 'Day 7: Ishasha – Tree-Climbing Lions (Queen Elizabeth NP)',
+                    activities: `
+                        <strong>Morning:</strong> Drive to Ishasha sector of Queen Elizabeth NP. Afternoon game drive to spot Uganda's famous tree-climbing lions in fig trees.
+                    `
+                },
+                {
+                    day: 'Days 8–9: Queen Elizabeth National Park',
+                    activities: `
+                        <strong>Day 8:</strong> Morning game drive on Kasenyi plains — lions, leopards, elephants, and Cape buffaloes.<br>
+                        <strong>Day 9:</strong> Kazinga Channel boat cruise — spectacular hippos, crocodiles, and 600+ bird species.
+                    `
+                },
+                {
+                    day: 'Days 10–11: Kibale National Park – Chimpanzee Trekking',
+                    activities: `
+                        <strong>Day 10:</strong> Drive to Kibale NP. Afternoon Bigodi Wetland Sanctuary birdwatching.<br>
+                        <strong>Day 11:</strong> Full chimpanzee trekking experience in Kibale Forest — East Africa's primate capital.
+                    `
+                },
+                {
+                    day: 'Days 12–13: Murchison Falls National Park',
+                    activities: `
+                        <strong>Day 12:</strong> Drive to Murchison Falls NP, stopping at Ziwa Rhino Sanctuary for rhino tracking on foot.<br>
+                        <strong>Day 13:</strong> Morning game drive on the northern bank. Afternoon Nile boat cruise to the base of Murchison Falls.
+                    `
+                },
+                {
+                    day: 'Day 14: Return to Entebbe',
+                    activities: `
+                        <strong>Morning:</strong> Drive from Murchison Falls to Entebbe International Airport.<br>
+                        <strong>Afternoon:</strong> Arrive at Entebbe. End of the Grand East Africa Tour.
+                    `
+                }
+            ],
+            pricing: [
+                { type: 'Per Person', price: 'Contact Us', includes: 'Gorilla trekking permit, chimp trekking permit, rhino tracking, mid-range lodge accommodation throughout (full board), private 4WD safari vehicle with professional guide, Nile boat cruise, Kazinga Channel cruise, Akagera boat cruise, and all park/border fees.' }
+            ]
+        },
         'kidepo-murchison': {
             title: '5-Day Expedition to Kidepo Valley & Murchison Falls National Parks',
             duration: '5 Days / 4 Nights',
