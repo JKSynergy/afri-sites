@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afrisites Tours & Travel - Discover Uganda & East Africa</title>
+    <meta name="description" content="Experience unforgettable adventures in Uganda and East Africa with Afrisites Tours & Travel. Expert safari tours, gorilla trekking, and personalized travel experiences.">
+    <link rel="icon" type="image/png" href="images/cropped-logo-scaled-1.png">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Afrisites Tours & Travel - Discover Uganda & East Africa">
+    <meta property="og:description" content="Experience unforgettable adventures in Uganda and East Africa. Expert safari tours, gorilla trekking, and personalized travel experiences.">
+    <meta property="og:image" content="https://afrisitestoursandtravel.org/images/cropped-logo-scaled-1.png">
+    <meta property="og:url" content="https://afrisitestoursandtravel.org">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Afrisites Tours & Travel">
+    <meta name="twitter:description" content="Experience unforgettable adventures in Uganda and East Africa.">
+    <meta name="twitter:image" content="https://afrisitestoursandtravel.org/images/cropped-logo-scaled-1.png">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Josefin+Sans:wght@400;500;600;700&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <!-- Structured Data - LocalBusiness Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TravelAgency",
+      "name": "Afrisites Tours & Travel",
+      "image": "https://afrisitestoursandtravel.org/images/cropped-logo-scaled-1.png",
+      "@id": "https://afrisitestoursandtravel.org",
+      "url": "https://afrisitestoursandtravel.org",
+      "telephone": "+256393101000",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kampala Buwate Light Close",
+        "addressLocality": "Kira Municipality",
+        "postalCode": "P.O.Box 107327",
+        "addressCountry": "UG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 0.3476,
+        "longitude": 32.5825
+      },
+      "sameAs": [
+        "https://www.facebook.com/share/1AYkxr24NF/",
+        "https://www.instagram.com/afrisitestours",
+        "https://x.com/afrisitestours",
+        "https://www.tiktok.com/@afrisitestours"
+      ],
+      "priceRange": "$$-$$$",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><span class="logo-sun">Afrisites</span><span class="logo-tour"> Tours & Travel</span></h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#book-now" class="search-btn">Book Now</a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-slider">
+            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1549366021-9f761d450615?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');">
+                <div class="hero-overlay"></div>
+            </div>
+        </div>
+        
+        <div class="hero-content">
+            <h1>Discover the Heart of Africa</h1>
+            <p>Delivering seamless, memorable, and personalized travel experiences across Uganda, East Africa and beyond</p>
+            <div class="hero-buttons">
+                <a href="#packages" class="btn-primary">Explore Tours</a>
+                <a href="#contact" class="btn-secondary">Plan Your Trip</a>
+            </div>
+        </div>
+        
+        <!-- Tour Customization Bar -->
+        <div class="tour-search-bar">
+            <div class="search-field">
+                <i class="fas fa-map-marker-alt"></i>
+                <select class="search-select">
+                    <option value="">Where you want to go</option>
+                    <option value="bwindi">Bwindi Impenetrable Forest</option>
+                    <option value="queen-elizabeth">Queen Elizabeth National Park</option>
+                    <option value="murchison">Murchison Falls</option>
+                    <option value="kidepo">Kidepo Valley</option>
+                    <option value="lake-mburo">Lake Mburo</option>
+                    <option value="jinja">Jinja - Source of the Nile</option>
+                </select>
+            </div>
+            <div class="search-field">
+                <i class="fas fa-list"></i>
+                <select class="search-select">
+                    <option value="">Experiences</option>
+                    <option value="gorilla">Gorilla Trekking</option>
+                    <option value="safari">Wildlife Safari</option>
+                    <option value="adventure">Adventure & Hiking</option>
+                    <option value="cultural">Cultural Tours</option>
+                    <option value="water">Water Activities</option>
+                </select>
+            </div>
+            <div class="search-field">
+                <i class="fas fa-users"></i>
+                <select class="search-select">
+                    <option value="">2 Adult(s), 0 Children</option>
+                    <option value="1">1 Adult</option>
+                    <option value="2">2 Adults</option>
+                    <option value="3">3 Adults</option>
+                    <option value="4">4 Adults</option>
+                    <option value="family">Family (2 Adults, 2 Children)</option>
+                    <option value="group">Group (6+ People)</option>
+                </select>
+            </div>
+            <div class="search-field">
+                <i class="fas fa-car"></i>
+                <select class="search-select">
+                    <option value="">Tour Class</option>
+                    <option value="budget">Budget</option>
+                    <option value="standard">Standard</option>
+                    <option value="luxury">Luxury</option>
+                    <option value="premium">Premium</option>
+                </select>
+            </div>
+            <button class="search-btn" onclick="searchTours()"><i class="fas fa-search"></i> SEARCH TOURS</button>
+            <button class="customize-btn">CUSTOMIZE TOURS</button>
+        </div>
+        
+        <div class="slider-controls">
+            <button class="slider-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="slider-btn next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+        
+        <div class="slider-dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-hero">
+            <div class="about-hero-overlay"></div>
+            <div class="about-hero-content">
+                <h2>About Afrisites Tours & Travel</h2>
+                <p>Creating memorable travel experiences across Uganda, East Africa, and beyond</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="lead">We are dedicated to delivering seamless, memorable & personalized travel experiences</p>
+                    <p>Afrisites Tours and Travel (U) Limited is a fully registered company in Uganda, East Africa. We delight in providing memorable customer experiences by offering tourism products and experiences for customer gratitude.</p>
+                    <p>We boast in having great collaborations with tourism destinations in Uganda and East Africa. Our destinations offer relaxation, luxury adventure and fun experiences. At Afrisites, customer fulfillment is our aim, and our goal is to offer beyond our clients' expectations.</p>
+                    
+                    <div class="values">
+                        <h3>Our Values</h3>
+                        <div class="value-tags">
+                            <span>Trust</span>
+                            <span>Integrity</span>
+                            <span>Honesty</span>
+                            <span>Accountability</span>
+                            <span>Godliness</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="images/ZOM4714-768x512.jpg" alt="African Safari - Wildlife viewing in Uganda National Parks" loading="lazy">
+                </div>
+            </div>
+
+            <div class="mission-vision">
+                <div class="mission">
+                    <div class="icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To offer an unbeatable tourism experience and provide superior customer satisfaction and value for money to our clients.</p>
+                </div>
+                <div class="vision">
+                    <div class="icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To be a model travel agency which offers excellent and value-based customer experiences.</p>
+                </div>
+            </div>
+
+            <!-- Our Team Section -->
+            <div class="team-section">
+                <div class="section-header">
+                    <h2>Meet Our Team</h2>
+                    <p>Passionate professionals dedicated to making your African adventure unforgettable</p>
+                </div>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="team-image">
+                            <img src="images/ZOM4820-683x1024.jpg" alt="Samuel Mutumba - Founder & CEO of Afrisites Tours" loading="lazy">
+                        </div>
+                        <div class="team-info">
+                            <h3>Samuel Mutumba</h3>
+                            <p class="team-role">Founder & CEO</p>
+                            <p class="team-bio">With over 10 years in tourism, Samuel's passion for showcasing Uganda's beauty drives our mission.</p>
+                            <div class="team-social">
+                                <a href="https://www.linkedin.com/company/afrisites-tours" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://x.com/afrisitestours" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="team-image">
+                            <img src="images/ZOM4879-683x1024.jpg" alt="Grace Nakato - Operations Manager" loading="lazy">
+                        </div>
+                        <div class="team-info">
+                            <h3>Grace Nakato</h3>
+                            <p class="team-role">Operations Manager</p>
+                            <p class="team-bio">Grace ensures every tour runs smoothly, coordinating logistics and accommodations with precision.</p>
+                            <div class="team-social">
+                                <a href="https://www.linkedin.com/company/afrisites-tours" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://x.com/afrisitestours" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="team-image">
+                            <img src="images/ZOM4896-683x1024.jpg" alt="David Okello - Lead Safari Guide" loading="lazy">
+                        </div>
+                        <div class="team-info">
+                            <h3>David Okello</h3>
+                            <p class="team-role">Lead Safari Guide</p>
+                            <p class="team-bio">A certified guide with deep knowledge of Uganda's wildlife and ecosystems.</p>
+                            <div class="team-social">
+                                <a href="https://www.linkedin.com/company/afrisites-tours" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://x.com/afrisitestours" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-overlay"></div>
+        <div class="container">
+            <h2 class="stats-title">These Impressive Figures</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon-circle">
+                        <div class="stat-icon">
+                            <i class="fas fa-map"></i>
+                        </div>
+                    </div>
+                    <div class="stat-number" data-target="200">0</div>
+                    <div class="stat-label">Tours</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon-circle">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+                    <div class="stat-number" data-target="400">0</div>
+                    <div class="stat-label">Tourists</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon-circle">
+                        <div class="stat-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                    </div>
+                    <div class="stat-number" data-target="80">0</div>
+                    <div class="stat-label">Destinations</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon-circle">
+                        <div class="stat-icon">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                    </div>
+                    <div class="stat-number" data-target="25">0</div>
+                    <div class="stat-label">Hotels</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="services-hero">
+            <div class="services-hero-overlay"></div>
+            <div class="services-hero-content">
+                <h2>Our Services</h2>
+                <p>Comprehensive travel solutions tailored to your needs</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Safari wildlife viewing in Uganda" loading="lazy">
+                        <div class="service-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Tour Planning & Safaris</h3>
+                        <p>Wildlife safaris, gorilla trekking, birdwatching, hiking, cultural tours, adventure tourism, and beach holidays across Uganda and East Africa.</p>
+                        <ul class="service-list">
+                            <li>Gorilla and chimpanzee trekking</li>
+                            <li>Big Five wildlife safaris</li>
+                            <li>Cultural heritage tours</li>
+                            <li>Adventure activities (rafting, zip-lining)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="International travel destinations" loading="lazy">
+                        <div class="service-icon">
+                            <i class="fas fa-globe-africa"></i>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>International Travel Packages</h3>
+                        <p>Guided travel packages to Middle East, Asia, Europe, and beyond including Dubai, Zanzibar, Maldives, Thailand, and more.</p>
+                        <ul class="service-list">
+                            <li>East African cross-country tours</li>
+                            <li>European getaway packages</li>
+                            <li>Religious pilgrimages</li>
+                            <li>Corporate retreats & group tours</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Airplane flight booking services" loading="lazy">
+                        <div class="service-icon">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Air Ticketing & Flight Bookings</h3>
+                        <p>Fast, reliable airline ticketing for domestic and international travel with real-time booking and competitive rates.</p>
+                        <ul class="service-list">
+                            <li>Multi-destination flight plans</li>
+                            <li>Group and corporate ticketing</li>
+                            <li>Rebooking and cancellations</li>
+                            <li>Emergency flight bookings</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Luxury hotel accommodation" loading="lazy">
+                        <div class="service-icon">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Hotel & Accommodation Booking</h3>
+                        <p>Secure the best stays across all destinations with luxury, mid-range, and budget options available.</p>
+                        <ul class="service-list">
+                            <li>Hotels, lodges, and safari camps</li>
+                            <li>Honeymoon accommodations</li>
+                            <li>Special group rates</li>
+                            <li>24/7 check-in coordination</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Airport transfers and car rentals" loading="lazy">
+                        <div class="service-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Airport Transfers & Car Rentals</h3>
+                        <p>Professional ground transport solutions including airport pick-ups, chauffeured cars, and 4×4 safari vehicles.</p>
+                        <ul class="service-list">
+                            <li>Airport pick-up and drop-off</li>
+                            <li>Self-drive and guided options</li>
+                            <li>4×4 safari vehicle rentals</li>
+                            <li>VIP transport fleets</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Passport and visa processing services" loading="lazy">
+                        <div class="service-icon">
+                            <i class="fas fa-passport"></i>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Visa Processing & Assistance</h3>
+                        <p>Expert guidance and full support in securing travel documents including tourist, business, and student visas.</p>
+                        <ul class="service-list">
+                            <li>Tourist visa processing</li>
+                            <li>Embassy appointment scheduling</li>
+                            <li>Document review and guidance</li>
+                            <li>Pre-departure briefing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Corporate travel and event management" loading="lazy">
+                        <div class="service-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Corporate Travel & MICE</h3>
+                        <p>Complete event management for meetings, incentives, conferences, and corporate retreats with full logistics support.</p>
+                        <ul class="service-list">
+                            <li>Corporate retreats and incentive trips</li>
+                            <li>Conference and event planning</li>
+                            <li>Team-building activities</li>
+                            <li>Destination weddings</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Travel insurance and support services" loading="lazy">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Travel Insurance & Support</h3>
+                        <p>Travel safely with optional protection and 24/7 emergency support services for peace of mind.</p>
+                        <ul class="service-list">
+                            <li>Travel medical insurance</li>
+                            <li>Emergency evacuation coordination</li>
+                            <li>Lost baggage support</li>
+                            <li>24/7 travel assistance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Packages Section -->
+    <section id="packages" class="packages">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Tour Packages</h2>
+                <p>Diverse packages to meet your desires</p>
+            </div>
+
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Kidepo Valley National Park safari landscape" loading="lazy">
+                        <div class="package-duration">5 Days</div>
+                    </div>
+                    <div class="package-content">
+                        <h3>Kidepo Valley & Murchison Falls</h3>
+                        <p>Embark on a thrilling 5-day expedition through Kidepo Valley and Murchison Falls National Parks, where breathtaking landscapes, rich wildlife, and unforgettable safari adventures await.</p>
+                        <div class="package-features">
+                            <span><i class="fas fa-check"></i> Wildlife Safari</span>
+                            <span><i class="fas fa-check"></i> Waterfall Views</span>
+                            <span><i class="fas fa-check"></i> Game Drives</span>
+                        </div>
+                        <a href="packages.html#kidepo-murchison" class="btn-primary">View Details</a>
+                    </div>
+                </div>
+
+                <div class="package-card featured">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Mountain gorilla trekking in Uganda and Rwanda" loading="lazy">
+                        <div class="package-duration">7 Days</div>
+                        <div class="featured-badge">Most Popular</div>
+                    </div>
+                    <div class="package-content">
+                        <h3>Uganda & Rwanda Gorilla Safari</h3>
+                        <p>Discover the wild heart of Africa on a 7-day Pristine Adventures safari through Uganda and Rwanda, featuring unforgettable gorilla trekking and diverse wildlife encounters.</p>
+                        <div class="package-features">
+                            <span><i class="fas fa-check"></i> Gorilla Trekking</span>
+                            <span><i class="fas fa-check"></i> Wildlife Viewing</span>
+                            <span><i class="fas fa-check"></i> Cultural Experiences</span>
+                        </div>
+                        <a href="packages.html#gorilla-safari" class="btn-primary">View Details</a>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Big Five safari - elephants in Uganda" loading="lazy">
+                        <div class="package-duration">5 Days</div>
+                    </div>
+                    <div class="package-content">
+                        <h3>Uganda Big Five Safari</h3>
+                        <p>Experience the thrill of tracking Africa's iconic Big Five on a 5-day, 4-night Ugandan safari, exploring stunning savannahs and vibrant national parks teeming with wildlife.</p>
+                        <div class="package-features">
+                            <span><i class="fas fa-check"></i> Big Five Tracking</span>
+                            <span><i class="fas fa-check"></i> Luxury Lodges</span>
+                            <span><i class="fas fa-check"></i> Professional Guides</span>
+                        </div>
+                        <a href="packages.html#big-five-safari" class="btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="packages-cta">
+                <a href="packages.html" class="btn-secondary">View All Packages</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Travelers Say</h2>
+                <div class="rating">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span>5.0 based on <a href="https://www.google.com/search?hl=en-UG&gl=ug&q=Afrisites+Tours+%26+Travel,+CJ49%2B4W3,+Buwate+kampala,+Buwate&ludocid=7620934140692159929&lsig=AB86z5W75NtJ7t0zvsCcKDmf3hDl#lrd=0x177db1002a826eef:0x69c2ff39389a5db9,3" target="_blank" rel="noopener noreferrer" style="color: #27ae60; text-decoration: underline; pointer-events: auto; cursor: pointer;">Google Reviews</a></span>
+                </div>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"I had a truly memorable adventure, all thanks to Afrisites Tours & Travel. From the peaceful beauty of Ssezibwa Falls to the stunning views at the Nile Bridge in Jinja, and finally to the iconic Source of the Nile, it was an experience like no other. The absolute highlight was Busowoko Falls - even with my fear of water, the natural water massage was exhilarating!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Ganafa Roland</h4>
+                            <span>7 months ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Exceptional service and unforgettable experiences. The team made me feel safe, comfortable, and fully immersed in every moment of the journey. Highly recommend this tour for anyone looking to explore Uganda's hidden gems with ease and joy!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Mine Teriyeitu</h4>
+                            <span>8 months ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Professional, reliable, and truly passionate about showcasing the beauty of Uganda. Every detail was perfectly planned and executed. Can't wait to book another adventure with Afrisites!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Sylvia Kahigi</h4>
+                            <span>8 months ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-hero">
+            <div class="contact-hero-overlay"></div>
+            <div class="contact-hero-content">
+                <h2>Get In Touch</h2>
+                <p>Ready to embark on your next adventure? Let's start planning your dream trip</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>Reach out to us through any of the following channels and our team will respond promptly.</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Address</h4>
+                                <p>Kampala Buwate Light Close<br>Kira Municipality<br>P.O.Box 107327, Uganda</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+256 393101000</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>Info@afrisitestoursandtravel.org</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/1AYkxr24NF/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/afrisitestours?igsh=MWF3NjZhZWJoaXg5eQ==&utm_source=ig_contact_invite" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/afrisitestours?t=BAAgxnkriuY4JzA-G13aRQ&s=08" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.tiktok.com/@afrisitestours?_t=ZM-8vpIFXoFHNP&_r=1" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <select id="service" name="service" required>
+                                <option value="">Select Service</option>
+                                <option value="safari">Safari Tours</option>
+                                <option value="gorilla">Gorilla Trekking</option>
+                                <option value="international">International Travel</option>
+                                <option value="flights">Flight Booking</option>
+                                <option value="custom">Custom Package</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Tell us about your dream trip..." rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Now Section -->
+    <section id="book-now" class="book-now">
+        <div class="container">
+            <div class="book-content">
+                <h2>Ready for Your Adventure?</h2>
+                <p>Don't wait - your African adventure is just a click away!</p>
+                <div class="book-buttons">
+                    <a href="tel:+256393101000" class="btn-primary">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                    <a href="#contact" class="btn-secondary">Book Online</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Afrisites Tours & Travel</h3>
+                    <p>Your trusted partner for unforgettable African adventures. Delivering seamless, memorable, and personalized travel experiences.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/share/1AYkxr24NF/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/afrisitestours?igsh=MWF3NjZhZWJoaXg5eQ==&utm_source=ig_contact_invite" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/afrisitestours?t=BAAgxnkriuY4JzA-G13aRQ&s=08" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.tiktok.com/@afrisitestours?_t=ZM-8vpIFXoFHNP&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="packages.html">Safari Tours</a></li>
+                        <li><a href="packages.html">Gorilla Trekking</a></li>
+                        <li><a href="index.html#services">Flight Booking</a></li>
+                        <li><a href="index.html#services">International Travel</a></li>
+                        <li><a href="index.html#contact">Custom Packages</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> Kampala Buwate Light Close, Kira Municipality</p>
+                        <p><i class="fas fa-phone"></i> +256 393101000</p>
+                        <p><i class="fas fa-envelope"></i> Info@afrisitestoursandtravel.org</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Afrisites Tours & Travel. All rights reserved.</p>
+                <p>Powered by <a href="https://www.synergyconceptshub.com/" target="_blank" rel="noopener noreferrer" style="color: #27ae60; text-decoration: none; font-weight: 600; pointer-events: auto; cursor: pointer;">Synergy Concepts Hub</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <a href="https://wa.me/256393101000?text=Hi%2C%20I%27m%20interested%20in%20booking%20a%20tour" target="_blank" class="chat-button" id="chatButton">
+            <i class="fab fa-whatsapp"></i>
+            <span>Need Help?</span>
+        </a>
+    </div>
+
+    <!-- Customize Tour Modal -->
+    <div id="customizeTourModal" class="modal">
+        <div class="modal-content customize-modal">
+            <span class="close-modal">&times;</span>
+            <h2>Customize Your Dream Safari</h2>
+            <p class="modal-subtitle">Tell us about your perfect adventure and we'll create a personalized itinerary just for you</p>
+            
+            <form id="customizeTourForm" class="customize-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="custName"><i class="fas fa-user"></i> Full Name *</label>
+                        <input type="text" id="custName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="custEmail"><i class="fas fa-envelope"></i> Email Address *</label>
+                        <input type="email" id="custEmail" name="email" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="custPhone"><i class="fas fa-phone"></i> Phone Number *</label>
+                        <input type="tel" id="custPhone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="custCountry"><i class="fas fa-globe"></i> Country</label>
+                        <input type="text" id="custCountry" name="country">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="custDestination"><i class="fas fa-map-marker-alt"></i> Preferred Destination *</label>
+                        <select id="custDestination" name="destination" required>
+                            <option value="">Select Destination</option>
+                            <option value="bwindi">Bwindi Impenetrable Forest</option>
+                            <option value="murchison">Murchison Falls National Park</option>
+                            <option value="queen-elizabeth">Queen Elizabeth National Park</option>
+                            <option value="kidepo">Kidepo Valley National Park</option>
+                            <option value="lake-mburo">Lake Mburo National Park</option>
+                            <option value="serengeti">Serengeti National Park</option>
+                            <option value="masai-mara">Masai Mara Reserve</option>
+                            <option value="custom">Custom/Multiple Destinations</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="custExperience"><i class="fas fa-hiking"></i> Tour Experience *</label>
+                        <select id="custExperience" name="experience" required>
+                            <option value="">Select Experience</option>
+                            <option value="gorilla-trekking">Gorilla Trekking</option>
+                            <option value="wildlife-safari">Wildlife Safari</option>
+                            <option value="bird-watching">Bird Watching</option>
+                            <option value="cultural-tours">Cultural Tours</option>
+                            <option value="adventure-sports">Adventure Sports</option>
+                            <option value="beach-relaxation">Beach & Relaxation</option>
+                            <option value="photography">Photography Safari</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="custGuests"><i class="fas fa-users"></i> Number of Guests *</label>
+                        <select id="custGuests" name="guests" required>
+                            <option value="">Select Guests</option>
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3-4">3-4 Guests</option>
+                            <option value="5-7">5-7 Guests</option>
+                            <option value="8+">8+ Guests</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="custClass"><i class="fas fa-star"></i> Tour Class *</label>
+                        <select id="custClass" name="tourClass" required>
+                            <option value="">Select Class</option>
+                            <option value="budget">Budget</option>
+                            <option value="standard">Standard</option>
+                            <option value="luxury">Luxury</option>
+                            <option value="premium">Premium</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="custDates"><i class="fas fa-calendar"></i> Preferred Travel Dates *</label>
+                        <input type="text" id="custDates" name="dates" placeholder="e.g., March 2026 or Flexible" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="custDuration"><i class="fas fa-clock"></i> Duration *</label>
+                        <select id="custDuration" name="duration" required>
+                            <option value="">Select Duration</option>
+                            <option value="1-3">1-3 Days</option>
+                            <option value="4-7">4-7 Days</option>
+                            <option value="8-14">8-14 Days</option>
+                            <option value="15+">15+ Days</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="custBudget"><i class="fas fa-dollar-sign"></i> Approximate Budget (USD)</label>
+                    <input type="text" id="custBudget" name="budget" placeholder="e.g., $5,000 - $10,000 or Flexible">
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="custSpecialRequests"><i class="fas fa-list"></i> Special Requests or Requirements</label>
+                    <textarea id="custSpecialRequests" name="specialRequests" rows="4" placeholder="Any dietary requirements, accessibility needs, special occasions, or specific activities you'd like to include..."></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Send Customization Request
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Packages - Afrisites Tours & Travel | Uganda Safari Packages</title>
+    <meta name="description" content="Discover our comprehensive tour packages including gorilla trekking, Big Five safaris, and cultural experiences across Uganda and Rwanda. Book your dream African adventure today.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Josefin+Sans:wght@400;500;600;700&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Packages Page Specific Styles */
+        .packages-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .packages-section {
+            padding: 5rem 0;
+        }
+
+        .package-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .category-btn {
+            background: transparent;
+            border: 2px solid #27ae60;
+            color: #27ae60;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .category-btn.active,
+        .category-btn:hover {
+            background: #27ae60;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .package-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            min-height: 300px;
+        }
+
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .package-header {
+            position: relative;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+
+        .package-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #27ae60;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .package-badge.premium {
+            background: #f39c12;
+        }
+
+        .package-header-content {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 12px;
+            padding: 1.2rem;
+            width: 100%;
+        }
+
+        .package-header h3 {
+            font-family: 'Playfair Display', serif;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .package-duration {
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .package-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .package-price {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            flex-wrap: wrap;
+        }
+
+        .price-item {
+            text-align: center;
+            flex: 1;
+            min-width: 100px;
+        }
+
+        .price-label {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 0.25rem;
+            font-weight: 500;
+        }
+
+        .price-amount {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #27ae60;
+        }
+
+        .package-summary {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+        }
+
+        .package-highlights {
+            margin-bottom: 1.2rem;
+            flex-grow: 1;
+        }
+
+        .package-highlights h4 {
+            color: #333;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .highlights-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.4rem;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .highlight-item i {
+            color: #27ae60;
+            font-size: 0.8rem;
+        }
+
+        .package-actions {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: auto;
+        }
+
+        .btn-details {
+            flex: 1;
+            background: transparent;
+            border: 2px solid #27ae60;
+            color: #27ae60;
+            padding: 0.7rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .btn-details:hover {
+            background: #27ae60;
+            color: white;
+        }
+
+        .btn-book {
+            flex: 1;
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 0.7rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .btn-book:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        /* Modal Styles */
+        .package-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            padding: 2rem;
+        }
+
+        .package-modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-header {
+            background: #27ae60;
+            color: white;
+            padding: 2rem;
+            border-radius: 20px 20px 0 0;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .itinerary-day {
+            margin-bottom: 2rem;
+            border-left: 3px solid #27ae60;
+            padding-left: 1rem;
+        }
+
+        .day-header {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: #27ae60;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .day-activities {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .pricing-section {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .pricing-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .package-card {
+                grid-template-columns: 300px 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .packages-hero {
+                height: 50vh;
+            }
+
+            .package-categories {
+                justify-content: center;
+                gap: 0.5rem;
+            }
+
+            .category-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .package-card {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+            
+            .package-header {
+                height: 200px;
+            }
+
+            .package-actions {
+                flex-direction: column;
+            }
+
+            .package-price {
+                justify-content: center;
+            }
+            
+            .highlights-list {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                margin: 1rem;
+                max-height: 85vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="index.html" style="text-decoration: none;"><span class="logo-sun">Afrisites</span><span class="logo-tour"> Tours & Travel</span></a></h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="packages.html" class="active">Packages</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="index.html#book-now" class="cta-btn">Book Now</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Packages Hero Section -->
+    <section class="packages-hero">
+        <div class="hero-content">
+            <h1>Our Tour Packages</h1>
+            <p>Discover Uganda and East Africa with our carefully crafted safari experiences</p>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="packages-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Choose Your Adventure</h2>
+                <p>From gorilla trekking to Big Five safaris, we have the perfect package for every traveler</p>
+            </div>
+
+            <!-- Package Categories -->
+            <div class="package-categories">
+                <button class="category-btn active" data-category="all">All Packages</button>
+                <button class="category-btn" data-category="multi-day">Multi-Day Safaris</button>
+                <button class="category-btn" data-category="short">Short Escapes</button>
+                <button class="category-btn" data-category="gorilla">Gorilla Trekking</button>
+                <button class="category-btn" data-category="cultural">Cultural Tours</button>
+            </div>
+
+            <!-- Packages Grid -->
+            <div class="packages-grid" id="packagesGrid">
+                
+                <!-- 5-Day Kidepo & Murchison Falls -->
+                <div id="kidepo-murchison" class="package-card premium" data-category="multi-day">
+                    <div class="package-badge premium">Premium Safari</div>
+                    <div class="package-header" style="background-image: url('https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="package-header-content">
+                            <h3>Kidepo Valley & Murchison Falls</h3>
+                            <div class="package-duration">5 Days / 4 Nights</div>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-price">
+                            <div class="price-item">
+                                <div class="price-label">Single Traveler</div>
+                                <div class="price-amount">$2,200</div>
+                            </div>
+                            <div class="price-item">
+                                <div class="price-label">Couple</div>
+                                <div class="price-amount">$3,800</div>
+                            </div>
+                            <div class="price-item">
+                                <div class="price-label">Group (8+)</div>
+                                <div class="price-amount">$1,800 pp</div>
+                            </div>
+                        </div>
+                        <div class="package-summary">
+                            Embark on a thrilling 5-day expedition through Kidepo Valley and Murchison Falls National Parks, where breathtaking landscapes, rich wildlife, and unforgettable safari adventures await.
+                        </div>
+                        <div class="package-highlights">
+                            <h4>Package Highlights</h4>
+                            <div class="highlights-list">
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Rhino tracking at Ziwa Sanctuary</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Murchison Falls viewpoint</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Kidepo Valley game drives</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Karamojong cultural visit</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>All meals & accommodation</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Professional guide</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="package-actions">
+                            <button class="btn-details" onclick="showPackageDetails('kidepo-murchison')">View Details</button>
+                            <button class="btn-book" onclick="bookPackage('Kidepo Valley & Murchison Falls')">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7-Day Uganda & Rwanda Gorilla Safari -->
+                <div id="gorilla-safari" class="package-card premium" data-category="multi-day gorilla">
+                    <div class="package-badge premium">Most Popular</div>
+                    <div class="package-header" style="background-image: url('https://images.unsplash.com/photo-1564760055775-d63b17a55c44?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="package-header-content">
+                            <h3>Uganda & Rwanda Gorilla Safari</h3>
+                            <div class="package-duration">7 Days / 6 Nights</div>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-price">
+                            <div class="price-item">
+                                <div class="price-label">Single Traveler</div>
+                                <div class="price-amount">$3,400</div>
+                            </div>
+                            <div class="price-item">
+                                <div class="price-label">Couple</div>
+                                <div class="price-amount">$5,800</div>
+                            </div>
+                            <div class="price-item">
+                                <div class="price-label">Group (8+)</div>
+                                <div class="price-amount">$2,700 pp</div>
+                            </div>
+                        </div>
+                        <div class="package-summary">
+                            Discover the wild heart of Africa on a 7-day Pristine Adventures safari through Uganda and Rwanda, featuring unforgettable gorilla trekking and diverse wildlife encounters.
+                        </div>
+                        <div class="package-highlights">
+                            <h4>Package Highlights</h4>
+                            <div class="highlights-list">
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Bwindi gorilla trekking</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Rwanda Volcanoes National Park</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Golden monkey trekking</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Lake Kivu boat cruise</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Cultural village visits</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Gorilla permits included</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="package-actions">
+                            <button class="btn-details" onclick="showPackageDetails('uganda-rwanda-gorilla')">View Details</button>
+                            <button class="btn-book" onclick="bookPackage('Uganda & Rwanda Gorilla Safari')">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5-Day Uganda Big Five -->
+                <div id="big-five-safari" class="package-card" data-category="multi-day">
+                    <div class="package-badge">Big Five</div>
+                    <div class="package-header" style="background-image: url('https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="package-header-content">
+                            <h3>Uganda Big Five Safari</h3>
+                            <div class="package-duration">5 Days / 4 Nights</div>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-price">
+                            <div class="price-item">
+                                <div class="price-label">Per Person</div>
+                                <div class="price-amount">$1,200</div>
+                            </div>
+                        </div>
+                        <div class="package-summary">
+                            Experience the thrill of tracking Africa's iconic Big Five on a 5-day, 4-night Ugandan safari, exploring stunning savannahs and vibrant national parks teeming with wildlife.
+                        </div>
+                        <div class="package-highlights">
+                            <h4>Package Highlights</h4>
+                            <div class="highlights-list">
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Rhino tracking at Ziwa</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Murchison Falls game drives</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Nile boat cruise</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Cultural community visit</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Full board accommodation</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>4WD safari vehicle</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="package-actions">
+                            <button class="btn-details" onclick="showPackageDetails('big-five')">View Details</button>
+                            <button class="btn-book" onclick="bookPackage('Uganda Big Five Safari')">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lake Bunyonyi Escape -->
+                <div class="package-card" data-category="short cultural">
+                    <div class="package-badge">Relaxation</div>
+                    <div class="package-header" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="package-header-content">
+                            <h3>Lake Bunyonyi Escape</h3>
+                            <div class="package-duration">3 Days / 2 Nights</div>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-price">
+                            <div class="price-item">
+                                <div class="price-label">Per Person</div>
+                                <div class="price-amount">Contact Us</div>
+                            </div>
+                        </div>
+                        <div class="package-summary">
+                            Embark on a refreshing 3-day getaway to the tranquil shores of Lake Bunyonyi, complemented by nearby cultural attractions and breathtaking scenic views.
+                        </div>
+                        <div class="package-highlights">
+                            <h4>Package Highlights</h4>
+                            <div class="highlights-list">
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Lakeside lodge accommodation</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Boat rides & island tours</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Village cultural visits</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Scenic viewpoint hikes</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Photography opportunities</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Full board meals</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="package-actions">
+                            <button class="btn-details" onclick="showPackageDetails('lake-bunyonyi')">View Details</button>
+                            <button class="btn-book" onclick="bookPackage('Lake Bunyonyi Escape')">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Queen Elizabeth Escape -->
+                <div class="package-card" data-category="short">
+                    <div class="package-badge">Wildlife</div>
+                    <div class="package-header" style="background-image: url('https://images.unsplash.com/photo-1549366021-9f761d040ed2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="package-header-content">
+                            <h3>Queen Elizabeth Wildlife Adventure</h3>
+                            <div class="package-duration">3 Days / 2 Nights</div>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-price">
+                            <div class="price-item">
+                                <div class="price-label">Per Person</div>
+                                <div class="price-amount">Contact Us</div>
+                            </div>
+                        </div>
+                        <div class="package-summary">
+                            Explore Queen Elizabeth National Park's rich wildlife diversity including elephants, buffaloes, and the famous Kazinga Channel boat cruise.
+                        </div>
+                        <div class="package-highlights">
+                            <h4>Package Highlights</h4>
+                            <div class="highlights-list">
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Game drives in QE Park</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Kazinga Channel boat cruise</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Hippo & crocodile viewing</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Bird watching opportunities</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Lodge accommodation</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Professional guide</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="package-actions">
+                            <button class="btn-details" onclick="showPackageDetails('queen-elizabeth')">View Details</button>
+                            <button class="btn-book" onclick="bookPackage('Queen Elizabeth Wildlife Adventure')">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More packages can be added here -->
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Package Details Modal -->
+    <div class="package-modal" id="packageModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closePackageModal()">&times;</button>
+                <h2 id="modalTitle"></h2>
+                <p id="modalDuration"></p>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Afrisites Tours & Travel</h3>
+                    <p>Your trusted partner for unforgettable African adventures. Delivering seamless, memorable, and personalized travel experiences.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/share/1AYkxr24NF/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/afrisitestours?igsh=MWF3NjZhZWJoaXg5eQ==&utm_source=ig_contact_invite" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/afrisitestours?t=BAAgxnkriuY4JzA-G13aRQ&s=08" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.tiktok.com/@afrisitestours?_t=ZM-8vpIFXoFHNP&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Popular Packages</h4>
+                    <ul>
+                        <li><a href="packages.html">Gorilla Trekking Safari</a></li>
+                        <li><a href="packages.html">Big Five Safari</a></li>
+                        <li><a href="packages.html">Kidepo & Murchison</a></li>
+                        <li><a href="packages.html">Lake Bunyonyi Escape</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> Kampala Buwate Light Close, Kira Municipality</p>
+                        <p><i class="fas fa-phone"></i> +256 393101000</p>
+                        <p><i class="fas fa-envelope"></i> Info@afrisitestoursandtravel.org</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Afrisites Tours & Travel. All rights reserved.</p>
+                <p>Powered by <a href="#" style="color: #27ae60; text-decoration: none; font-weight: 600;">Synergy Concepts Hub</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <div class="chat-button" id="chatButton">
+            <i class="fas fa-comments"></i>
+            <span>Need Help?</span>
+        </div>
+    </div>
+
+    <script src="packages.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
