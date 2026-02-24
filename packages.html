@@ -87,6 +87,7 @@
             background: rgba(0,0,0,0.5);
             backdrop-filter: blur(10px);
             border-top: 1px solid rgba(255,255,255,0.12);
+            pointer-events: none; /* display-only – must not block content below */
         }
 
         .hero-stat {
@@ -1059,7 +1060,7 @@
             .packages-hero {
                 height: auto;
                 min-height: 50vh;
-                padding: 80px 1rem 70px; /* bottom padding = stats bar height */
+                padding: 80px 1rem 70px; /* bottom padding keeps hero text above the stats bar */
                 background-attachment: scroll;
             }
 
@@ -1074,6 +1075,8 @@
 
             .hero-stats {
                 flex-wrap: wrap;
+                /* Ensure any overflow stays within the hero section */
+                max-height: none;
             }
 
             .package-categories {
@@ -1152,7 +1155,7 @@
             }
 
             .packages-section {
-                padding: 2.5rem 0 3rem;
+                padding: 5.5rem 0 3rem; /* extra top clearance for the 2-row hero-stats bar on small phones */
             }
 
             .package-content {
@@ -1229,11 +1232,11 @@
 
             <!-- Package Categories -->
             <div class="package-categories">
-                <button class="category-btn active" data-category="all"><i class="fas fa-globe-africa"></i> All Packages</button>
-                <button class="category-btn" data-category="multi-day"><i class="fas fa-route"></i> Multi-Day Safaris</button>
-                <button class="category-btn" data-category="short"><i class="fas fa-bolt"></i> Short Escapes</button>
-                <button class="category-btn" data-category="gorilla"><i class="fas fa-paw"></i> Gorilla Trekking</button>
-                <button class="category-btn" data-category="cultural"><i class="fas fa-landmark"></i> Cultural Tours</button>
+                <button type="button" class="category-btn active" data-category="all" onclick="filterPackages('all')"><i class="fas fa-globe-africa"></i> All Packages</button>
+                <button type="button" class="category-btn" data-category="multi-day" onclick="filterPackages('multi-day')"><i class="fas fa-route"></i> Multi-Day Safaris</button>
+                <button type="button" class="category-btn" data-category="short" onclick="filterPackages('short')"><i class="fas fa-bolt"></i> Short Escapes</button>
+                <button type="button" class="category-btn" data-category="gorilla" onclick="filterPackages('gorilla')"><i class="fas fa-paw"></i> Gorilla Trekking</button>
+                <button type="button" class="category-btn" data-category="cultural" onclick="filterPackages('cultural')"><i class="fas fa-landmark"></i> Cultural Tours</button>
             </div>
 
             <!-- Results bar -->

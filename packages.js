@@ -1,4 +1,63 @@
 // Packages page functionality
+
+// ─── Global filter function (callable from inline onclick or event delegation) ───
+function filterPackages(category) {
+    var buttons = document.querySelectorAll('.category-btn');
+    var cards   = document.querySelectorAll('.package-card');
+
+    // Update active button
+    buttons.forEach(function(btn) {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-category') === category) {
+            btn.classList.add('active');
+        }
+    });
+
+    // Show / hide cards
+    var visibleCount = 0;
+    cards.forEach(function(card) {
+        var cardCategories = (card.getAttribute('data-category') || '').split(' ');
+
+        if (category === 'all' || cardCategories.indexOf(category) !== -1) {
+            card.style.display = 'grid';
+            card.style.opacity = '1';
+            card.style.transform = 'none';
+            card.style.animation = 'none';
+            void card.offsetWidth;               // force reflow
+            card.style.animation = 'fadeIn 0.5s ease';
+            visibleCount++;
+        } else {
+            card.style.display = 'none';
+        }
+    });
+
+    // Update counter
+    var counter = document.getElementById('visibleCount');
+    if (counter) counter.textContent = visibleCount;
+}
+// Expose globally so inline onclick can reach it
+window.filterPackages = filterPackages;
+
+// ─── Event-delegation fallback on the pill container ───
+(function() {
+    function attachDelegation() {
+        var container = document.querySelector('.package-categories');
+        if (!container) return;
+        container.addEventListener('click', function(e) {
+            var btn = e.target.closest('.category-btn');
+            if (!btn) return;
+            var cat = btn.getAttribute('data-category');
+            if (cat) filterPackages(cat);
+        });
+    }
+    // Attach as soon as the DOM is ready – two entry points for reliability
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', attachDelegation);
+    } else {
+        attachDelegation();   // DOM already parsed
+    }
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
     // Apply URL parameter filters on page load
     applyURLFilters();
@@ -14,34 +73,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Package filtering
+    // Legacy per-button listeners (kept for belt-and-suspenders reliability)
     const categoryButtons = document.querySelectorAll('.category-btn');
     const packageCards = document.querySelectorAll('.package-card');
     
     categoryButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // Remove active class from all buttons
-            categoryButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
-            this.classList.add('active');
-            
-            const category = this.getAttribute('data-category');
-            
-            packageCards.forEach(card => {
-                const cardCategories = card.getAttribute('data-category').split(' ');
-                
-                if (category === 'all' || cardCategories.includes(category)) {
-                    card.style.display = 'grid';
-                    card.style.opacity = '1';
-                    card.style.transform = 'none';
-                    card.style.animation = 'fadeIn 0.5s ease';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-
-            // Update visible count
-            updateVisibleCount();
+            filterPackages(this.getAttribute('data-category'));
         });
     });
 

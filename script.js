@@ -550,8 +550,15 @@ function showNotification(message, type = 'info') {
 
 // Scroll animations
 function animateOnScroll() {
-    const elements = document.querySelectorAll('.service-card, .package-card, .testimonial-card');
-    
+    // On the packages page, skip .package-card — packages.js handles its own filter/reveal logic
+    const isPackagesPage = !!document.querySelector('.packages-hero');
+    const selector = isPackagesPage
+        ? '.service-card, .testimonial-card'
+        : '.service-card, .package-card, .testimonial-card';
+
+    const elements = document.querySelectorAll(selector);
+    if (!elements.length) return;
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
