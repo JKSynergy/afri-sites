@@ -2,6 +2,17 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Apply URL parameter filters on page load
     applyURLFilters();
+
+    // Auto-open modal if a package hash is in the URL (e.g. from index.html "View Details")
+    if (window.location.hash) {
+        const hashId = window.location.hash.slice(1);
+        const target = document.getElementById(hashId);
+        if (target && target.classList.contains('package-card')) {
+            setTimeout(function() {
+                window.showPackageDetails(hashId);
+            }, 300);
+        }
+    }
     
     // Package filtering
     const categoryButtons = document.querySelectorAll('.category-btn');
