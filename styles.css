@@ -118,6 +118,12 @@ body {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    padding: 10px;
+    margin: -10px;
+    z-index: 1100;
+    position: relative;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .hamburger span {
@@ -2412,6 +2418,10 @@ body {
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
+        min-width: 44px;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
     }
 
     /* Hide the desktop Book Now pill on mobile - it's accessible via the nav menu */

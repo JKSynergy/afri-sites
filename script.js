@@ -131,12 +131,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Close on outside click
-    window.onclick = function(event) {
-        if (event.target == modal) {
+    document.addEventListener('click', function(event) {
+        if (modal && event.target === modal) {
             modal.style.display = 'none';
             document.body.style.overflow = 'auto';
         }
-    }
+    });
     
     // Handle form submission
     if (customizeForm) {
