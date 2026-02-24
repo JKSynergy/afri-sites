@@ -93,7 +93,7 @@ body {
     color: #FFC107;
 }
 
-.search-btn {
+.search-btn, .cta-btn {
     background: #FFC107;
     color: #2C3E50;
     padding: 0.8rem 2rem;
@@ -108,7 +108,7 @@ body {
     cursor: pointer;
 }
 
-.search-btn:hover {
+.search-btn:hover, .cta-btn:hover {
     background: #FFB300;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(255, 193, 7, 0.3);
