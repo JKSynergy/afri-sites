@@ -601,7 +601,7 @@ body {
 
 .value-tags {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 0.5rem;
 }
 
@@ -1349,7 +1349,7 @@ body {
 
 .packages-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
     gap: 2rem;
     margin-bottom: 3rem;
 }
@@ -1663,8 +1663,6 @@ body {
     font-size: 1rem;
     box-shadow: 0 4px 14px rgba(39,174,96,0.35);
 }
-
-.contact-item-body {}
 
 .contact-item h4 {
     color: #1a1a1a;
@@ -2264,6 +2262,38 @@ body {
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
     }
+
+    .nav-container {
+        padding: 0 20px;
+    }
+
+    .nav-menu {
+        gap: 1.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-content {
+        gap: 2rem;
+    }
+
+    .contact-content {
+        gap: 2rem;
+    }
+
+    .packages-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -2691,6 +2721,84 @@ body {
         max-width: 100%;
         height: auto;
     }
+
+    /* iOS: disable fixed background attachment (causes rendering bugs on iOS Safari) */
+    .stats-section {
+        background-attachment: scroll;
+    }
+
+    /* iOS: prevent auto-zoom on focused form inputs (requires min font-size 16px) */
+    input,
+    select,
+    textarea {
+        font-size: 16px;
+    }
+
+    /* Nav container height and padding on mobile */
+    .nav-container {
+        padding: 0 1rem;
+        height: 65px;
+    }
+
+    .nav-menu {
+        top: 65px;
+    }
+
+    /* About CTA strip - stack vertically */
+    .about-cta {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .about-cta-buttons {
+        justify-content: center;
+    }
+
+    /* Book now section */
+    .book-content h2 {
+        font-size: 2rem;
+    }
+
+    .book-content p {
+        font-size: 1rem;
+    }
+
+    /* Package card padding */
+    .package-content {
+        padding: 1.25rem;
+    }
+
+    /* Slider dots above search bar */
+    .slider-dots {
+        bottom: auto;
+        top: auto;
+        position: static;
+        transform: none;
+        justify-content: center;
+        margin-top: 1rem;
+        display: none;
+    }
+
+    /* Slider controls smaller on mobile */
+    .slider-controls {
+        padding: 0 0.5rem;
+    }
+
+    /* Section header padding */
+    .section-header {
+        padding: 0 1rem;
+    }
+
+    /* Gallery responsive */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Blog grid */
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 480px) {
@@ -2777,6 +2885,94 @@ body {
 
     .testimonial-text {
         font-size: 0.95rem;
+    }
+
+    /* Stats grid: single column on small phones */
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .stats-section {
+        padding: 3rem 0;
+    }
+
+    /* Contact items: prevent horizontal overflow */
+    .contact-item {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .contact-item:hover {
+        transform: none;
+    }
+
+    /* Tighter footer on small screens */
+    .footer {
+        padding: 2.5rem 0 1rem;
+    }
+
+    /* About highlights: single column */
+    .about-highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .ah-card--wide {
+        grid-column: span 1;
+    }
+
+    /* Package grid always single column */
+    .packages-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Chat widget tighter on small screens */
+    .chat-widget {
+        bottom: 1rem;
+        right: 1rem;
+    }
+}
+
+/* Extra-small phones (360px and below) */
+@media (max-width: 360px) {
+    .hero-content h1 {
+        font-size: 1.6rem;
+    }
+
+    .nav-logo h2 {
+        font-size: 1rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.4rem;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .search-btn,
+    .customize-btn {
+        font-size: 0.85rem;
+        padding: 0.75rem 1.25rem;
+    }
+
+    .package-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 0 12px;
+    }
+
+    .contact-form form {
+        padding: 0 1rem 1rem;
+    }
+
+    .contact-form-header {
+        padding: 1.25rem 1rem 0;
     }
 }
 
