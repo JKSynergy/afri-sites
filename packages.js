@@ -73,7 +73,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             ],
             pricing: [
-                { type: 'Per Person', price: 'Contact Us', includes: 'Gorilla trekking permit, lodge accommodation (full board), private guide, driver/vehicle, park entry fees, and border crossing assistance.' }
+                { type: 'Solo (1 room)', price: '$1,750', includes: 'Park fees, gorilla permit, lodge accommodation (full board), private guide/driver, 4WD vehicle, all transportation, and roundtrip airport transfer.' },
+                { type: '2+ people (per person)', price: '$1,580', includes: 'Park fees, gorilla permit, shared lodge accommodation (full board), private guide/driver, 4WD vehicle, all transportation, and roundtrip airport transfer.' }
             ]
         },
         'gorilla-3day-batwa': {
@@ -105,7 +106,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             ],
             pricing: [
-                { type: 'Per Person', price: 'Contact Us', includes: 'Gorilla trekking permit, Batwa cultural experience, full board lodge accommodation with private facilities, professional guide, and private 4WD vehicle.' }
+                { type: 'Solo (1 room)', price: '$1,640', includes: 'Park fees, gorilla permit, Batwa cultural experience, full board lodge accommodation, private guide/driver, 4WD vehicle, and all transportation.' },
+                { type: '2 people (per person)', price: '$1,530', includes: 'Park fees, gorilla permit, Batwa cultural experience, shared lodging (full board), private guide/driver, 4WD vehicle, and all transportation.' },
+                { type: '3 people (per person)', price: '$1,430', includes: 'Park fees, gorilla permit, Batwa experience, shared lodging (full board), private guide/driver, 4WD vehicle, and all transportation.' },
+                { type: '4+ people (per person)', price: '$1,330', includes: 'Park fees, gorilla permit, Batwa experience, shared lodging (full board), private guide/driver, 4WD vehicle, and all transportation.' }
             ]
         },
         'gorilla-chimp-4day': {
@@ -144,7 +148,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             ],
             pricing: [
-                { type: 'Per Person', price: 'Contact Us', includes: 'Gorilla permit, chimp trekking permit, mid-range lodge & hotel accommodation, meals, private 4WD vehicle, professional driver/guide, and all park entry fees.' }
+                { type: 'Solo (1 room)', price: '$2,145', includes: 'Park fees, gorilla & chimp permits, mid-range lodge accommodation (full board), private guide/driver, 4WD vehicle, and all transportation.' },
+                { type: '2 people (per person)', price: '$1,705', includes: 'Park fees, gorilla & chimp permits, shared accommodation (full board), private guide/driver, 4WD vehicle, and all transportation.' },
+                { type: '3 people (per person)', price: '$1,672', includes: 'Park fees, gorilla & chimp permits, shared accommodation (full board), private guide/driver, 4WD vehicle, and all transportation.' },
+                { type: '4 people (per person)', price: '$1,639', includes: 'Park fees, gorilla & chimp permits, shared accommodation (full board), private guide/driver, 4WD vehicle, and all transportation.' },
+                { type: '5 people (per person)', price: '$1,595', includes: 'Park fees, gorilla & chimp permits, shared accommodation (full board), private guide/driver, 4WD vehicle, and all transportation.' },
+                { type: '6 people (per person)', price: '$1,540', includes: 'Park fees, gorilla & chimp permits, shared accommodation (full board), private guide/driver, 4WD vehicle, and all transportation.' }
             ]
         },
         'primate-4day-rw': {
@@ -182,7 +191,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             ],
             pricing: [
-                { type: 'Per Person', price: 'Contact Us', includes: 'Gorilla & chimp trekking permits, mid-range lodge accommodation (full board), private guide/driver, private 4WD vehicle, and all park/border fees.' }
+                { type: 'Solo (1 room)', price: '$3,402', includes: 'Park fees, gorilla & chimp permits, mid-range lodge accommodation (full board), private guide/driver, 4WD vehicle, all transportation, and border fees.' },
+                { type: '2 people (per person)', price: '$2,518', includes: 'Park fees, gorilla & chimp permits, shared accommodation (full board), private guide/driver, 4WD vehicle, all transportation, and border fees.' },
+                { type: '3 people (per person)', price: '$2,224', includes: 'Park fees, gorilla & chimp permits, shared accommodation (full board), private guide/driver, 4WD vehicle, all transportation, and border fees.' },
+                { type: '4 people (per person)', price: '$2,072', includes: 'Park fees, gorilla & chimp permits, shared accommodation (full board), private guide/driver, 4WD vehicle, all transportation, and border fees.' },
+                { type: '5 people (per person)', price: '$1,997', includes: 'Park fees, gorilla & chimp permits, shared accommodation (full board), private guide/driver, 4WD vehicle, all transportation, and border fees.' },
+                { type: '6 people (per person)', price: '$1,939', includes: 'Park fees, gorilla & chimp permits, shared accommodation (full board), private guide/driver, 4WD vehicle, all transportation, and border fees.' }
             ]
         },
         'gorilla-wildlife-5day': {
@@ -221,7 +235,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             ],
             pricing: [
-                { type: 'Per Person', price: 'Contact Us', includes: 'Gorilla trekking permit, mid-range lodges (full board), private 4WD vehicle with guide, Kazinga Channel boat cruise, walking safari fees, and all park entry fees.' }
+                { type: 'Solo (1 room)', price: '$2,891', includes: 'Gorilla & chimp permits, mid-range lodge accommodation (full board), private 4WD vehicle with guide, Kazinga Channel boat cruise, walking safari, and all park entry fees.' },
+                { type: '2 people (per person)', price: '$2,090', includes: 'Gorilla & chimp permits, shared accommodation (full board), private 4WD vehicle with guide, Kazinga Channel cruise, walking safari, and all park entry fees.' },
+                { type: '3 people (per person)', price: '$1,891', includes: 'Gorilla & chimp permits, shared accommodation (full board), private 4WD vehicle with guide, Kazinga Channel cruise, walking safari, and all park entry fees.' },
+                { type: '4 people (per person)', price: '$1,782', includes: 'Gorilla & chimp permits, shared accommodation (full board), private 4WD vehicle with guide, Kazinga Channel cruise, walking safari, and all park entry fees.' },
+                { type: '5 people (per person)', price: '$1,713', includes: 'Gorilla & chimp permits, shared accommodation (full board), private 4WD vehicle with guide, Kazinga Channel cruise, walking safari, and all park entry fees.' },
+                { type: '6 people (per person)', price: '$1,650', includes: 'Gorilla & chimp permits, shared accommodation (full board), private 4WD vehicle with guide, Kazinga Channel cruise, walking safari, and all park entry fees.' }
             ]
         },
         'flying-6day': {
@@ -277,7 +296,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             ],
             pricing: [
-                { type: 'Per Person', price: 'Contact Us', includes: '3 internal charter flights, gorilla & chimp trekking permits, mid-range lodge accommodation (full board), game drives, Kazinga Channel cruise, and all park entry fees.' }
+                { type: 'Solo (1 room)', price: '$4,653', includes: '3 internal charter flights, gorilla & chimp permits, mid-range lodge accommodation (full board), game drives, Kazinga Channel cruise, and all park entry fees.' },
+                { type: '2 people (per person)', price: '$3,625', includes: '3 internal charter flights, gorilla & chimp permits, shared lodging (full board), game drives, Kazinga Channel cruise, and all park entry fees.' },
+                { type: '3 people (per person)', price: '$3,388', includes: '3 internal charter flights, gorilla & chimp permits, shared lodging (full board), game drives, Kazinga Channel cruise, and all park entry fees.' },
+                { type: '4 people (per person)', price: '$3,245', includes: '3 internal charter flights, gorilla & chimp permits, shared lodging (full board), game drives, Kazinga Channel cruise, and all park entry fees.' },
+                { type: '5 people (per person)', price: '$3,190', includes: '3 internal charter flights, gorilla & chimp permits, shared lodging (full board), game drives, Kazinga Channel cruise, and all park entry fees.' },
+                { type: '6 people (per person)', price: '$3,119', includes: '3 internal charter flights, gorilla & chimp permits, shared lodging (full board), game drives, Kazinga Channel cruise, and all park entry fees.' }
             ]
         },
         'chimps-gorilla-big5-7day': {
@@ -331,7 +355,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             ],
             pricing: [
-                { type: 'Per Person', price: 'Contact Us', includes: 'Gorilla & chimp trekking permits, mid-range lodge accommodation (full board), private 4WD safari vehicle with guide, game drives, boat cruise, and all park entry fees.' }
+                { type: 'Group of 5 (per person)', price: '$3,729', includes: 'Gorilla & chimp permits, mid-range lodge accommodation (full board), private 4WD safari vehicle with guide, game drives, boat cruise, and all park entry fees.' }
             ]
         },
         'rwanda-7day': {
@@ -376,7 +400,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             ],
             pricing: [
-                { type: 'Per Person', price: 'Contact Us', includes: 'Golden monkey tracking permit, gorilla trekking permit, chimp trekking permit, mid-range lodge accommodation (full board), private guide/driver, 4WD vehicle, game drives, boat cruise, and all park/border fees.' }
+                { type: 'Solo (1 room)', price: '$4,862', includes: 'Golden monkey tracking, gorilla & chimp permits, mid-range lodge accommodation (full board), private guide/driver, 4WD vehicle, game drives, boat cruise, and all park/border fees.' },
+                { type: '2 people (per person)', price: '$3,190', includes: 'Golden monkey tracking, gorilla & chimp permits, shared lodging (full board), private guide/driver, 4WD vehicle, game drives, boat cruise, and all park/border fees.' },
+                { type: '3 people (per person)', price: '$2,998', includes: 'Golden monkey tracking, gorilla & chimp permits, shared lodging (full board), private guide/driver, 4WD vehicle, game drives, boat cruise, and all park/border fees.' },
+                { type: '4 people (per person)', price: '$2,849', includes: 'Golden monkey tracking, gorilla & chimp permits, shared lodging (full board), private guide/driver, 4WD vehicle, game drives, boat cruise, and all park/border fees.' },
+                { type: '5 people (per person)', price: '$2,783', includes: 'Golden monkey tracking, gorilla & chimp permits, shared lodging (full board), private guide/driver, 4WD vehicle, game drives, boat cruise, and all park/border fees.' },
+                { type: '6 people (per person)', price: '$2,635', includes: 'Golden monkey tracking, gorilla & chimp permits, shared lodging (full board), private guide/driver, 4WD vehicle, game drives, boat cruise, and all park/border fees.' }
             ]
         },
         'uganda-8day': {
@@ -428,7 +457,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             ],
             pricing: [
-                { type: 'Per Person', price: 'Contact Us', includes: 'Complimentary in-vehicle Wi-Fi, gorilla & chimp trekking permits, mid-range lodge accommodation (full board), private 4WD safari vehicle with guide, Nile boat cruise, Kazinga boat cruise, rhino tracking, and all park entry fees.' }
+                { type: '2+ people (per person)', price: '$3,245', includes: 'Gorilla & chimp permits, in-vehicle Wi-Fi, mid-range lodge accommodation (full board), private 4WD safari vehicle with guide, Nile & Kazinga boat cruises, rhino tracking, and all park entry fees.' }
             ]
         },
         'uganda-9day': {
@@ -479,7 +508,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             ],
             pricing: [
-                { type: 'Per Person', price: 'Contact Us', includes: 'Gorilla & chimp trekking permits, Batwa cultural experience, mid-range lodge accommodation (full board), private 4WD safari vehicle with guide, all game drives, boat cruise, canoe tour, and park entry fees.' }
+                { type: 'Solo (1 room)', price: '$3,630', includes: 'Gorilla & chimp permits, Batwa cultural experience, mid-range lodge accommodation (full board), private 4WD safari vehicle with guide, all game drives, boat cruise, canoe tour, and park entry fees.' },
+                { type: '2+ people (per person)', price: '$3,135', includes: 'Gorilla & chimp permits, Batwa cultural experience, shared lodging (full board), private 4WD safari vehicle with guide, all game drives, boat cruise, canoe tour, and park entry fees.' }
             ]
         },
         'gorilla-chimp-big5-10day': {
@@ -530,7 +560,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             ],
             pricing: [
-                { type: 'Per Person', price: 'Contact Us', includes: 'Gorilla & chimp trekking permits, rhino tracking, mid-range lodge accommodation (full board), private 4WD safari vehicle with guide, Nile boat cruise, Kazinga Channel cruise, and all park entry fees.' }
+                { type: 'Solo (1 room)', price: '$4,950', includes: 'Gorilla & chimp permits, rhino tracking, mid-range lodge accommodation (full board), private 4WD safari vehicle with guide, Nile & Kazinga boat cruises, and all park entry fees.' },
+                { type: '2+ people (per person)', price: '$3,993', includes: 'Gorilla & chimp permits, rhino tracking, shared lodging (full board), private 4WD safari vehicle with guide, Nile & Kazinga boat cruises, and all park entry fees.' }
             ]
         },
         'primates-big5-11day': {
@@ -709,7 +740,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             ],
             pricing: [
-                { type: 'Per Person', price: 'Contact Us', includes: 'Gorilla & chimp trekking permits, golden monkey tracking permit, rhino tracking, mid-range lodge accommodation (full board), private 4WD vehicle with guide, Nile boat cruise, Kazinga Channel cruise, and all park entry fees.' }
+                { type: 'Solo (1 room)', price: '$5,600', includes: 'Gorilla & chimp permits, golden monkey tracking, rhino tracking, mid-range lodge accommodation (full board), private 4WD vehicle with guide, Nile & Kazinga boat cruises, and all park entry fees.' },
+                { type: '2 people (per person)', price: '$3,950', includes: 'Gorilla & chimp permits, golden monkey tracking, rhino tracking, shared lodging (full board), private 4WD vehicle with guide, Nile & Kazinga boat cruises, and all park entry fees.' },
+                { type: '3 people (per person)', price: '$3,785', includes: 'Gorilla & chimp permits, golden monkey tracking, rhino tracking, shared lodging (full board), private 4WD vehicle with guide, Nile & Kazinga boat cruises, and all park entry fees.' },
+                { type: '4 people (per person)', price: '$3,500', includes: 'Gorilla & chimp permits, golden monkey tracking, rhino tracking, shared lodging (full board), private 4WD vehicle with guide, Nile & Kazinga boat cruises, and all park entry fees.' },
+                { type: '5 people (per person)', price: '$3,433', includes: 'Gorilla & chimp permits, golden monkey tracking, rhino tracking, shared lodging (full board), private 4WD vehicle with guide, Nile & Kazinga boat cruises, and all park entry fees.' },
+                { type: '6 people (per person)', price: '$3,235', includes: 'Gorilla & chimp permits, golden monkey tracking, rhino tracking, shared lodging (full board), private 4WD vehicle with guide, Nile & Kazinga boat cruises, and all park entry fees.' }
             ]
         },
         'rwanda-uganda-14day': {
@@ -780,7 +816,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             ],
             pricing: [
-                { type: 'Per Person', price: 'Contact Us', includes: 'Gorilla trekking permit, chimp trekking permit, rhino tracking, mid-range lodge accommodation throughout (full board), private 4WD safari vehicle with professional guide, Nile boat cruise, Kazinga Channel cruise, Akagera boat cruise, and all park/border fees.' }
+                { type: 'Solo (1 room)', price: '$6,600', includes: 'Gorilla & chimp permits, rhino tracking, mid-range lodge accommodation throughout (full board), private 4WD safari vehicle with professional guide, Nile, Kazinga & Akagera boat cruises, and all park/border fees.' },
+                { type: '2+ people (per person)', price: '$5,500', includes: 'Gorilla & chimp permits, rhino tracking, shared lodging throughout (full board), private 4WD safari vehicle with professional guide, Nile, Kazinga & Akagera boat cruises, and all park/border fees.' }
             ]
         },
         'kidepo-murchison': {
