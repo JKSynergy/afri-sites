@@ -32,6 +32,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 if (category === 'all' || cardCategories.includes(category)) {
                     card.style.display = 'grid';
+                    card.style.opacity = '1';
+                    card.style.transform = 'none';
                     card.style.animation = 'fadeIn 0.5s ease';
                 } else {
                     card.style.display = 'none';
@@ -1249,27 +1251,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Animation on scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px 50px 0px'
-    };
-
-    const packageObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    packageCards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        packageObserver.observe(card);
-    });
+    // Cards are always visible — no scroll-based hide/show
+    // (opacity animation was causing cards to remain invisible after filter toggle)
 });
 
 // Apply URL parameter filters
