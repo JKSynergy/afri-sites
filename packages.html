@@ -420,8 +420,8 @@
         .package-modal {
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.75);
-            backdrop-filter: blur(4px);
+            background: rgba(10,20,30,0.82);
+            backdrop-filter: blur(6px);
             display: none;
             justify-content: center;
             align-items: center;
@@ -431,122 +431,540 @@
 
         .package-modal.active {
             display: flex;
-            animation: modalIn 0.3s ease;
+            animation: modalIn 0.3s cubic-bezier(0.34,1.56,0.64,1);
         }
 
         @keyframes modalIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to   { opacity: 1; transform: scale(1); }
+            from { opacity: 0; transform: scale(0.92) translateY(20px); }
+            to   { opacity: 1; transform: scale(1) translateY(0); }
         }
 
         .modal-content {
             background: #fff;
-            border-radius: 20px;
+            border-radius: 22px;
             width: 100%;
-            max-width: 860px;
-            max-height: 90vh;
+            max-width: 880px;
+            max-height: 92vh;
             overflow-y: auto;
             position: relative;
-            box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+            box-shadow: 0 40px 100px rgba(0,0,0,0.45);
+            scrollbar-width: thin;
+            scrollbar-color: #c8e6c9 transparent;
         }
 
+        .modal-content::-webkit-scrollbar { width: 6px; }
+        .modal-content::-webkit-scrollbar-track { background: transparent; }
+        .modal-content::-webkit-scrollbar-thumb { background: #c8e6c9; border-radius: 3px; }
+
         .modal-header {
-            background: linear-gradient(135deg, #1e8449 0%, #27ae60 60%, #2ecc71 100%);
+            background: linear-gradient(135deg, #145a32 0%, #1e8449 45%, #27ae60 100%);
             color: white;
-            padding: 2rem 2rem 1.6rem;
-            border-radius: 20px 20px 0 0;
+            padding: 2rem 2.5rem 1.75rem;
+            border-radius: 22px 22px 0 0;
             position: sticky;
             top: 0;
             z-index: 10;
+            overflow: hidden;
+        }
+
+        .modal-header::before {
+            content: '';
+            position: absolute;
+            top: -40px; right: -40px;
+            width: 180px; height: 180px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.07);
+            pointer-events: none;
+        }
+
+        .modal-header::after {
+            content: '';
+            position: absolute;
+            bottom: -60px; left: 30%;
+            width: 260px; height: 260px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            pointer-events: none;
         }
 
         .modal-header h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 700;
-            padding-right: 2.5rem;
+            padding-right: 3rem;
             line-height: 1.3;
+            position: relative;
+            z-index: 1;
         }
 
         .modal-header p {
-            font-size: 0.9rem;
-            opacity: 0.85;
-            margin-top: 0.3rem;
+            font-size: 0.88rem;
+            opacity: 0.8;
+            margin-top: 0.35rem;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
         }
 
         .modal-close {
             position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: rgba(255,255,255,0.2);
-            border: none;
+            top: 1.1rem;
+            right: 1.1rem;
+            background: rgba(255,255,255,0.18);
+            border: 1px solid rgba(255,255,255,0.25);
             color: white;
-            width: 36px;
-            height: 36px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
-            font-size: 1.3rem;
+            font-size: 1rem;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: background 0.2s;
+            transition: all 0.2s;
+            z-index: 2;
         }
 
         .modal-close:hover {
-            background: rgba(255,255,255,0.35);
+            background: rgba(255,255,255,0.32);
+            transform: rotate(90deg);
         }
 
         .modal-body {
-            padding: 2rem;
+            padding: 2rem 2.5rem;
+        }
+
+        /* Itinerary */
+        .modal-section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #145a32;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .modal-section-title i {
+            color: #27ae60;
+            font-size: 1rem;
         }
 
         .itinerary-day {
-            margin-bottom: 1.75rem;
+            margin-bottom: 1rem;
             padding: 1rem 1.25rem;
-            border-left: 4px solid #27ae60;
-            background: #f9fbfa;
-            border-radius: 0 10px 10px 0;
+            border-left: 3px solid #27ae60;
+            background: #f4fbf7;
+            border-radius: 0 12px 12px 0;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .itinerary-day:hover {
+            border-left-color: #1e8449;
+            background: #ecf7f1;
         }
 
         .day-header {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.05rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.82rem;
             color: #1e8449;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
             font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
         }
 
         .day-activities {
-            color: #555;
-            line-height: 1.7;
-            font-size: 0.92rem;
+            color: #4a5568;
+            line-height: 1.75;
+            font-size: 0.9rem;
         }
 
+        /* Pricing */
         .pricing-section {
-            background: #edf7f1;
-            border: 1px solid #c3e6cb;
+            background: linear-gradient(135deg, #f0faf5, #e8f5ee);
+            border: 1px solid #b2dfdb;
             padding: 1.5rem;
-            border-radius: 14px;
-            margin: 1.5rem 0;
+            border-radius: 16px;
+            margin: 1.75rem 0;
         }
 
-        .pricing-section h3 {
-            font-family: 'Playfair Display', serif;
-        }
+        .pricing-section .modal-section-title { margin-bottom: 1rem; }
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
             gap: 1rem;
-            margin-top: 1rem;
+            margin-top: 0.75rem;
         }
 
         .pricing-item {
             background: white;
-            padding: 1.1rem;
-            border-radius: 10px;
+            padding: 1.25rem;
+            border-radius: 12px;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 3px 12px rgba(39,174,96,0.1);
+            border-top: 3px solid #27ae60;
+        }
+
+        .pricing-item-type {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: #888;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-item-price {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #1e8449;
+            margin-bottom: 0.4rem;
+        }
+
+        .pricing-item-includes {
+            font-size: 0.82rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Inclusions / Exclusions / Premium */
+        .modal-list-section {
+            margin-top: 1.5rem;
+            padding: 1.25rem 1.5rem;
+            border-radius: 14px;
+        }
+
+        .modal-list-section.inclusions {
+            background: #f4fbf7;
+            border: 1px solid #c8e6c9;
+        }
+
+        .modal-list-section.exclusions {
+            background: #fdf9f0;
+            border: 1px solid #f5deb3;
+        }
+
+        .modal-list-section.premium {
+            background: #f7f4fd;
+            border: 1px solid #d4b8f5;
+        }
+
+        .modal-list-section ul {
+            list-style: none;
+            margin-top: 0.75rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 0.4rem 1.5rem;
+        }
+
+        .modal-list-section ul li {
+            font-size: 0.9rem;
+            color: #4a5568;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            line-height: 1.5;
+            padding: 0.2rem 0;
+        }
+
+        .modal-list-section ul li::before {
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .modal-list-section.inclusions ul li::before {
+            content: '\f00c';
+            color: #27ae60;
+            font-size: 0.75rem;
+        }
+
+        .modal-list-section.exclusions ul li::before {
+            content: '\f00d';
+            color: #e67e22;
+            font-size: 0.75rem;
+        }
+
+        .modal-list-section.premium ul li::before {
+            content: '\f005';
+            color: #9b59b6;
+            font-size: 0.72rem;
+        }
+
+        /* Modal CTA */
+        .modal-cta {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding-top: 1.75rem;
+            border-top: 1px solid #e8f5ee;
+            flex-wrap: wrap;
+        }
+
+        .modal-cta-book {
+            flex: 1;
+            min-width: 180px;
+            background: linear-gradient(135deg, #1e8449, #27ae60);
+            color: white;
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 18px rgba(39,174,96,0.35);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .modal-cta-book:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(39,174,96,0.45);
+        }
+
+        .modal-cta-contact {
+            flex: 1;
+            min-width: 180px;
+            background: transparent;
+            color: #1e8449;
+            border: 2px solid #27ae60;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .modal-cta-contact:hover {
+            background: #f0faf5;
+        }
+
+        /* Book Now Modal */
+        .book-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(10,20,30,0.82);
+            backdrop-filter: blur(6px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10002;
+            padding: 1.5rem;
+            animation: modalIn 0.3s cubic-bezier(0.34,1.56,0.64,1);
+        }
+
+        .book-modal-card {
+            background: white;
+            border-radius: 22px;
+            width: 100%;
+            max-width: 480px;
+            overflow: hidden;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.4);
+            position: relative;
+        }
+
+        .book-modal-header {
+            background: linear-gradient(135deg, #145a32, #27ae60);
+            padding: 2rem 2rem 1.75rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-modal-header::before {
+            content: '';
+            position: absolute;
+            top: -30px; right: -30px;
+            width: 130px; height: 130px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+        }
+
+        .book-modal-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .book-modal-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            position: relative;
+        }
+
+        .book-modal-header p {
+            font-size: 0.88rem;
+            opacity: 0.8;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        .book-modal-close {
+            position: absolute;
+            top: 1rem; right: 1rem;
+            background: rgba(255,255,255,0.18);
+            border: 1px solid rgba(255,255,255,0.25);
+            color: white;
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            z-index: 2;
+        }
+
+        .book-modal-close:hover {
+            background: rgba(255,255,255,0.3);
+            transform: rotate(90deg);
+        }
+
+        .book-modal-body {
+            padding: 1.75rem 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .book-modal-option {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            border-radius: 14px;
+            text-decoration: none;
+            transition: all 0.25s;
+            border: 1.5px solid transparent;
+        }
+
+        .book-modal-option.call {
+            background: #f4fbf7;
+            border-color: #c8e6c9;
+            color: #1e8449;
+        }
+
+        .book-modal-option.call:hover {
+            background: #e8f5ee;
+            border-color: #27ae60;
+            transform: translateX(4px);
+        }
+
+        .book-modal-option.email {
+            background: #f0f6ff;
+            border-color: #c5d9f5;
+            color: #2563eb;
+        }
+
+        .book-modal-option.email:hover {
+            background: #e0ecff;
+            border-color: #93b8f5;
+            transform: translateX(4px);
+        }
+
+        .book-modal-option.whatsapp {
+            background: #f2fbf4;
+            border-color: #b8e8c2;
+            color: #128c7e;
+        }
+
+        .book-modal-option.whatsapp:hover {
+            background: #e2f7e6;
+            border-color: #25d366;
+            transform: translateX(4px);
+        }
+
+        .book-modal-option.form {
+            background: #fdf9f0;
+            border-color: #f5deb3;
+            color: #b45309;
+        }
+
+        .book-modal-option.form:hover {
+            background: #fef3db;
+            border-color: #f0c060;
+            transform: translateX(4px);
+        }
+
+        .book-opt-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .book-modal-option.call .book-opt-icon { background: #d4efdf; color: #1e8449; }
+        .book-modal-option.email .book-opt-icon { background: #dbeafe; color: #2563eb; }
+        .book-modal-option.whatsapp .book-opt-icon { background: #d5f5de; color: #128c7e; }
+        .book-modal-option.form .book-opt-icon { background: #fde8b4; color: #b45309; }
+
+        .book-opt-text strong {
+            display: block;
+            font-weight: 700;
+            font-size: 0.92rem;
+            margin-bottom: 0.1rem;
+        }
+
+        .book-opt-text span {
+            font-size: 0.8rem;
+            opacity: 0.75;
+        }
+
+        .pricing-section {
+            background: linear-gradient(135deg, #f0faf5, #e8f5ee);
+            border: 1px solid #b2dfdb;
+            padding: 1.5rem;
+            border-radius: 16px;
+            margin: 1.75rem 0;
+        }
+
+        .pricing-section .modal-section-title { margin-bottom: 1rem; }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 1rem;
+            margin-top: 0.75rem;
+        }
+
+        .pricing-item {
+            background: white;
+            padding: 1.25rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 3px 12px rgba(39,174,96,0.1);
+            border-top: 3px solid #27ae60;
         }
 
         /* ---- CTA Strip ---- */
@@ -664,7 +1082,29 @@
             }
 
             .modal-content {
-                max-height: 88vh;
+                max-height: 92vh;
+                border-radius: 16px;
+            }
+
+            .modal-header {
+                padding: 1.5rem 1.5rem 1.25rem;
+                border-radius: 16px 16px 0 0;
+            }
+
+            .modal-body {
+                padding: 1.25rem 1.5rem;
+            }
+
+            .modal-list-section ul {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-cta {
+                flex-direction: column;
+            }
+
+            .book-modal-card {
+                border-radius: 16px;
             }
 
             .hero-stat {

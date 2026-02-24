@@ -1054,87 +1054,83 @@ document.addEventListener('DOMContentLoaded', function() {
     window.showPackageDetails = function(packageId) {
         const modal = document.getElementById('packageModal');
         const modalTitle = document.getElementById('modalTitle');
+        const modalDuration = document.getElementById('modalDuration');
         const modalBody = document.getElementById('modalBody');
-        
+
         const packageData = packageDetails[packageId];
-        
         if (!packageData) return;
-        
+
         modalTitle.textContent = packageData.title;
-        
-        let modalContent = `
-            <div class="itinerary-section">
-                <h3 style="font-family: 'Playfair Display', serif; color: #e74c3c; margin-bottom: 2rem;">Detailed Itinerary</h3>
-        `;
-        
-        packageData.itinerary.forEach(day => {
-            modalContent += `
-                <div class="itinerary-day">
-                    <div class="day-header">${day.day}</div>
-                    <div class="day-activities">${day.activities}</div>
-                </div>
-            `;
-        });
-        
-        modalContent += `</div>`;
-        
-        if (packageData.pricing) {
-            modalContent += `
+        if (packageData.itinerary && packageData.itinerary.length) {
+            const nights = packageData.itinerary.length - 1;
+            modalDuration.innerHTML = `<i class="fas fa-calendar-alt"></i> ${packageData.itinerary.length} Days${nights > 0 ? ' / ' + nights + ' Nights' : ''}`;
+        } else {
+            modalDuration.textContent = '';
+        }
+
+        let html = '';
+
+        // --- Itinerary ---
+        if (packageData.itinerary && packageData.itinerary.length) {
+            html += `<div class="modal-section-title"><i class="fas fa-map-marked-alt"></i> Detailed Itinerary</div>`;
+            packageData.itinerary.forEach(day => {
+                html += `
+                    <div class="itinerary-day">
+                        <div class="day-header">${day.day}</div>
+                        <div class="day-activities">${day.activities}</div>
+                    </div>`;
+            });
+        }
+
+        // --- Pricing ---
+        if (packageData.pricing && packageData.pricing.length) {
+            html += `
                 <div class="pricing-section">
-                    <h3 style="font-family: 'Playfair Display', serif; color: #e74c3c; margin-bottom: 1rem;">Pricing Details</h3>
-                    <div class="pricing-grid">
-            `;
-            
+                    <div class="modal-section-title"><i class="fas fa-tag"></i> Pricing Details</div>
+                    <div class="pricing-grid">`;
             packageData.pricing.forEach(price => {
-                modalContent += `
+                html += `
                     <div class="pricing-item">
-                        <h4 style="color: #333; margin-bottom: 0.5rem;">${price.type}</h4>
-                        <div style="font-size: 1.5rem; font-weight: 700; color: #e74c3c; margin-bottom: 0.5rem;">${price.price}</div>
-                        <p style="font-size: 0.9rem; color: #666;">${price.includes}</p>
-                    </div>
-                `;
+                        <div class="pricing-item-type">${price.type}</div>
+                        <div class="pricing-item-price">${price.price}</div>
+                        <div class="pricing-item-includes">${price.includes}</div>
+                    </div>`;
             });
-            
-            modalContent += `</div></div>`;
+            html += `</div></div>`;
         }
-        
-        if (packageData.premiumServices) {
-            modalContent += `
-                <div style="margin-top: 2rem;">
-                    <h4 style="color: #333; margin-bottom: 1rem;">Optional Premium Services:</h4>
-                    <ul style="color: #666; line-height: 1.6;">
-            `;
-            
-            packageData.premiumServices.forEach(service => {
-                modalContent += `<li>${service}</li>`;
-            });
-            
-            modalContent += `</ul></div>`;
+
+        // --- Premium Services ---
+        if (packageData.premiumServices && packageData.premiumServices.length) {
+            html += `
+                <div class="modal-list-section premium">
+                    <div class="modal-section-title"><i class="fas fa-star"></i> Optional Premium Add-ons</div>
+                    <ul>`;
+            packageData.premiumServices.forEach(s => { html += `<li>${s}</li>`; });
+            html += `</ul></div>`;
         }
-        
-        if (packageData.exclusions) {
-            modalContent += `
-                <div style="margin-top: 2rem;">
-                    <h4 style="color: #333; margin-bottom: 1rem;">Exclusions:</h4>
-                    <ul style="color: #666; line-height: 1.6;">
-            `;
-            
-            packageData.exclusions.forEach(exclusion => {
-                modalContent += `<li>${exclusion}</li>`;
-            });
-            
-            modalContent += `</ul></div>`;
+
+        // --- Exclusions ---
+        if (packageData.exclusions && packageData.exclusions.length) {
+            html += `
+                <div class="modal-list-section exclusions">
+                    <div class="modal-section-title"><i class="fas fa-times-circle"></i> Not Included</div>
+                    <ul>`;
+            packageData.exclusions.forEach(e => { html += `<li>${e}</li>`; });
+            html += `</ul></div>`;
         }
-        
-        modalContent += `
-            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #eee;">
-                <button onclick="bookPackage('${packageData.title}')" style="background: #e74c3c; color: white; border: none; padding: 1rem 2rem; border-radius: 25px; font-weight: 600; cursor: pointer; font-size: 1.1rem;">
-                    Book This Package
+
+        // --- CTA ---
+        html += `
+            <div class="modal-cta">
+                <button class="modal-cta-book" onclick="bookPackage('${packageData.title.replace(/'/g, "\\'")}')">
+                    <i class="fas fa-calendar-check"></i> Book This Package
                 </button>
-            </div>
-        `;
-        
-        modalBody.innerHTML = modalContent;
+                <a href="index.html#contact" class="modal-cta-contact">
+                    <i class="fas fa-envelope"></i> Send Enquiry
+                </a>
+            </div>`;
+
+        modalBody.innerHTML = html;
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
     };
@@ -1148,70 +1144,65 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Book package function
     window.bookPackage = function(packageName) {
-        // Create booking modal
-        const bookingContent = `
-            <div style="background: white; padding: 2rem; border-radius: 15px; max-width: 500px;">
-                <h3 style="color: #e74c3c; margin-bottom: 1rem;">Book: ${packageName}</h3>
-                <p style="margin-bottom: 2rem; color: #666;">Ready to embark on this incredible adventure? Contact us to book your safari!</p>
-                
-                <div style="display: flex; flex-direction: column; gap: 1rem;">
-                    <a href="tel:+256393101000" style="background: #e74c3c; color: white; padding: 1rem; border-radius: 10px; text-decoration: none; text-align: center; font-weight: 600;">
-                        <i class="fas fa-phone"></i> Call: +256 393101000
+        const existingOverlay = document.querySelector('.book-modal-overlay');
+        if (existingOverlay) existingOverlay.remove();
+
+        const overlay = document.createElement('div');
+        overlay.className = 'book-modal-overlay';
+        overlay.innerHTML = `
+            <div class="book-modal-card">
+                <div class="book-modal-header">
+                    <button class="book-modal-close" aria-label="Close"><i class="fas fa-times"></i></button>
+                    <div class="book-modal-icon"><i class="fas fa-calendar-check"></i></div>
+                    <h3>Book Your Adventure</h3>
+                    <p>${packageName}</p>
+                </div>
+                <div class="book-modal-body">
+                    <a href="tel:+256393101000" class="book-modal-option call">
+                        <div class="book-opt-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="book-opt-text">
+                            <strong>Call Us</strong>
+                            <span>+256 393101000 — Instant booking</span>
+                        </div>
                     </a>
-                    <a href="mailto:Info@afrisitestoursandtravel.org?subject=Booking Inquiry: ${encodeURIComponent(packageName)}" style="background: #3498db; color: white; padding: 1rem; border-radius: 10px; text-decoration: none; text-align: center; font-weight: 600;">
-                        <i class="fas fa-envelope"></i> Email Us
+                    <a href="https://wa.me/256393101000?text=Hi!%20I'd%20like%20to%20book%3A%20${encodeURIComponent(packageName)}" target="_blank" class="book-modal-option whatsapp">
+                        <div class="book-opt-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div class="book-opt-text">
+                            <strong>WhatsApp</strong>
+                            <span>Chat with our team directly</span>
+                        </div>
                     </a>
-                    <a href="index.html#contact" style="background: #27ae60; color: white; padding: 1rem; border-radius: 10px; text-decoration: none; text-align: center; font-weight: 600;">
-                        <i class="fas fa-form"></i> Contact Form
+                    <a href="mailto:Info@afrisitestoursandtravel.org?subject=Booking%20Inquiry%3A%20${encodeURIComponent(packageName)}" class="book-modal-option email">
+                        <div class="book-opt-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="book-opt-text">
+                            <strong>Email Us</strong>
+                            <span>Info@afrisitestoursandtravel.org</span>
+                        </div>
+                    </a>
+                    <a href="index.html#contact" class="book-modal-option form">
+                        <div class="book-opt-icon"><i class="fas fa-paper-plane"></i></div>
+                        <div class="book-opt-text">
+                            <strong>Contact Form</strong>
+                            <span>Fill in our enquiry form</span>
+                        </div>
                     </a>
                 </div>
-            </div>
-        `;
-        
-        showCustomModal(bookingContent);
-    };
+            </div>`;
 
-    // Custom modal function (reused from main script)
-    function showCustomModal(content) {
-        const existingModal = document.querySelector('.custom-modal');
-        if (existingModal) {
-            existingModal.remove();
-        }
-        
-        const modal = document.createElement('div');
-        modal.className = 'custom-modal';
-        modal.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 10002;
-            animation: fadeIn 0.3s ease;
-        `;
-        
-        modal.innerHTML = `
-            <div class="modal-content" style="position: relative;">
-                <button class="modal-close" style="position: absolute; top: -10px; right: -10px; background: #e74c3c; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center;">&times;</button>
-                ${content}
-            </div>
-        `;
-        
-        document.body.appendChild(modal);
-        
-        const closeBtn = modal.querySelector('.modal-close');
-        closeBtn.addEventListener('click', () => modal.remove());
-        
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.remove();
+        document.body.appendChild(overlay);
+        document.body.style.overflow = 'hidden';
+
+        overlay.querySelector('.book-modal-close').addEventListener('click', () => {
+            overlay.remove();
+            document.body.style.overflow = 'auto';
+        });
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) {
+                overlay.remove();
+                document.body.style.overflow = 'auto';
             }
         });
-    }
+    };
 
     // Close modal when clicking outside
     document.addEventListener('click', function(e) {
