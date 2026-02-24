@@ -941,7 +941,7 @@ body {
 .stats-section {
     position: relative;
     padding: 6rem 0;
-    background-image: url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+    background-image: url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -955,8 +955,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(3px);
+    background: linear-gradient(160deg, rgba(0,0,0,0.78) 0%, rgba(39,174,96,0.35) 100%);
 }
 
 .stats-section .container {
@@ -964,94 +963,96 @@ body {
     z-index: 2;
 }
 
+.stats-header {
+    margin-bottom: 3.5rem;
+}
+
 .stats-title {
-    font-family: 'Raleway', sans-serif;
-    font-size: 2.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
     font-weight: 700;
     color: white;
-    margin-bottom: 4rem;
-    text-transform: capitalize;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+}
+
+.stats-subtitle {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.75);
+    font-weight: 300;
+    max-width: 560px;
+    margin: 0 auto;
+    line-height: 1.6;
 }
 
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 3rem;
-    max-width: 1200px;
+    gap: 1.5rem;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
-.stat-item {
+.stat-card {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 18px;
+    padding: 2rem 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.25rem;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.stat-icon-circle {
-    position: relative;
-    width: 180px;
-    height: 180px;
+.stat-card:hover {
+    background: rgba(39,174,96,0.18);
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+    border-color: rgba(39,174,96,0.5);
+}
+
+.stat-icon-wrap {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #27ae60, #1a8a47);
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.stat-icon-circle::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 3px solid rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    animation: pulse 2s ease-in-out infinite;
-}
-
-.stat-icon {
-    width: 100px;
-    height: 100px;
-    background: #27ae60;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 30px rgba(39, 174, 96, 0.4);
-    transition: all 0.3s ease;
-}
-
-.stat-item:hover .stat-icon {
-    transform: scale(1.1);
-    box-shadow: 0 15px 40px rgba(39, 174, 96, 0.6);
-}
-
-.stat-icon i {
-    font-size: 2.5rem;
+    font-size: 1.6rem;
     color: white;
+    box-shadow: 0 8px 24px rgba(39,174,96,0.45);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover .stat-icon-wrap {
+    transform: scale(1.08) rotate(-3deg);
+}
+
+.stat-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
 }
 
 .stat-number {
-    font-size: 2.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
     font-weight: 700;
     color: white;
-    font-family: 'Raleway', sans-serif;
+    line-height: 1;
 }
 
 .stat-label {
-    font-size: 1.1rem;
-    color: #f9c500;
-    font-weight: 600;
-    text-transform: capitalize;
-}
-
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.1);
-        opacity: 0.8;
-    }
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.75);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
 }
 
 /* Services Section */
@@ -2331,12 +2332,20 @@ body {
 
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
+        gap: 1.25rem;
     }
 
     .stats-title {
-        font-size: 1.8rem;
-        margin-bottom: 2.5rem;
+        font-size: 2rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .stat-number {
+        font-size: 2.4rem;
+    }
+
+    .stat-card {
+        padding: 1.5rem 1rem;
     }
 
     .stat-icon-circle {
@@ -2350,10 +2359,6 @@ body {
     }
 
     .stat-icon i {
-        font-size: 2rem;
-    }
-
-    .stat-number {
         font-size: 2rem;
     }
 
