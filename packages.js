@@ -41,42 +41,88 @@ window.filterPackages = filterPackages;
 
 // ─── Debug: log what element is actually on top at the pill button positions ───
 (function() {
+    // Capture-phase global click listener — fires BEFORE anything can stopPropagation
+    document.addEventListener('click', function(e) {
+        console.log('[GlobalClick] capture phase | target:', e.target.tagName + '.' + e.target.className,
+            '| x:', Math.round(e.clientX), 'y:', Math.round(e.clientY),
+            '| topEl at point:', (document.elementFromPoint(e.clientX, e.clientY) || 'null'));
+    }, true);
+
     function debugPills() {
         var buttons = document.querySelectorAll('.category-btn');
         if (!buttons.length) {
             console.warn('[PillDebug] No .category-btn elements found in DOM');
             return;
         }
+        var anyInViewport = false;
         buttons.forEach(function(btn) {
             var rect = btn.getBoundingClientRect();
+            // Only check elements actually in the viewport
+            if (rect.top < 0 || rect.bottom > window.innerHeight) {
+                console.log('[PillDebug] btn "' + btn.textContent.trim() + '" is off-screen (rect.top=' + Math.round(rect.top) + ') — skipping overlap check');
+                return;
+            }
+            anyInViewport = true;
             var cx = rect.left + rect.width / 2;
             var cy = rect.top + rect.height / 2;
             var topEl = document.elementFromPoint(cx, cy);
             var isBlocked = topEl !== btn && !btn.contains(topEl);
             console.log(
                 '[PillDebug] btn "' + btn.textContent.trim() + '"',
-                '| rect:', Math.round(rect.top) + '-' + Math.round(rect.bottom),
+                '| rect top:', Math.round(rect.top), 'bottom:', Math.round(rect.bottom),
                 '| topElement:', topEl ? (topEl.tagName + '.' + (topEl.className || '').toString().split(' ').join('.')) : 'null',
                 isBlocked ? '⚠️ BLOCKED' : '✅ reachable'
             );
-        });
-
-        // Also log any fixed/absolute elements with high z-index that could be culprits
-        var allEls = document.querySelectorAll('*');
-        allEls.forEach(function(el) {
-            var st = window.getComputedStyle(el);
-            var pos = st.position;
-            var zi = parseInt(st.zIndex, 10);
-            if ((pos === 'fixed' || pos === 'absolute') && zi > 5) {
-                var r = el.getBoundingClientRect();
-                if (r.width > 0 && r.height > 0 && st.pointerEvents !== 'none') {
-                    console.log('[PillDebug] Potential blocker:', el.tagName + '.' + (el.className || '').toString().split(' ').join('.'),
-                        'z-index:', zi, 'pos:', pos,
-                        'rect:', Math.round(r.top) + ',' + Math.round(r.left), '→', Math.round(r.bottom) + ',' + Math.round(r.right));
+            if (isBlocked) {
+                // Walk up to find the actual covering element
+                var covering = topEl;
+                while (covering) {
+                    var st = window.getComputedStyle(covering);
+                    console.log('[PillDebug]   → covering element:', covering.tagName, 
+                        'class:', covering.className,
+                        'z-index:', st.zIndex, 'pos:', st.position, 
+                        'pointer-events:', st.pointerEvents,
+                        'rect:', JSON.stringify(covering.getBoundingClientRect()));
+                    covering = covering.parentElement;
+                    if (!covering || covering === document.body) break;
                 }
             }
         });
+
+        if (!anyInViewport) {
+            console.log('[PillDebug] All pills off-screen — scroll to them and this check will re-run.');
+        }
+
+        // Log any positioned elements that could be covering the pill zone
+        var pillContainer = document.querySelector('.package-categories');
+        if (pillContainer) {
+            var pr = pillContainer.getBoundingClientRect();
+            if (pr.top >= 0 && pr.top < window.innerHeight) {
+                var allEls = document.querySelectorAll('*');
+                allEls.forEach(function(el) {
+                    var st = window.getComputedStyle(el);
+                    var pos = st.position;
+                    var zi = parseInt(st.zIndex, 10) || 0;
+                    if ((pos === 'fixed' || pos === 'absolute') && zi > 0 && st.pointerEvents !== 'none') {
+                        var r = el.getBoundingClientRect();
+                        // Check if it overlaps the pill container
+                        var overlaps = r.left < pr.right && r.right > pr.left && r.top < pr.bottom && r.bottom > pr.top;
+                        if (overlaps && r.width > 0 && r.height > 0) {
+                            console.warn('[PillDebug] OVERLAPPING element:', el.tagName + '.' + el.className,
+                                'z-index:', zi, 'pos:', pos, 'pointer-events:', st.pointerEvents);
+                        }
+                    }
+                });
+            }
+        }
     }
+
+    // Run on load, and again whenever user scrolls (debounced)
+    var scrollTimer;
+    window.addEventListener('scroll', function() {
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(debugPills, 200);
+    }, { passive: true });
 
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function() { setTimeout(debugPills, 500); });
@@ -130,9 +176,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const packageCards = document.querySelectorAll('.package-card');
     
     categoryButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function(e) {
+            console.log('[PillDebug] direct click on btn:', this.getAttribute('data-category'));
             filterPackages(this.getAttribute('data-category'));
         });
+        // Touchend fallback for mobile browsers that delay/swallow click events
+        button.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            console.log('[PillDebug] direct touchend on btn:', this.getAttribute('data-category'));
+            filterPackages(this.getAttribute('data-category'));
+        }, { passive: false });
     });
 
     function updateVisibleCount() {

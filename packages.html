@@ -158,6 +158,8 @@
             flex-wrap: wrap;
             gap: 0.65rem;
             margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 10;
         }
 
         .category-btn {
@@ -175,6 +177,13 @@
             transition: all 0.25s ease;
             font-family: 'Poppins', sans-serif;
             box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            position: relative;
+            z-index: 10;
+            pointer-events: all;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: rgba(39,174,96,0.2);
+            user-select: none;
+            -webkit-user-select: none;
         }
 
         .category-btn i {
