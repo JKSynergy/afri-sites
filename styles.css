@@ -124,6 +124,9 @@ body {
     position: relative;
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
+    pointer-events: auto;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .hamburger span {
@@ -132,6 +135,7 @@ body {
     background: #333;
     margin: 3px 0;
     transition: 0.3s;
+    pointer-events: none;
 }
 
 .hamburger.active span:nth-child(1) {
