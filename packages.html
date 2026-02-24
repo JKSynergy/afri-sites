@@ -1058,8 +1058,22 @@
         @media (max-width: 768px) {
             .packages-hero {
                 height: auto;
-                padding: 5rem 1rem 0;
+                min-height: 50vh;
+                padding: 80px 1rem 70px; /* bottom padding = stats bar height */
                 background-attachment: scroll;
+            }
+
+            .packages-hero h1 {
+                font-size: 2rem;
+            }
+
+            .packages-hero p {
+                font-size: 0.95rem;
+                margin-bottom: 0;
+            }
+
+            .hero-stats {
+                flex-wrap: wrap;
             }
 
             .package-categories {
@@ -1117,6 +1131,32 @@
             .hero-stat {
                 min-width: 90px;
                 padding: 0.7rem 0.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-stats {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                width: 100%;
+            }
+
+            .hero-stat {
+                min-width: 0;
+                border-right: none;
+                border-bottom: 1px solid rgba(255,255,255,0.12);
+            }
+
+            .hero-stat-num {
+                font-size: 1.2rem;
+            }
+
+            .packages-section {
+                padding: 2.5rem 0 3rem;
+            }
+
+            .package-content {
+                padding: 1rem 1.1rem;
             }
         }
     </style>

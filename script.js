@@ -759,7 +759,8 @@ function addRevealAnimation() {
     
     const sectionObserver = new IntersectionObserver(revealSection, {
         root: null,
-        threshold: 0.05
+        threshold: 0.05,
+        rootMargin: '0px 0px 300px 0px'
     });
     
     sections.forEach(section => {
