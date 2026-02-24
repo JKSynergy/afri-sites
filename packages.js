@@ -2,6 +2,7 @@
 
 // ─── Global filter function (callable from inline onclick or event delegation) ───
 function filterPackages(category) {
+    console.log('[PillDebug] filterPackages called with category:', category);
     var buttons = document.querySelectorAll('.category-btn');
     var cards   = document.querySelectorAll('.package-card');
 
@@ -38,12 +39,63 @@ function filterPackages(category) {
 // Expose globally so inline onclick can reach it
 window.filterPackages = filterPackages;
 
+// ─── Debug: log what element is actually on top at the pill button positions ───
+(function() {
+    function debugPills() {
+        var buttons = document.querySelectorAll('.category-btn');
+        if (!buttons.length) {
+            console.warn('[PillDebug] No .category-btn elements found in DOM');
+            return;
+        }
+        buttons.forEach(function(btn) {
+            var rect = btn.getBoundingClientRect();
+            var cx = rect.left + rect.width / 2;
+            var cy = rect.top + rect.height / 2;
+            var topEl = document.elementFromPoint(cx, cy);
+            var isBlocked = topEl !== btn && !btn.contains(topEl);
+            console.log(
+                '[PillDebug] btn "' + btn.textContent.trim() + '"',
+                '| rect:', Math.round(rect.top) + '-' + Math.round(rect.bottom),
+                '| topElement:', topEl ? (topEl.tagName + '.' + (topEl.className || '').toString().split(' ').join('.')) : 'null',
+                isBlocked ? '⚠️ BLOCKED' : '✅ reachable'
+            );
+        });
+
+        // Also log any fixed/absolute elements with high z-index that could be culprits
+        var allEls = document.querySelectorAll('*');
+        allEls.forEach(function(el) {
+            var st = window.getComputedStyle(el);
+            var pos = st.position;
+            var zi = parseInt(st.zIndex, 10);
+            if ((pos === 'fixed' || pos === 'absolute') && zi > 5) {
+                var r = el.getBoundingClientRect();
+                if (r.width > 0 && r.height > 0 && st.pointerEvents !== 'none') {
+                    console.log('[PillDebug] Potential blocker:', el.tagName + '.' + (el.className || '').toString().split(' ').join('.'),
+                        'z-index:', zi, 'pos:', pos,
+                        'rect:', Math.round(r.top) + ',' + Math.round(r.left), '→', Math.round(r.bottom) + ',' + Math.round(r.right));
+                }
+            }
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() { setTimeout(debugPills, 500); });
+    } else {
+        setTimeout(debugPills, 500);
+    }
+})();
+
 // ─── Event-delegation fallback on the pill container ───
 (function() {
     function attachDelegation() {
         var container = document.querySelector('.package-categories');
         if (!container) return;
+        // Log touch events too so we know if the problem is touch vs click
+        container.addEventListener('touchstart', function(e) {
+            console.log('[PillDebug] touchstart on container, e.target:', e.target.tagName + '.' + e.target.className);
+        }, { passive: true });
         container.addEventListener('click', function(e) {
+            console.log('[PillDebug] click on container, e.target:', e.target.tagName + '.' + e.target.className);
             var btn = e.target.closest('.category-btn');
             if (!btn) return;
             var cat = btn.getAttribute('data-category');
