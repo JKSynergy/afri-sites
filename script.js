@@ -586,7 +586,7 @@ document.addEventListener('DOMContentLoaded', animateOnScroll);
 
 // Add loading animation
 window.addEventListener('load', function() {
-    document.body.classList.add('loading');
+    document.body.classList.remove('loading'); // ensure body never has pointer-events:none
 });
 
 // Parallax effect for hero section
