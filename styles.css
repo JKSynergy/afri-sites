@@ -1013,16 +1013,16 @@ body {
 
 .services-hero {
     position: relative;
-    height: 50vh;
-    min-height: 400px;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    height: 55vh;
+    min-height: 420px;
+    background: linear-gradient(160deg, rgba(0, 0, 0, 0.65) 0%, rgba(39, 174, 96, 0.2) 100%),
                 url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
-    margin-bottom: 5rem;
+    margin-bottom: 0;
 }
 
 .services-hero-overlay {
@@ -1060,8 +1060,38 @@ body {
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
+.services-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50px;
+    padding: 0.4rem 1.2rem;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.2rem;
+}
+
+.services-breadcrumb a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.services-breadcrumb a:hover {
+    color: #fff;
+}
+
+.services-breadcrumb i {
+    font-size: 0.7rem;
+    opacity: 0.7;
+}
+
 .section-header {
     text-align: center;
+    margin-top: 4.5rem;
     margin-bottom: 3rem;
 }
 
@@ -1090,18 +1120,20 @@ body {
 
 .service-card {
     background: white;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     overflow: hidden;
     display: grid;
     grid-template-columns: 250px 1fr;
     min-height: 200px;
+    border-left: 4px solid transparent;
 }
 
 .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.13);
+    border-left-color: #27ae60;
 }
 
 .service-image {
@@ -1123,18 +1155,19 @@ body {
 
 .service-icon {
     position: absolute;
-    bottom: 1rem;
+    top: 1rem;
     left: 1rem;
     background: linear-gradient(135deg, #27ae60, #229954);
+    backdrop-filter: blur(4px);
     color: white;
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.25rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-size: 1.15rem;
+    box-shadow: 0 4px 14px rgba(39, 174, 96, 0.45);
 }
 
 .service-content {
@@ -1144,12 +1177,13 @@ body {
 }
 
 .service-card h3 {
-    font-family: 'Crimson Text', serif;
-    color: #333;
+    font-family: 'Playfair Display', serif;
+    color: #1a1a1a;
     margin-bottom: 0.75rem;
-    font-size: 1.35rem;
-    font-weight: 600;
+    font-size: 1.3rem;
+    font-weight: 700;
     letter-spacing: -0.01em;
+    line-height: 1.3;
 }
 
 .service-card p {
@@ -1175,12 +1209,87 @@ body {
 }
 
 .service-list li::before {
-    content: '✓';
+    content: '\f058';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
     position: absolute;
     left: 0;
     color: #27ae60;
-    font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: auto;
+    padding-top: 1.1rem;
+    color: #27ae60;
+    font-weight: 600;
+    font-size: 0.88rem;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s, gap 0.2s, color 0.2s;
+    align-self: flex-start;
+}
+
+.service-link:hover {
+    border-bottom-color: #27ae60;
+    gap: 0.65rem;
+    color: #229954;
+}
+
+/* Services CTA strip */
+.services-cta {
+    margin-top: 4rem;
+    background: linear-gradient(135deg, #27ae60 0%, #1a8a47 100%);
+    border-radius: 20px;
+    padding: 2.75rem 3.5rem;
+    color: white;
+    box-shadow: 0 8px 32px rgba(39, 174, 96, 0.35);
+}
+
+.services-cta-inner {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.services-cta-icon {
+    font-size: 2.8rem;
+    opacity: 0.85;
+    flex-shrink: 0;
+}
+
+.services-cta h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0 0 0.4rem;
+    line-height: 1.2;
+}
+
+.services-cta p {
+    font-size: 1rem;
+    opacity: 0.88;
+    margin: 0;
+}
+
+.services-cta .btn-primary {
+    background: white;
+    color: #27ae60;
+    border: none;
+    white-space: nowrap;
+    margin-left: auto;
+    font-weight: 700;
+}
+
+.services-cta .btn-primary:hover {
+    background: #f0faf4;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Packages Section */
@@ -1930,7 +2039,7 @@ body {
     .services-hero {
         height: 40vh;
         min-height: 300px;
-        margin-bottom: 3rem;
+        margin-bottom: 0;
     }
     
     .services-hero-content h2 {
@@ -1944,6 +2053,13 @@ body {
     .service-card {
         grid-template-columns: 1fr;
         min-height: auto;
+        border-left: none;
+        border-top: 4px solid transparent;
+    }
+
+    .service-card:hover {
+        border-left-color: transparent;
+        border-top-color: #27ae60;
     }
     
     .service-image {
@@ -1951,15 +2067,29 @@ body {
     }
     
     .service-icon {
-        bottom: 0.75rem;
+        top: 0.75rem;
         left: 0.75rem;
-        width: 45px;
-        height: 45px;
-        font-size: 1.1rem;
+        width: 44px;
+        height: 44px;
+        font-size: 1.05rem;
     }
     
     .service-content {
         padding: 1.5rem;
+    }
+
+    .services-cta {
+        padding: 2rem 1.75rem;
+    }
+
+    .services-cta-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .services-cta .btn-primary {
+        margin-left: 0;
     }
 }
 
