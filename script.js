@@ -794,7 +794,7 @@ function showNotification(message) {
                 opacity: 0;
                 transform: translateX(400px);
                 transition: all 0.3s ease;
-                font-family: 'Inter', sans-serif;
+                font-family: 'Poppins', sans-serif;
                 font-weight: 500;
             }
             

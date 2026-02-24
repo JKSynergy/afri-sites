@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
     color: #333;
     overflow-x: hidden;
@@ -229,7 +229,7 @@ body {
 .search-select {
     border: none;
     background: transparent;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 0.85rem;
     color: #333;
     cursor: pointer;
@@ -1790,7 +1790,7 @@ body {
     border-radius: 10px;
     font-size: 0.95rem;
     transition: all 0.3s ease;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     background: #f8f9fa;
     box-sizing: border-box;
@@ -1904,7 +1904,7 @@ body {
 }
 
 .footer-section h4 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: white;
     margin-bottom: 1rem;
     font-weight: 600;
@@ -2143,7 +2143,7 @@ body {
     border: 2px solid #e0e0e0;
     border-radius: 4px;
     font-size: 0.95rem;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     transition: all 0.3s ease;
     pointer-events: auto;
 }
