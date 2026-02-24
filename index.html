@@ -733,35 +733,40 @@
         <div class="contact-hero">
             <div class="contact-hero-overlay"></div>
             <div class="contact-hero-content">
+                <div class="contact-breadcrumb"><a href="#home">Home</a> <i class="fas fa-chevron-right"></i> Contact Us</div>
                 <h2>Get In Touch</h2>
                 <p>Ready to embark on your next adventure? Let's start planning your dream trip</p>
             </div>
         </div>
         
         <div class="container">
+            <div class="section-header">
+                <h2>We'd Love to Hear From You</h2>
+                <p>Reach out and our team will respond within 24 hours to help plan your perfect African experience</p>
+            </div>
             <div class="contact-content">
                 <div class="contact-info">
                     <h3>Contact Information</h3>
-                    <p>Reach out to us through any of the following channels and our team will respond promptly.</p>
+                    <p>Connect with us through any of the channels below — we're available seven days a week.</p>
 
                     <div class="contact-details">
                         <div class="contact-item">
                             <div class="contact-icon">
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
-                            <div>
-                                <h4>Address</h4>
+                            <div class="contact-item-body">
+                                <h4>Our Office</h4>
                                 <p>Kampala Buwate Light Close<br>Kira Municipality<br>P.O.Box 107327, Uganda</p>
                             </div>
                         </div>
 
                         <div class="contact-item">
                             <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
+                                <i class="fas fa-phone-alt"></i>
                             </div>
-                            <div>
-                                <h4>Phone</h4>
-                                <p>+256 393101000</p>
+                            <div class="contact-item-body">
+                                <h4>Call Us</h4>
+                                <p><a href="tel:+256393101000">+256 393101000</a></p>
                             </div>
                         </div>
 
@@ -769,46 +774,68 @@
                             <div class="contact-icon">
                                 <i class="fas fa-envelope"></i>
                             </div>
-                            <div>
-                                <h4>Email</h4>
-                                <p>Info@afrisitestoursandtravel.org</p>
+                            <div class="contact-item-body">
+                                <h4>Email Us</h4>
+                                <p><a href="mailto:Info@afrisitestoursandtravel.org">Info@afrisitestoursandtravel.org</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-item-body">
+                                <h4>Office Hours</h4>
+                                <p>Monday – Saturday: 8:00 AM – 6:00 PM<br>Sunday: 10:00 AM – 4:00 PM</p>
                             </div>
                         </div>
                     </div>
 
+                    <div class="contact-social-label">Follow Our Journey</div>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/share/1AYkxr24NF/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.facebook.com/share/1AYkxr24NF/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/afrisitestours?igsh=MWF3NjZhZWJoaXg5eQ==&utm_source=ig_contact_invite" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="https://x.com/afrisitestours?t=BAAgxnkriuY4JzA-G13aRQ&s=08" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                         <a href="https://www.tiktok.com/@afrisitestours?_t=ZM-8vpIFXoFHNP&_r=1" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/256393101000" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
 
                 <div class="contact-form">
+                    <div class="contact-form-header">
+                        <h3>Send Us a Message</h3>
+                        <p>Fill in the form and we'll get back to you within 24 hours</p>
+                    </div>
                     <form id="contactForm">
-                        <div class="form-group">
+                        <div class="form-group form-icon-group">
+                            <i class="fas fa-user form-input-icon"></i>
                             <input type="text" id="name" name="name" placeholder="Full Name" required>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-icon-group">
+                            <i class="fas fa-envelope form-input-icon"></i>
                             <input type="email" id="email" name="email" placeholder="Email Address" required>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-icon-group">
+                            <i class="fas fa-phone form-input-icon"></i>
                             <input type="tel" id="phone" name="phone" placeholder="Phone Number">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-icon-group">
+                            <i class="fas fa-concierge-bell form-input-icon"></i>
                             <select id="service" name="service" required>
                                 <option value="">Select Service</option>
                                 <option value="safari">Safari Tours</option>
                                 <option value="gorilla">Gorilla Trekking</option>
                                 <option value="international">International Travel</option>
                                 <option value="flights">Flight Booking</option>
+                                <option value="hotel">Hotel &amp; Accommodation</option>
+                                <option value="visa">Visa Processing</option>
                                 <option value="custom">Custom Package</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Tell us about your dream trip..." rows="5" required></textarea>
+                            <textarea id="message" name="message" placeholder="Tell us about your dream trip — destination, dates, group size..." rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn-primary">Send Message</button>
+                        <button type="submit" class="btn-primary contact-submit"><i class="fas fa-paper-plane"></i> Send Message</button>
                     </form>
                 </div>
             </div>
@@ -820,7 +847,7 @@
         <div class="container">
             <div class="book-content">
                 <h2>Ready for Your Adventure?</h2>
-                <p>Don't wait - your African adventure is just a click away!</p>
+                <p>Don't wait — your African adventure is just a call away!</p>
                 <div class="book-buttons">
                     <a href="tel:+256393101000" class="btn-primary">
                         <i class="fas fa-phone"></i> Call Now
