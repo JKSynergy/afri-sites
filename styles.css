@@ -150,6 +150,7 @@ body {
     color: white;
     position: relative;
     overflow: hidden;
+    background-color: #0d1f12;
 }
 
 .hero-slider {
@@ -2411,6 +2412,21 @@ body {
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
+    }
+
+    /* Hide the desktop Book Now pill on mobile - it's accessible via the nav menu */
+    .nav-container > .search-btn,
+    .nav-container > .cta-btn {
+        display: none;
+    }
+
+    /* Keep logo on one line at mobile */
+    .nav-logo h2 {
+        font-size: 1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 170px;
     }
 
     .nav-menu {

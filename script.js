@@ -35,8 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Initialize hero slider
-    initHeroSlider();
+    // Initialize hero slider (only on pages that have slider elements)
+    if (document.querySelector('.hero-slide')) {
+        initHeroSlider();
+    }
     
     // Tour Search Bar Functionality
     const customizeBtn = document.querySelector('.customize-btn');
@@ -337,8 +339,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Contact Form Handler
-document.getElementById('contactForm').addEventListener('submit', function(e) {
+// Contact Form Handler (only bind if form exists on this page)
+const _contactForm = document.getElementById('contactForm');
+if (_contactForm) _contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
     
     // Get form data
@@ -434,7 +437,7 @@ Submitted: ${new Date().toLocaleString()}
             showNotification('Opening your email client... Please send the prepared email.', 'info');
         }, 1000);
     }
-});
+}); // end if (_contactForm)
 
 // Email validation function
 function isValidEmail(email) {
@@ -741,7 +744,7 @@ function addRevealAnimation() {
     
     const sectionObserver = new IntersectionObserver(revealSection, {
         root: null,
-        threshold: 0.15
+        threshold: 0.05
     });
     
     sections.forEach(section => {
