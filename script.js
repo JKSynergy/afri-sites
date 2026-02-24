@@ -785,8 +785,11 @@ revealStyles.textContent = `
 `;
 document.head.appendChild(revealStyles);
 
-// Initialize section reveal animation
-document.addEventListener('DOMContentLoaded', addRevealAnimation);
+// Initialize section reveal animation only on pages without their own card animations
+// (packages.js, gallery.js handle their own reveal logic)
+if (!document.querySelector('.packages-hero, .gallery-hero, .gallery-section')) {
+    document.addEventListener('DOMContentLoaded', addRevealAnimation);
+}
 
 // Show notification function
 function showNotification(message) {
