@@ -496,10 +496,75 @@
             padding: 4.5rem 0;
         }
 
+        .video-coming-soon-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .video-cs-banner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            background: linear-gradient(135deg, #0d2b1a 0%, #1a5c38 100%);
+            border-radius: 20px;
+            padding: 2.8rem 3rem;
+            width: 100%;
+            max-width: 700px;
+            box-shadow: 0 8px 32px rgba(39,174,96,0.18);
+        }
+
+        .video-cs-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: rgba(39,174,96,0.2);
+            border: 2px solid rgba(39,174,96,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #5dde8e;
+        }
+
+        .video-cs-badge {
+            display: inline-block;
+            background: rgba(249,197,0,0.15);
+            border: 1.5px solid rgba(249,197,0,0.5);
+            color: #f9c500;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 0.28rem 0.9rem;
+            border-radius: 50px;
+        }
+
+        .video-cs-banner h3 {
+            font-family: 'Playfair Display', serif;
+            color: white;
+            font-size: 1.9rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 0;
+        }
+
+        .video-cs-banner p {
+            color: rgba(255,255,255,0.75);
+            font-size: 0.98rem;
+            text-align: center;
+            max-width: 480px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            width: 100%;
         }
 
         .video-item {
@@ -507,73 +572,54 @@
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .video-item:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
         }
 
         .video-thumbnail {
             position: relative;
-            height: 210px;
+            height: 190px;
             background-size: cover;
             background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
         }
 
         .video-thumbnail::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.6) 100%);
+            background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%);
         }
 
-        .play-button {
-            position: relative;
+        .video-cs-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(249,197,0,0.92);
+            color: #1a2e12;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.22rem 0.7rem;
+            border-radius: 50px;
             z-index: 2;
-            background: rgba(39, 174, 96, 0.92);
-            color: white;
-            border: none;
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            font-size: 1.4rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        }
-
-        .play-button:hover {
-            background: #27ae60;
-            transform: scale(1.12);
-            box-shadow: 0 6px 25px rgba(39,174,96,0.5);
         }
 
         .video-content {
-            padding: 1.5rem;
+            padding: 1.25rem 1.4rem;
         }
 
         .video-content h3 {
             font-family: 'Playfair Display', serif;
             color: #222;
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+            margin-bottom: 0.4rem;
             font-weight: 600;
-            line-height: 1.3;
+            line-height: 1.35;
         }
 
         .video-content p {
-            color: #666;
-            font-size: 0.9rem;
-            line-height: 1.65;
+            color: #777;
+            font-size: 0.85rem;
+            line-height: 1.6;
         }
 
         /* ── Responsive ───────────────────────────────────── */
@@ -996,54 +1042,59 @@
                 <p>Experience the adventure through our exciting safari videos</p>
             </div>
 
-            <div class="video-grid">
-                <div class="video-item">
-                    <div class="video-thumbnail" style="background-image: url('https://images.unsplash.com/photo-1564760055775-d63b17a55c44?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');" data-video="gorilla-trekking">
-                        <button class="play-button">
-                            <i class="fas fa-play"></i>
-                        </button>
+            <div class="video-coming-soon-wrap">
+
+                <!-- Coming Soon Banner -->
+                <div class="video-cs-banner">
+                    <div class="video-cs-icon"><i class="fas fa-film"></i></div>
+                    <span class="video-cs-badge">Coming Soon</span>
+                    <h3>Safari Videos on the Way</h3>
+                    <p>We're compiling our best footage from gorilla treks, wildlife drives, and cultural encounters across Uganda and East Africa. Check back soon!</p>
+                </div>
+
+                <!-- Preview cards (no play — just teasers) -->
+                <div class="video-grid">
+                    <div class="video-item">
+                        <div class="video-thumbnail" style="background-image: url('https://images.unsplash.com/photo-1564760055775-d63b17a55c44?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                            <span class="video-cs-tag">Coming Soon</span>
+                        </div>
+                        <div class="video-content">
+                            <h3>Gorilla Trekking Adventure</h3>
+                            <p>Bwindi Impenetrable Forest — meeting mountain gorillas face to face.</p>
+                        </div>
                     </div>
-                    <div class="video-content">
-                        <h3>Gorilla Trekking Adventure</h3>
-                        <p>Join us on an unforgettable journey to meet mountain gorillas in their natural habitat in Bwindi Impenetrable Forest.</p>
+
+                    <div class="video-item">
+                        <div class="video-thumbnail" style="background-image: url('https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                            <span class="video-cs-tag">Coming Soon</span>
+                        </div>
+                        <div class="video-content">
+                            <h3>Big Five Safari Experience</h3>
+                            <p>Queen Elizabeth & Murchison Falls NP — Africa's iconic wildlife up close.</p>
+                        </div>
+                    </div>
+
+                    <div class="video-item">
+                        <div class="video-thumbnail" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                            <span class="video-cs-tag">Coming Soon</span>
+                        </div>
+                        <div class="video-content">
+                            <h3>Murchison Falls Boat Cruise</h3>
+                            <p>The Nile squeezing through the world's most powerful waterfall gorge.</p>
+                        </div>
+                    </div>
+
+                    <div class="video-item">
+                        <div class="video-thumbnail" style="background-image: url('https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                            <span class="video-cs-tag">Coming Soon</span>
+                        </div>
+                        <div class="video-content">
+                            <h3>Cultural Encounters</h3>
+                            <p>Uganda's rich traditions — dances, crafts, and community experiences.</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="video-item">
-                    <div class="video-thumbnail" style="background-image: url('https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');" data-video="big-five-safari">
-                        <button class="play-button">
-                            <i class="fas fa-play"></i>
-                        </button>
-                    </div>
-                    <div class="video-content">
-                        <h3>Big Five Safari Experience</h3>
-                        <p>Witness the majestic Big Five animals in their natural environment during our expertly guided safari tours.</p>
-                    </div>
-                </div>
-
-                <div class="video-item">
-                    <div class="video-thumbnail" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');" data-video="murchison-falls">
-                        <button class="play-button">
-                            <i class="fas fa-play"></i>
-                        </button>
-                    </div>
-                    <div class="video-content">
-                        <h3>Murchison Falls Boat Cruise</h3>
-                        <p>Experience the power of the Nile as it thunders through the narrow gorge at Murchison Falls.</p>
-                    </div>
-                </div>
-
-                <div class="video-item">
-                    <div class="video-thumbnail" style="background-image: url('https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80');" data-video="cultural-encounters">
-                        <button class="play-button">
-                            <i class="fas fa-play"></i>
-                        </button>
-                    </div>
-                    <div class="video-content">
-                        <h3>Cultural Encounters</h3>
-                        <p>Immerse yourself in the rich culture and traditions of Uganda's diverse communities.</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
